@@ -11,7 +11,7 @@ export default async function ConversationsLayout({
   const conversations = await getConversations();
   const users = await getUsers();
   return (
-    // @ts-expect-error Server Component
+
     <Sidebar>
       <ConversationList initialItems={conversations} users={users} />
       <div className="h-full">{children}</div>
