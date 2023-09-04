@@ -1,2 +1,2 @@
 # NextJS
-Creating NextJs projects, studying from YouTube.
+Creating NextJs projects, deployment on Vercel.
