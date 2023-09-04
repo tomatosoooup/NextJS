@@ -1,6 +1,7 @@
 import getCurrentUser from "<components>/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "../../libs/prismadb";
+import { pusherServer } from "<components>/app/libs/pusher";
 
 export async function POST(request: Request) {
   try {
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
     const { userId, isGroup, members, name } = body;
 
     if (!currentUser?.id || !currentUser?.email) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized", { status: 400 });
     }
 
     if (isGroup && (!members || members.length < 2 || !name)) {
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
     }
 
     if (isGroup) {
-      const newConversation = prisma.conversation.create({
+      const newConversation = await prisma.conversation.create({
         data: {
           name,
           isGroup,
@@ -35,6 +36,12 @@ export async function POST(request: Request) {
         include: {
           users: true,
         },
+      });
+
+      newConversation.users.forEach((user) => {
+        if (user.email) {
+          pusherServer.trigger(user.email, "conversation:new", newConversation);
+        }
       });
 
       return NextResponse.json(newConversation);
@@ -79,6 +86,12 @@ export async function POST(request: Request) {
       include: {
         users: true,
       },
+    });
+
+    newConversation.users.map((user) => {
+      if (user.email) {
+        pusherServer.trigger(user.email, "conversation:new", newConversation);
+      }
     });
 
     return NextResponse.json(newConversation);
