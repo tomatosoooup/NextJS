@@ -5,7 +5,7 @@ import Button from "./buttons/Button";
 const SectionBox = () => {
   return (
     <div className="md:grid md:grid-cols-2 min-h-screen pt-36 md:pt-56  text-white">
-      <div className="px-5 text-center">
+      <div className="px-5 text-center md:text-justify">
         <h1 className="text-4xl md:text-6xl uppercase mb-5 ">
           Cryptocurrency exchange
         </h1>
