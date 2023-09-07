@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import DropDown from "../DropDown";
+// import DropDown from "../DropDown";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -10,28 +10,29 @@ const Navbar = () => {
   return (
     <div className="fixed inset-0 min-h-fit hidden lg:block w-screen z-10">
       <div className="max-w-screen-2xl m-auto mt-5 px-5 mb-5">
-        <ul className="flex list-none items-center justify-center h-full text-[20px] uppercase text-white">
-          <Link href="/" className="mr-auto">
+        <ul className="flex list-none items-center justify-between h-full text-[20px] uppercase text-white w-full">
+          <Link href="/" className="flex-shrink-0">
             {t("main")}
           </Link>
-          <Link href="/" className="lg:mr-16">
+          <Link href="/" className="flex-shrink-0">
             {t("contacts")}
           </Link>
-          <div className="text-center flex flex-col font-medium mx-10 lg:mx-24">
+          <div className="text-center flex flex-col font-medium flex-shrink relative">
+            <div className="w-16 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-28 top-10"></div>
+
             <span className="text-6xl tracking-[0.5rem]">KLTP</span>
             <span className="text-lg tracking-[0.5rem] lowercase font-normal">
               exchange
             </span>
+            <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-10"></div>
           </div>
-          <Link href="/" className="lg:ml-16">
+          <Link href="/" className="flex-shrink-0">
             {t("about")}
           </Link>
-          <Link href="/" className="ml-auto">
+          <Link href="/" className="flex-shrink-0">
             {t("services")}
           </Link>
-          <div className="ml-auto">
-            <DropDown />
-          </div>
+          {/* <DropDown /> */}
         </ul>
       </div>
     </div>
