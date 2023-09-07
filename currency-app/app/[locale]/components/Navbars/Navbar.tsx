@@ -8,8 +8,8 @@ const Navbar = () => {
   const t = useTranslations("Navbar");
 
   return (
-    <div className="fixed inset-0 min-h-fit hidden md:block">
-      <div className="max-w-7xl m-auto mt-5 px-5 mb-5">
+    <div className="fixed inset-0 min-h-fit hidden lg:block w-screen z-10">
+      <div className="max-w-screen-2xl m-auto mt-5 px-5 mb-5">
         <ul className="flex list-none items-center justify-center h-full text-[20px] uppercase text-white">
           <Link href="/" className="mr-auto">
             {t("main")}

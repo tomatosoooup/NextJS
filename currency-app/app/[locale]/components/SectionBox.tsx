@@ -1,24 +1,30 @@
 "use client";
 
 import Button from "./buttons/Button";
+import Bank from "./Bank";
 
 const SectionBox = () => {
   return (
-    <div className="md:grid md:grid-cols-2 min-h-screen pt-36 md:pt-56  text-white">
-      <div className="px-5 text-center md:text-justify">
-        <h1 className="text-4xl md:text-6xl uppercase mb-5 ">
+    <div className="lg:grid lg:grid-cols-2  min-h-screen text-white">
+      <div className="px-5 text-center lg:text-justify pt-32 lg:pt-72 ">
+        <h1 className="text-4xl md:text-6xl uppercase mb-5 font-bold">
           Cryptocurrency exchange
         </h1>
-        <p className="text-base md:text-xl text-[#CECECE]">
-          Надежный партнер в мире криптовалют и финансов. <br />
+        <p className="text-sm md:text-xl text-[#CECECE] font-normal">
+          <span className="font-semibold">
+            Надежный партнер в мире криптовалют и финансов.
+          </span>
+          <br />
           <br /> Наша цель - сделать каждую операцию быстрой, простой и
           безопасной, чтобы вы могли сосредоточиться на своих делах, нежели
           волноваться о финансовых аспектах.
         </p>
-        <Button>Совершить обмен</Button>
+        <div className="hidden lg:block mt-5">
+          <Button>Совершить обмен</Button>
+        </div>
       </div>
-      <div>
-        <img src="" alt="Bank" />
+      <div className="fixed inset-0 w-full pt-44 md:pt-36 lg:pt-0 h-[900px] md:h-[1100px] lg:h-[900px] lg:relative">
+        <Bank />
       </div>
     </div>
   );

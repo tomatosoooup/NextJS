@@ -6,7 +6,9 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children }) => {
   return (
-    <section className="min-h-screen max-w-7xl m-auto ">{children}</section>
+    <section className="min-h-screen max-w-screen-2xl m-auto ">
+      {children}
+    </section>
   );
 };
 
