@@ -15,7 +15,7 @@ const Footer = () => {
             <Link href={"/"}>Add a podcast</Link>
           </ul>
         </div>
-        <div className="text-center flex flex-col font-medium flex-shrink relative text-white order-3 mt-10 md:order-none">
+        <div className="text-center flex flex-col font-medium flex-shrink relative text-white order-3 mt-10 md:mt-0 md:order-none">
           <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-40 top-24"></div>
           <span className="text-8xl tracking-[0.5rem]">KLTP</span>
           <span className="text-4xl tracking-[0.5rem] lowercase font-light">

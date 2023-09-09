@@ -65,7 +65,7 @@ const ServiceBox = () => {
         alt="sepa"
         width={475}
         height={475}
-        className="hidden lg:block absolute right-48 top-20 z-10"
+        className="hidden lg:block absolute right-12 top-20 z-10"
         src={"./images/sepa.svg"}
         priority
       />
@@ -85,9 +85,9 @@ const ServiceBox = () => {
       />
       <Image
         alt="swift"
-        width={400}
-        height={400}
-        className="hidden lg:block absolute right-20 bottom-36 "
+        width={375}
+        height={375}
+        className="hidden lg:block absolute -right-2 bottom-10 "
         src={"./images/swift.svg"}
       />
       <Image
