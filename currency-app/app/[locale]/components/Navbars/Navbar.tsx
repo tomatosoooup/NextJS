@@ -8,7 +8,8 @@ const Navbar = () => {
   const t = useTranslations("Navbar");
 
   return (
-    <div className="fixed inset-0 min-h-fit hidden lg:block w-screen z-10">
+    // fixed inset-0 w-screen z-20
+    <div className="min-h-fit hidden lg:block">
       <div className="max-w-screen-2xl m-auto mt-5 px-5 mb-5">
         <ul className="flex list-none items-center justify-between h-full text-[20px] uppercase text-white w-full">
           <Link href="/" className="flex-shrink-0">

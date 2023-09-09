@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Section from "./components/Section";
 import SectionBox from "./components/SectionBox";
 import Header from "@/components/Header";
+import ServiceBox from "./components/ServicesBox";
 
 export default function Index() {
   // const router = useRouter();
@@ -14,7 +15,10 @@ export default function Index() {
     <>
       <Header />
       <Section>
-        <SectionBox></SectionBox>
+        <SectionBox />
+      </Section>
+      <Section>
+        <ServiceBox />
       </Section>
       <Footer />
     </>

@@ -2,18 +2,22 @@
   display: flex;
   overflow: hidden;
   user-select: none;
-  gap: 20px;
 }
 
 .items {
   flex-shrink: 0;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   min-width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.item {
-  font-weight: bold;
+.items > div {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
 }
 
 .marquee {
