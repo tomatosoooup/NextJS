@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "./Button";
-import Bank from "./Bank";
+// import Bank from "./Bank";
 import { TfiReload } from "react-icons/tfi";
 
 const SectionBox = () => {
@@ -30,9 +30,9 @@ const SectionBox = () => {
           </Button>
         </div>
       </div>
-      <div className="fixed inset-0 w-full pt-44 md:pt-36 lg:pt-0 h-[900px] md:h-[1100px] lg:h-[900px] lg:relative">
+      {/* <div className="fixed inset-0 h-[600px] lg:h-auto w-screen pl-[50%]">
         <Bank />
-      </div>
+      </div> */}
     </div>
   );
 };

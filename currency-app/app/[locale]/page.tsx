@@ -1,21 +1,22 @@
 "use client";
 
+import Footer from "@/components/Footer";
 // import { useRouter } from "next/navigation";
-import Navbar from "./components/Navbars/Navbar";
-import MobileNavbar from "./components/Navbars/MobileNavbar";
+
 import Section from "./components/Section";
 import SectionBox from "./components/SectionBox";
+import Header from "@/components/Header";
 
 export default function Index() {
   // const router = useRouter();
 
   return (
     <>
-      <Navbar />
-      <MobileNavbar />
+      <Header />
       <Section>
         <SectionBox></SectionBox>
       </Section>
+      <Footer />
     </>
   );
 }
