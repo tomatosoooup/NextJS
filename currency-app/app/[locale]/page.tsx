@@ -6,6 +6,7 @@ import Main from "./components/Main";
 
 import Services from "./components/Services";
 import Footer from "@/components/Footer";
+import About from "./components/About";
 
 export default function Home() {
   // const router = useRouter();
@@ -15,6 +16,9 @@ export default function Home() {
       <Header />
       <Section>
         <Main />
+      </Section>
+      <Section>
+        <About />
       </Section>
       <Section>
         <Services />
