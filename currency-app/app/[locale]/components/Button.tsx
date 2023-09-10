@@ -3,6 +3,7 @@
 import { useFonts } from "@/providers/FontProvider";
 import clsx from "clsx";
 import { TfiReload } from "react-icons/tfi";
+import classes from "./Button.module.css";
 
 interface ButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
@@ -27,21 +28,19 @@ const Button: React.FC<ButtonProps> = ({
       className={clsx(
         `
         uppercase
-        text-sm 
-        font-medium
+        text-base 
+        font-semibold
         leading-6
         flex 
         items-center
         gap-5
         rounded-md
-        px-6 
+        px-8 
         py-3
-        bg-gradient-to-r 
-        from-[#D9D9D917] 
-        to-[#D9D9D917] 
         relative
         z-10
 
+        ${classes.btn}
   `,
         fullWidth && "w-full"
       )}

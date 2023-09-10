@@ -38,7 +38,9 @@ const Main = () => {
             </span>
           </p>
           <div className="hidden lg:block mt-10">
-            <Button>Совершить обмен</Button>
+            <Button>
+              <span className="pt-1">Совершить обмен</span>
+            </Button>
           </div>
         </div>
         <div>
