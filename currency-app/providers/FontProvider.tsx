@@ -17,6 +17,7 @@ export const FontProvider = ({ children }) => {
     ct: "Campton, sans-serif",
     cf: "Integral CF Regular, sans-serif",
     tt: "TT Interfaces, sans-serif",
+    gt: "Gotham, sans-serif",
   });
 
   return (

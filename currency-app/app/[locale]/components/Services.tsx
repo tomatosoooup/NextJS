@@ -1,14 +1,17 @@
 "use client";
 
+import { useFonts } from "@/providers/FontProvider";
 import Image from "next/image";
 
-const ServiceBox = () => {
+const Services = () => {
+  const fonts = useFonts();
   return (
     <div className="text-white relative">
-      <div className="pt-32 pb-16 md:pb-28 px-5">
-        <h2 className="text-4xl font-semibold text-center md:text-left">
-          УСЛУГИ
-        </h2>
+      <div
+        className="pt-32 pb-16 md:pb-28 px-5 relative z-20"
+        style={{ fontFamily: `${fonts.tt}` }}
+      >
+        <h2 className="text-5xl font-bold text-center md:text-left">УСЛУГИ</h2>
         <div className="flex">
           <div className="my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
           <div className="my-10 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
@@ -63,7 +66,7 @@ const ServiceBox = () => {
         alt="sepa"
         width={475}
         height={475}
-        className="hidden lg:block absolute right-12 top-20 z-10"
+        className="hidden lg:block absolute right-12 top-20 z-10 pointer-events-none"
         src={"./images/sepa.svg"}
         priority
       />
@@ -71,32 +74,32 @@ const ServiceBox = () => {
         alt="dollar"
         width={1100}
         height={1100}
-        className="hidden lg:block absolute -left-40 -bottom-80"
+        className="hidden lg:block absolute -left-40 -bottom-80 pointer-events-none"
         src={"./images/dollar.svg"}
       />
       <Image
         alt="dollar-2"
         width={400}
         height={400}
-        className="lg:hidden absolute -left-0 -bottom-44 "
+        className="lg:hidden absolute -left-0 -bottom-44 pointer-events-none"
         src={"./images/dollar-2.svg"}
       />
       <Image
         alt="swift"
         width={375}
         height={375}
-        className="hidden lg:block absolute -right-2 bottom-10 "
+        className="hidden lg:block absolute -right-0 bottom-32 pointer-events-none"
         src={"./images/swift.svg"}
       />
       <Image
         alt="swift-mobile"
         width={250}
         height={250}
-        className="absolute right-0 top-32 lg:hidden"
+        className="absolute right-0 top-32 lg:hidden pointer-events-none"
         src={"./images/swift-2.svg"}
       />
     </div>
   );
 };
 
-export default ServiceBox;
+export default Services;

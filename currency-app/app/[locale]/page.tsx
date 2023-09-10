@@ -1,11 +1,11 @@
-import Footer from "@/components/Footer";
-
 // import { useRouter } from "next/navigation";
 
-import Section from "./components/Section";
-import SectionBox from "./components/SectionBox";
 import Header from "@/components/Header";
-import ServiceBox from "./components/ServicesBox";
+import Section from "./components/Section";
+import Main from "./components/Main";
+
+import Services from "./components/Services";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // const router = useRouter();
@@ -14,11 +14,10 @@ export default function Home() {
     <>
       <Header />
       <Section>
-        <SectionBox />
+        <Main />
       </Section>
-      {/* <Section>hello</Section> */}
       <Section>
-        <ServiceBox />
+        <Services />
       </Section>
       <Footer />
     </>

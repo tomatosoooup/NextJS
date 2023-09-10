@@ -6,14 +6,14 @@ import Button from "./Button";
 
 import { useFonts } from "@/providers/FontProvider";
 
-const SectionBox = () => {
+const Main = () => {
   const fonts = useFonts();
   return (
     <>
-      <div className="lg:grid lg:grid-cols-2 text-white md:mb-32 lg:mb-20 relative">
+      <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20 relative">
         <div className="px-5 text-center lg:text-justify pt-32">
           <h1
-            className="text-4xl md:text-6xl uppercase mb-5 font-bold"
+            className="text-3xl md:text-6xl uppercase mb-5 font-bold"
             style={{ fontFamily: `${fonts.ct}` }}
           >
             Cryptocurrency exchange
@@ -47,14 +47,14 @@ const SectionBox = () => {
             src={"./images/Bank.svg"}
             width={700}
             height={700}
-            className="hidden lg:block"
+            className="hidden lg:block pointer-events-none"
           />
           <Image
             alt="Bank-2"
             src={"./images/Bank-2.svg"}
             width={500}
             height={500}
-            className="lg:hidden mx-auto !relative"
+            className="lg:hidden mx-auto !relative pointer-events-none"
           />
         </div>
       </div>
@@ -63,10 +63,10 @@ const SectionBox = () => {
         src={"./images/Bitcoin.svg"}
         width={375}
         height={375}
-        className="absolute left-0 -bottom-36 hidden lg:block"
+        className="absolute left-0 -bottom-36 hidden lg:block pointer-events-none"
       />
     </>
   );
 };
 
-export default SectionBox;
+export default Main;
