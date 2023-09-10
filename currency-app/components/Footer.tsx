@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8">
+    <div className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8 relative z-10">
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         <div className="w-full order-1 md:order-none">
           <ul className="flex flex-col px-5 gap-2 text-[#D3D3D3] text-lg">
@@ -16,12 +16,12 @@ const Footer = () => {
           </ul>
         </div>
         <div className="text-center flex flex-col font-medium flex-shrink relative text-white order-3 mt-10 md:mt-0 md:order-none">
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-40 top-24"></div>
-          <span className="text-8xl tracking-[0.5rem]">KLTP</span>
-          <span className="text-4xl tracking-[0.5rem] lowercase font-light">
+          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-40 top-12 lg:top-24"></div>
+          <span className="text-6xl lg:text-8xl  tracking-[0.5rem]">KLTP</span>
+          <span className="text-xl lg:text-4xl tracking-[0.5rem] lowercase font-light">
             exchange
           </span>
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-40 top-24"></div>
+          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-40 top-12 lg:top-24"></div>
         </div>
         <div className="w-full order-2 md:order-none">
           <ul className="flex flex-col px-5 text-right gap-2 text-[#D3D3D3] text-lg">
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="text-center my-3 text-white/50">
+      <div className="text-center mt-12 mb-3 text-white/50 text-sm ">
         © 2023 KLTP - crypto and financial solutions
       </div>
     </div>

@@ -1,9 +1,11 @@
+import { useFonts } from "@/providers/FontProvider";
 import "./Ticker.css";
 
 const Ticker = () => {
+  const fonts = useFonts();
   return (
     <>
-      <div className="items-wrap">
+      <div className="items-wrap" style={{ fontFamily: `${fonts.tt}` }}>
         <div className="items marquee reverse text-xs leading-none">
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
@@ -50,8 +52,8 @@ const Ticker = () => {
         </div>
       </div>
       {/* End of first marquee */}
-      <div className="items-wrap">
-        <div className="items marquee text-5xl leading-none mb-2">
+      <div className="items-wrap" style={{ fontFamily: `${fonts.cf}` }}>
+        <div className="items marquee text-6xl leading-none mb-3">
           <div></div>
           <span>KNOW ME</span>
           <div></div>
@@ -94,7 +96,7 @@ const Ticker = () => {
           <span>PAY ME</span>
           <div></div>
         </div>
-        <div className="items marquee text-5xl leading-none mb-2">
+        <div className="items marquee text-6xl leading-none mb-3">
           <span>KNOW ME</span>
           <div></div>
           <span>LiKE ME</span>
@@ -138,7 +140,7 @@ const Ticker = () => {
         </div>
       </div>
       {/* REVERSE */}
-      <div className="items-wrap">
+      <div className="items-wrap" style={{ fontFamily: `${fonts.tt}` }}>
         <div className="items marquee reverse rotate text-xs leading-none">
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>

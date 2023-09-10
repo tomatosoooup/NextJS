@@ -1,42 +1,71 @@
 "use client";
 
+import Image from "next/image";
 import Button from "./Button";
 // import Bank from "./Bank";
-import { TfiReload } from "react-icons/tfi";
+
+import { useFonts } from "@/providers/FontProvider";
 
 const SectionBox = () => {
+  const fonts = useFonts();
   return (
-    <div className="lg:grid lg:grid-cols-2 min-h-screen text-white">
-      <div className="px-5 text-center lg:text-justify pt-32 lg:pt-72 ">
-        <h1 className="text-4xl md:text-6xl uppercase mb-5 font-bold">
-          Cryptocurrency exchange
-        </h1>
-        <div className="flex justify-center lg:justify-start">
-          <div className="my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
-          <div className="my-10 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
-        </div>
-        <p className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl">
-          <span className="font-semibold">
-            Надежный партнер в мире криптовалют и финансов.
-          </span>
-          <br />
-          <br /> Наша цель - сделать каждую операцию быстрой, простой и
-          безопасной, чтобы вы могли сосредоточиться на своих делах, нежели
-          волноваться о финансовых аспектах.
-        </p>
-        <div className="hidden lg:block mt-10">
-          <Button>
-            <span className="uppercase text-sm font-semibold flex items-center gap-5">
-              Совершить обмен
-              <TfiReload size={20} color="#828282" />
+    <>
+      <div className="lg:grid lg:grid-cols-2 text-white md:mb-32 lg:mb-20 relative">
+        <div className="px-5 text-center lg:text-justify pt-32">
+          <h1
+            className="text-4xl md:text-6xl uppercase mb-5 font-bold"
+            style={{ fontFamily: `${fonts.ct}` }}
+          >
+            Cryptocurrency exchange
+          </h1>
+          <div className="flex justify-center lg:justify-start">
+            <div className="my-5 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
+            <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+          </div>
+          <p
+            className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
+            style={{ fontFamily: `${fonts.tt}` }}
+          >
+            <span className="font-semibold">
+              Надежный партнер в мире криптовалют и финансов.
             </span>
-          </Button>
+            <br />
+            <br />
+            <span className="font-light">
+              Наша цель - сделать каждую операцию быстрой, простой и безопасной,
+              чтобы вы могли сосредоточиться на своих делах, нежели волноваться
+              о финансовых аспектах.
+            </span>
+          </p>
+          <div className="hidden lg:block mt-10">
+            <Button>Совершить обмен</Button>
+          </div>
+        </div>
+        <div>
+          <Image
+            alt="Bank"
+            src={"./images/Bank.svg"}
+            width={700}
+            height={700}
+            className="hidden lg:block"
+          />
+          <Image
+            alt="Bank-2"
+            src={"./images/Bank-2.svg"}
+            width={500}
+            height={500}
+            className="lg:hidden mx-auto !relative"
+          />
         </div>
       </div>
-      {/* <div className="fixed inset-0 h-[600px] lg:h-auto w-screen pl-[50%]">
-        <Bank />
-      </div> */}
-    </div>
+      <Image
+        alt="Bitcoin"
+        src={"./images/Bitcoin.svg"}
+        width={375}
+        height={375}
+        className="absolute left-0 -bottom-36 hidden lg:block"
+      />
+    </>
   );
 };
 

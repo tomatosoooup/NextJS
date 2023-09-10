@@ -31,9 +31,7 @@ const ServiceBox = () => {
           </li>
           <li className="relative pl-4">
             Депозитирование Fintech банков
-            <span className="text-[#9F9F9F]">
-              ( Revolut , Wise , Zen и т.д )
-            </span>
+            <span className="text-[#9F9F9F]">( Revolut, Wise, Zen и т.д )</span>
             <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
           </li>
         </ul>

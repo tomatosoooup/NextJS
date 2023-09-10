@@ -1,36 +1,43 @@
 import "../globals.css";
-
+import type { Metadata } from "next";
+// import { FontProvider } from "@/providers/FontProvides";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ua" }];
-}
+import DropDown from "./components/DropDown";
+import { FontProvider } from "@/providers/FontProvider";
 
-interface LocaleLayoutProps {
+export const metadata: Metadata = {
+  title: "Trading company",
+  description: "Trading company",
+};
+
+interface RootLayoutProps {
   children: React.ReactNode;
   params: {
     locale: string;
   };
 }
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params: { locale },
-}: LocaleLayoutProps) {
-  let messages;
+}: RootLayoutProps) {
+  let messages: Record<string, any>;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
-
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <FontProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <DropDown />
+            {children}
+          </NextIntlClientProvider>
+        </FontProvider>
       </body>
     </html>
   );
