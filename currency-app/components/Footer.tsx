@@ -25,10 +25,10 @@ const Footer = () => {
           style={{ fontFamily: `${fonts.ct}` }}
         >
           <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-40 top-12 lg:top-24"></div>
-          <span className="text-7xl lg:text-8xl  tracking-[0.7rem] font-extrabold">
+          <span className="text-5xl lg:text-8xl  tracking-[0.7rem] font-extrabold">
             KLTP
           </span>
-          <span className="text-xl lg:text-4xl tracking-[0.7rem] lowercase font-light leading-4">
+          <span className="text-sm lg:text-4xl tracking-[0.7rem] lowercase font-light leading-4">
             exchange
           </span>
           <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-40 top-12 lg:top-24"></div>
