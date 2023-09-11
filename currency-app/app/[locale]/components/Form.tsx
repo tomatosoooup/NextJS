@@ -36,50 +36,52 @@ const Form = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl my-32 relative pt-5 pb-10">
+      <form className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10">
+        {/* Selects */}
         <div
           className="flex flex-col justify-center mt-12 order-1 lg:order-none"
           style={{ fontFamily: `${fonts.tt}` }}
         >
           <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
             <div className="w-1/2">
-              <span>Вы отдаёте</span>
+              <div className="mb-2">Вы отдаёте</div>
               <SelectDrop options={options} />
             </div>
             <TfiReload size={18} color="#828282" className="mt-5" />
             <div className="w-1/2">
-              <span>Вы получаете</span>
+              <div className="mb-2">Вы получаете</div>
               <SelectDrop options={options} />
             </div>
           </div>
           <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
             <div className="w-1/2">
-              <span>Сумма</span>
+              <div className="mb-2">Сумма</div>
               <Input disabled={true} id="input-1" />
             </div>
-
             <div className="w-1/2">
               <Input disabled={true} id="input-2" />
             </div>
           </div>
         </div>
+        {/* Inputs */}
         <div
           className="flex flex-col gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
           style={{ fontFamily: `${fonts.tt}` }}
         >
           <div>
-            <span className="font-medium">IBAN</span>
+            <div className="font-medium mb-1 lg:mb-0">IBAN</div>
             <Input id="input-3" />
           </div>
           <div>
-            <span className="font-medium">Получатель</span>
+            <div className="font-medium mb-1 lg:mb-0">Получатель</div>
             <Input id="input-4" />
           </div>
           <div>
-            <span className="font-medium">Telegram ID</span>
+            <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
             <Input id="input-5" />
           </div>
         </div>
+        {/* Two buttons */}
         <div className="hidden lg:flex justify-center h-[50px] mt-10 px-5">
           <Button>
             <span className="text-white  pt-1">Оставить заявку</span>
@@ -90,6 +92,7 @@ const Form = () => {
             <span className="text-white  pt-1">Оставить заявку</span>
           </Button>
         </div>
+        {/* Checkbox */}
         <div
           className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
           style={{ fontFamily: `${fonts.tt}` }}
@@ -126,6 +129,7 @@ const Form = () => {
             className="absolute hidden lg:block right-20 top-0"
           />
         </div>
+        {/* Logo */}
         <div
           className="text-center flex flex-col font-medium relative text-white w-fit mx-auto mt-10 lg:absolute lg:bottom-20 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
           style={{ fontFamily: `${fonts.ct}` }}
@@ -139,7 +143,7 @@ const Form = () => {
           </span>
           <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-64 top-11 lg:top-16"></div>
         </div>
-      </div>
+      </form>
     </>
   );
 };

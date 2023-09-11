@@ -26,6 +26,7 @@ const Input: React.FC<InputProps> = ({ id, type, disabled }) => {
             ring-1
             ring-inset
             ring-[#828282]
+            border
             bg-transparent 
             placeholder:text-[#555]
             text-[#555]
