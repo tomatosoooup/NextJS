@@ -1,14 +1,16 @@
 "use client";
 
-import { TfiReload } from "react-icons/tfi";
 import SelectDrop from "./inputs/SelectDrop";
 import Input from "./inputs/Input";
 import Button from "./Button";
+
 import Link from "next/link";
+
 import { useState } from "react";
-import { BsCheck2 } from "react-icons/bs";
-import Image from "next/image";
 import { useFonts } from "@/providers/FontProvider";
+import { BsCheck2 } from "react-icons/bs";
+import { TfiReload } from "react-icons/tfi";
+import Image from "next/image";
 
 const Form = () => {
   const fonts = useFonts();
@@ -39,7 +41,7 @@ const Form = () => {
           className="flex flex-col justify-center mt-12 order-1 lg:order-none"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-bold">
+          <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
             <div className="w-1/2">
               <span>Вы отдаёте</span>
               <SelectDrop options={options} />
@@ -50,7 +52,7 @@ const Form = () => {
               <SelectDrop options={options} />
             </div>
           </div>
-          <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-bold">
+          <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
             <div className="w-1/2">
               <span>Сумма</span>
               <Input disabled={true} id="input-1" />

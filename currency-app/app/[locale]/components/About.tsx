@@ -30,21 +30,21 @@ const About = () => {
             src={"./images/BTC-left.svg"}
             width={400}
             height={400}
-            className="absolute z-10 top-10 -left-20"
+            className="absolute z-10 top-10 -left-20 pointer-events-none"
           />
           <Image
             alt="BTC"
             src={"./images/BTC.svg"}
             width={525}
             height={525}
-            className="absolute z-20 left-16"
+            className="absolute z-20 left-16 pointer-events-none"
           />
           <Image
             alt="BTC-small-right"
             src={"./images/BTC-right.svg"}
             width={400}
             height={400}
-            className="absolute z-10 top-10 left-80"
+            className="absolute z-10 top-10 left-80 pointer-events-none"
           />
         </div>
         <div>
