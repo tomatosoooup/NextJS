@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
-import DropDown from "./components/DropDown";
+import DropDown from "./components/navbars/DropDown";
 import { FontProvider } from "@/providers/FontProvider";
 
 export const metadata: Metadata = {

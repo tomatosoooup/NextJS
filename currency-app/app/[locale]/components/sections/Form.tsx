@@ -1,8 +1,8 @@
 "use client";
 
-import SelectDrop from "./inputs/SelectDrop";
-import Input from "./inputs/Input";
-import Button from "./Button";
+import SelectDrop from "../inputs/SelectDrop";
+import Input from "../inputs/Input";
+import Button from "../buttons/Button";
 
 import Link from "next/link";
 

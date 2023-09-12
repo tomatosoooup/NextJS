@@ -2,7 +2,7 @@
 
 // import { useTranslations } from "next-intl";
 import BurgerMenu from "./BurgerMenu";
-import DropDown from "../DropDown";
+import DropDown from "./DropDown";
 
 const Navbar = () => {
   // const t = useTranslations("Navbar");

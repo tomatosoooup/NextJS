@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import classes from "../Button.module.css";
+import classes from "../buttons/Button.module.css";
 import Image from "next/image";
 
 type Option = {
