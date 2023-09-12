@@ -7,7 +7,7 @@ const Services = () => {
   const fonts = useFonts();
   return (
     <>
-      <section className="min-h-fit max-w-screen-2xl m-auto">
+      <section className="max-w-screen-2xl m-auto">
         <div className="text-white relative">
           <div
             className="pt-32 pb-16 md:pb-28 px-5 relative z-20"

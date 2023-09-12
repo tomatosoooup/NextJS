@@ -10,7 +10,7 @@ const Main = () => {
   const fonts = useFonts();
   return (
     <>
-      <section className="min-h-fit max-w-screen-2xl m-auto">
+      <section className=" max-w-screen-2xl m-auto">
         <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20 relative">
           <div className="px-5 text-center lg:text-justify pt-32">
             <h1

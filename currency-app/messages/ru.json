@@ -4,5 +4,22 @@
     "contacts": "Контакты",
     "about": "О нас",
     "services": "Сервисы"
-  }
+  },
+  "Main": {
+    "p1": "",
+    "p2": "",
+    "button": ""
+  },
+  "Form": {
+    "give": "",
+    "get": "",
+    "sum": "",
+    "reciever": "",
+    "button": "",
+    "chBox1": "",
+    "chBox2": ""
+  },
+  "About": {},
+  "Services": {},
+  "Footer": {}
 }

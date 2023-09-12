@@ -7,7 +7,7 @@ const About = () => {
   const fonts = useFonts();
   return (
     <>
-      <section className="min-h-fit max-w-screen-2xl m-auto">
+      <section className="max-w-screen-2xl m-auto">
         <h2
           className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
           style={{ fontFamily: `${fonts.tt}` }}
