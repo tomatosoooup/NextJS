@@ -12,6 +12,10 @@ import { BsCheck2 } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
 import Image from "next/image";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
+
 const Form = () => {
   const fonts = useFonts();
   const options = [
@@ -20,6 +24,25 @@ const Form = () => {
     { type: "USDF", name: "TRC22" },
     { type: "USDT", name: "TRC23" },
   ];
+
+  const form = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Настройте анимации для формы
+    gsap.from(form.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: form.current,
+        start: "top 80%",
+        end: "top 40%",
+        scrub: true,
+      },
+    });
+  }, []);
 
   //   const handleChange = () => {};
 
@@ -36,7 +59,10 @@ const Form = () => {
 
   return (
     <>
-      <form className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10">
+      <form
+        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10 relative"
+        ref={form}
+      >
         {/* Selects */}
         <div
           className="flex flex-col justify-center mt-12 order-1 lg:order-none"

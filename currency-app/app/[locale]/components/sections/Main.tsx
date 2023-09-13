@@ -2,19 +2,21 @@
 
 import Image from "next/image";
 import Button from "../buttons/Button";
+
 // import Bank from "./Bank";
 
 import { useFonts } from "@/providers/FontProvider";
 
 const Main = () => {
   const fonts = useFonts();
+
   return (
     <>
       <section className=" max-w-screen-2xl m-auto">
         <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20 relative">
           <div className="px-5 text-center lg:text-justify pt-32">
             <h1
-              className="text-3xl md:text-6xl uppercase mb-5 font-bold"
+              className="text-3xl md:text-6xl uppercase mb-5 font-bold relative"
               style={{ fontFamily: `${fonts.ct}` }}
             >
               Cryptocurrency exchange
