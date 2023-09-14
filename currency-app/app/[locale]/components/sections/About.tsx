@@ -3,8 +3,33 @@
 import { useFonts } from "@/providers/FontProvider";
 import Image from "next/image";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
+
 const About = () => {
   const fonts = useFonts();
+
+  const text = useRef(null);
+  const image = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: text.current,
+        start: "top-=300px 90%",
+        end: "top+=100px 80%",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    timeline
+      .from(text.current, { x: 400, opacity: 0 })
+      .from(image.current, { opacity: 0, scale: 0 }, 0);
+  }, []);
   return (
     <>
       <section className="max-w-screen-2xl m-auto">
@@ -25,7 +50,7 @@ const About = () => {
           Мы предоставляем широкий спектр финансовых услуг
         </p>
         <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
-          <div className="relative hidden lg:block">
+          <div className="relative hidden lg:block" ref={image}>
             <Image
               alt="BTC-small-left"
               src={"./images/BTC-left.svg"}
@@ -50,8 +75,9 @@ const About = () => {
           </div>
           <div>
             <ul
-              className="flex flex-col gap-5 my-20 text-[#EAEAEA] font-thin text-lg px-5"
+              className="flex flex-col gap-5 my-20 text-[#EAEAEA] font-thin text-lg px-5 relative"
               style={{ fontFamily: `${fonts.tt}` }}
+              ref={text}
             >
               <li>
                 Наша компания постоянно следит за тенденциями рынка, чтобы

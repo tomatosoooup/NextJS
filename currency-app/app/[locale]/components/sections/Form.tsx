@@ -30,16 +30,16 @@ const Form = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Настройте анимации для формы
     gsap.from(form.current, {
       opacity: 0,
-      y: 100,
+      right: 1000,
       duration: 1,
       scrollTrigger: {
         trigger: form.current,
-        start: "top 80%",
-        end: "top 40%",
+        start: "top-=900px",
+        end: "+=500px",
         scrub: true,
+        // markers: true,
       },
     });
   }, []);
@@ -60,7 +60,7 @@ const Form = () => {
   return (
     <>
       <form
-        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10 relative"
+        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10"
         ref={form}
       >
         {/* Selects */}
