@@ -6,9 +6,12 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
+
 
 const About = () => {
   const fonts = useFonts();
+  const t = useTranslations("About");
 
   const text = useRef(null);
   const image = useRef(null);
@@ -37,7 +40,7 @@ const About = () => {
           className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          About us
+          {t("h1")}
         </h2>
         <div className="flex justify-center">
           <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
@@ -47,7 +50,7 @@ const About = () => {
           className="text-center text-white text-xl mt-3 font-semibold"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          Мы предоставляем широкий спектр финансовых услуг
+          {t("p")}
         </p>
         <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
           <div className="relative hidden lg:block" ref={image}>
@@ -80,20 +83,16 @@ const About = () => {
               ref={text}
             >
               <li>
-                Наша компания постоянно следит за тенденциями рынка, чтобы
-                внедрять самые передовые и безопасные решения в сфере финансов.
+              {t("l1")}
               </li>
               <li>
-                <span className="font-semibold">Безопасность</span> - не просто
-                слово, а наш основной принцип работы.
+                <span className="font-semibold">{t("l2-")}</span> {t("l2")}
               </li>
               <li>
-                Мы сочетаем в себе лучшие традиции банковского обслуживания с
-                инновационными решениями в сфере финансов и криптовалют.
+              {t("l3")}
               </li>
               <li>
-                Предоставляем услуги покупки/продажи криптовалюты за наличные
-                более чем в 52 странах мира.
+              {t("l4")}
               </li>
               <li>
                 <span
@@ -101,9 +100,8 @@ const About = () => {
                   style={{ fontFamily: `${fonts.cf}` }}
                 >
                   KLTP EXCHANGE
-                </span>
-                - сертифицированный сервис обмена криптовалют с европейской
-                лицензией.
+                </span> 
+                {t("l5")}
               </li>
             </ul>
           </div>

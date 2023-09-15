@@ -1,10 +1,12 @@
 "use client";
 
 import { useFonts } from "@/providers/FontProvider";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const Services = () => {
   const fonts = useFonts();
+  const t = useTranslations("Services");
   return (
     <>
       <section className="max-w-screen-2xl m-auto">
@@ -14,7 +16,7 @@ const Services = () => {
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <h2 className="text-5xl font-bold text-center md:text-left">
-              УСЛУГИ
+            {t("h1")}
             </h2>
             <div className="flex">
               <div className="my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
@@ -22,24 +24,23 @@ const Services = () => {
             </div>
             <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal">
               <li className="relative pl-4">
-                Наличный обмен криптовалют
-                <span className="text-[#9F9F9F]">(покупка/продажа)</span>
+              {t("l1")}
+                <span className="text-[#9F9F9F]">{t("l1-")}</span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-                Денежные перестановки между городами и странами
+              {t("l2")}
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-                Банковские переводы с использованием платежных систем: SEPA,
-                SWIFT, ПРОСТІР<span className="text-[#9F9F9F]">(UAH)</span>, PSP
-                <span>(Polski Standart Płatności)</span>
+              {t("l3")}<span className="text-[#9F9F9F]">(UAH)</span>, PSP
+                <span>{t("l3-")}</span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-                Депозитирование Fintech банков
+              {t("l4")}
                 <span className="text-[#9F9F9F]">
-                  ( Revolut, Wise, Zen и т.д )
+                  {t("l4-")}
                 </span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
@@ -56,7 +57,7 @@ const Services = () => {
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-                Пополнение физ.лиц{" "}
+                Пополнение физ.лиц
                 <span className="text-[#9F9F9F]">
                   (оплаты квартир, обучений, переводы семье)
                 </span>

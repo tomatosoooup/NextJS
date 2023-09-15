@@ -6,8 +6,11 @@ import Button from "../buttons/Button";
 // import Bank from "./Bank";
 
 import { useFonts } from "@/providers/FontProvider";
+import { useTranslations } from "next-intl";
 
 const Main = () => {
+
+  const t = useTranslations("Main");
   const fonts = useFonts();
 
   return (
@@ -30,19 +33,17 @@ const Main = () => {
               style={{ fontFamily: `${fonts.tt}` }}
             >
               <span className="font-semibold">
-                Надежный партнер в мире криптовалют и финансов.
+              {t("p1")}
               </span>
               <br />
               <br />
               <span className="font-light">
-                Наша цель - сделать каждую операцию быстрой, простой и
-                безопасной, чтобы вы могли сосредоточиться на своих делах,
-                нежели волноваться о финансовых аспектах.
+              {t("p2")}
               </span>
             </p>
             <div className="hidden lg:block mt-10">
               <Button>
-                <span className="pt-1">Совершить обмен</span>
+                <span className="pt-1">{t("button")}</span>
               </Button>
             </div>
           </div>

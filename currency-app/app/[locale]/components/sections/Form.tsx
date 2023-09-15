@@ -6,7 +6,6 @@ import Button from "../buttons/Button";
 
 import Link from "next/link";
 
-import { useState } from "react";
 import { useFonts } from "@/providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
@@ -14,10 +13,13 @@ import Image from "next/image";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const Form = () => {
   const fonts = useFonts();
+  const t = useTranslations("Form");
+
   const options = [
     { type: "USDT", name: "TRC20" },
     { type: "USDT", name: "TRC21" },
@@ -44,8 +46,6 @@ const Form = () => {
     });
   }, []);
 
-  //   const handleChange = () => {};
-
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedTwo, setIsClickedTwo] = useState(false);
 
@@ -70,18 +70,18 @@ const Form = () => {
         >
           <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
             <div className="w-1/2">
-              <div className="mb-2">Вы отдаёте</div>
+              <div className="mb-2">{t("give")}</div>
               <SelectDrop options={options} />
             </div>
             <TfiReload size={18} color="#828282" className="mt-5" />
             <div className="w-1/2">
-              <div className="mb-2">Вы получаете</div>
+              <div className="mb-2">{t("get")}</div>
               <SelectDrop options={options} />
             </div>
           </div>
           <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
             <div className="w-1/2">
-              <div className="mb-2">Сумма</div>
+              <div className="mb-2">{t("sum")}</div>
               <Input disabled={true} id="input-1" />
             </div>
             <div className="w-1/2">
@@ -95,11 +95,11 @@ const Form = () => {
           style={{ fontFamily: `${fonts.tt}` }}
         >
           <div>
-            <div className="font-medium mb-1 lg:mb-0">IBAN</div>
+            <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
             <Input id="input-3" />
           </div>
           <div>
-            <div className="font-medium mb-1 lg:mb-0">Получатель</div>
+            <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
             <Input id="input-4" />
           </div>
           <div>
@@ -110,12 +110,12 @@ const Form = () => {
         {/* Two buttons */}
         <div className="hidden lg:flex justify-center h-[50px] mt-10 px-5">
           <Button>
-            <span className="text-white  pt-1">Оставить заявку</span>
+            <span className="text-white  pt-1">{t("button")}</span>
           </Button>
         </div>
         <div className="lg:hidden justify-center h-[50px] mt-10 px-5 order-4 lg:order-none">
           <Button fullWidth>
-            <span className="text-white  pt-1">Оставить заявку</span>
+            <span className="text-white  pt-1">{t("button")}</span>
           </Button>
         </div>
         {/* Checkbox */}
