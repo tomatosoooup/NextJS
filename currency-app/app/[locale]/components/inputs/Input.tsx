@@ -7,9 +7,17 @@ interface InputProps {
   type?: string;
   required?: boolean;
   disabled?: boolean;
+  value?: string;
+  onChange?: (str: any) => void;
 }
 
-const Input: React.FC<InputProps> = ({ id, type, disabled }) => {
+const Input: React.FC<InputProps> = ({
+  id,
+  type,
+  disabled,
+  value,
+  onChange,
+}) => {
   return (
     <>
       <div>
@@ -18,6 +26,8 @@ const Input: React.FC<InputProps> = ({ id, type, disabled }) => {
           type={type}
           autoComplete={id}
           disabled={disabled}
+          value={value}
+          onChange={onChange}
           className={clsx(
             `
             w-full

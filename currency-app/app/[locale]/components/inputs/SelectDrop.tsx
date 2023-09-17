@@ -10,7 +10,17 @@ type Option = {
   name: string;
 };
 
-const SelectDrop = ({ options }) => {
+interface SelectDropProps {
+  options?: Record<string, any>;
+  onCurrencyFromChoose?: (el: string) => void;
+  onCurrencyToChoose?: (el: string) => void;
+}
+
+const SelectDrop: React.FC<SelectDropProps> = ({
+  options,
+  onCurrencyFromChoose,
+  onCurrencyToChoose,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
 
@@ -21,6 +31,15 @@ const SelectDrop = ({ options }) => {
   const handleOptionClick = (option: Option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    if (onCurrencyFromChoose) {
+      onCurrencyFromChoose(option.type);
+    }
+    if (onCurrencyToChoose) {
+      onCurrencyToChoose(option.type);
+    }
+    // if (value) {
+    //   onChange(value);
+    // }
   };
 
   return (
@@ -30,10 +49,10 @@ const SelectDrop = ({ options }) => {
         onClick={toggleDropdown}
       >
         <span className="pt-1">
-          {selectedOption ? selectedOption.name : "USDT"}
+          {selectedOption ? selectedOption.type : "USDT"}
         </span>
         <span className="pt-1">
-          {selectedOption ? selectedOption.type : "TRC20"}
+          {selectedOption ? selectedOption.name : "TRC20"}
         </span>
         <Image
           className="absolute right-4 top-4 hidden md:block"

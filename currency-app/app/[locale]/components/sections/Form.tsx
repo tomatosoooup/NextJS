@@ -13,18 +13,99 @@ import Image from "next/image";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+
+import { getCurrencyConversionRate } from "../../../api/getCurrency";
+
+type Rate = number | null;
 
 const Form = () => {
   const fonts = useFonts();
   const t = useTranslations("Form");
 
+  const [fromCurrency, setFromCurrency] = useState("");
+  const [toCurrency, setToCurrency] = useState("");
+  const [conversationFromRate, setConversationFromRate] = useState<Rate>(null);
+  const [conversationToRate, setConversationToRate] = useState<Rate>(null);
+  const bothCurrenciesSelected = fromCurrency && toCurrency;
+
+  const [amount, setAmount] = useState<string>("");
+  const [result, setResult] = useState("");
+
+  // console.log(fromCurrency, toCurrency); //check
+
+  const convertCurrency = async () => {
+    // from currency
+    try {
+      const data = await getCurrencyConversionRate(fromCurrency, toCurrency);
+
+      if (Array.isArray(data.to) && data.to.length > 0) {
+        const conversionInfo = data.to[0];
+        const mid = parseFloat(conversionInfo.mid);
+        const percentage = mid * 0.98; // Вычитание 2%
+        const result = parseFloat(percentage.toFixed(6));
+
+        setConversationFromRate(result);
+      } else {
+        throw new Error("Некорректный формат данных в ответе");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+    // to currency
+    try {
+      const data = await getCurrencyConversionRate(toCurrency, fromCurrency);
+
+      if (Array.isArray(data.to) && data.to.length > 0) {
+        const conversionInfo = data.to[0];
+        const mid = parseFloat(conversionInfo.mid);
+        const percentage = mid * 0.98; // Вычитание 2%
+        const result = parseFloat(percentage.toFixed(6));
+
+        setConversationToRate(result);
+      } else {
+        throw new Error("Некорректный формат данных в ответе");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+
+    if (fromCurrency === toCurrency) {
+      setConversationFromRate(1);
+      setConversationToRate(1);
+    }
+  };
+
+  // Вызываем функцию convertCurrency только если оба поля выбраны
+  useEffect(() => {
+    if (bothCurrenciesSelected) {
+      convertCurrency();
+    }
+  }, [bothCurrenciesSelected, fromCurrency, toCurrency]);
+
+  useEffect(() => {
+    const newAmount = amount;
+    if (newAmount) {
+      const convertedAmount = parseFloat(newAmount) * conversationFromRate;
+      const roundedAmount = convertedAmount.toFixed(2);
+      setResult(roundedAmount);
+    } else {
+      setResult("");
+    }
+  }, [amount, convertCurrency]);
+
+  const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newAmount = event.target.value;
+    setAmount(newAmount);
+  };
+
+  // заменим на динамические
   const options = [
-    { type: "USDT", name: "TRC20" },
-    { type: "USDT", name: "TRC21" },
-    { type: "USDF", name: "TRC22" },
-    { type: "USDT", name: "TRC23" },
+    { type: "USD", name: "TRC20" },
+    { type: "RUB", name: "TRC21" },
+    { type: "EUR", name: "TRC22" },
+    { type: "UAH", name: "TRC23" },
   ];
 
   const form = useRef(null);
@@ -60,7 +141,22 @@ const Form = () => {
     <>
       <form
         id="form"
-        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10"
+        className="flex 
+        flex-col 
+        lg:grid 
+        max-w-screen-xl 
+        m-auto 
+        grid-cols-2 
+        grid-rows-2 
+        h-fit 
+        bg-[#171717] 
+        rounded-2xl 
+        mt-10 
+        mb-10 
+        lg:my-32 
+        relative 
+        pt-5 
+        pb-10"
         ref={form}
       >
         {/* Selects */}
@@ -71,21 +167,37 @@ const Form = () => {
           <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
             <div className="w-1/2">
               <div className="mb-2">{t("give")}</div>
-              <SelectDrop options={options} />
+              <SelectDrop
+                options={options}
+                onCurrencyFromChoose={setFromCurrency}
+              />
             </div>
             <TfiReload size={18} color="#828282" className="mt-5" />
             <div className="w-1/2">
               <div className="mb-2">{t("get")}</div>
-              <SelectDrop options={options} />
+              <SelectDrop
+                options={options}
+                onCurrencyToChoose={setToCurrency}
+              />
             </div>
           </div>
           <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
-            <div className="w-1/2">
-              <div className="mb-2">{t("sum")}</div>
-              <Input id="input-1" />
+            <div className="w-1/2 relative">
+              <div className="mb-2 ">{t("sum")}</div>
+              <Input id="input-1" onChange={handleAmountChange} />
+              {bothCurrenciesSelected && (
+                <span className="absolute left-6 -bottom-7 text-sm text-[#555555] font-semibold">
+                  1 {fromCurrency} = {conversationFromRate} {toCurrency}
+                </span>
+              )}
             </div>
-            <div className="w-1/2">
-              <Input disabled={true} id="input-2" />
+            <div className="w-1/2 relative">
+              <Input disabled={true} id="input-2" value={result} />
+              {bothCurrenciesSelected && (
+                <span className="absolute left-6 -bottom-7 text-sm text-[#555555] font-semibold">
+                  1 {toCurrency} = {conversationToRate} {fromCurrency}
+                </span>
+              )}
             </div>
           </div>
         </div>
