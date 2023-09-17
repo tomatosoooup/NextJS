@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   const fonts = useFonts();
   return (
-    <div className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8 relative z-10" id="footer">
+    <div className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8 relative" id="footer">
       <div className="flex flex-col lg:flex-row w-full items-center justify-between">
         <div
           className="w-full order-1 lg:order-none"

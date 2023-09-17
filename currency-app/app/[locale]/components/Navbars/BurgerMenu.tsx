@@ -15,7 +15,7 @@ const BurgerMenu = () => {
     <>
     <button
       onClick={handleClick}
-      className="flex flex-col justify-center items-center h-14 z-[999] relative"
+      className="flex flex-col justify-center items-center h-14 z-[1000] relative"
     >
       <span
         className={`bg-slate-100 block transition-all duration-300 ease-out 

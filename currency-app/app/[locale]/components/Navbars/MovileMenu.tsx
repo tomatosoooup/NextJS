@@ -14,7 +14,7 @@ const MobileMenu = ({isVisible, onChange})=> {
     -translate-x-full 
     transition-all 
     duration-500 
-    z-50
+    z-[999]
     py-20
     flex
     flex-col`

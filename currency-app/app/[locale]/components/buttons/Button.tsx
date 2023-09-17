@@ -38,7 +38,6 @@ const Button: React.FC<ButtonProps> = ({
         px-8 
         py-3
         relative
-        z-10
         justify-center
         ${classes.btn}
   `,

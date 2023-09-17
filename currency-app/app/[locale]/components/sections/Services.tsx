@@ -34,7 +34,7 @@ const Services = () => {
       <section className="max-w-screen-2xl m-auto">
         <div className="text-white relative">
           <div
-            className="pt-32 pb-16 md:pb-28 px-5 relative z-20"
+            className="pt-32 pb-16 md:pb-28 px-5 relative"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <h2 className="text-5xl font-bold text-center md:text-left" id="services">

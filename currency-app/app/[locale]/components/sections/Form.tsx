@@ -60,7 +60,7 @@ const Form = () => {
     <>
       <form
       id="form"
-        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10 z-20"
+        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10"
         ref={form}
       >
         {/* Selects */}
