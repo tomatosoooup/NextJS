@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MobileMenu = ({isVisible, onChange})=> {
-    return <div className={clsx(`h-screen
+    return <div className={clsx(`
+    h-screen
     bg-[#121212] 
     w-screen 
     absolute 
@@ -16,9 +17,8 @@ const MobileMenu = ({isVisible, onChange})=> {
     z-50
     py-20
     flex
-    flex-col
-    overflow-y-hidden`
-    , isVisible && "-translate-x-0")} onClick={onChange}>
+    flex-col`
+    , isVisible && "translate-x-0")} onClick={onChange}>
         <ul className="flex flex-col text-[#ffffff] px-5 gap-6 font-semibold text-2xl mt-5">
         <Link href={"/"}>Головна</Link>
         <Link href={"/"}>Контакти</Link>
