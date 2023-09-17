@@ -8,7 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 
-
 const About = () => {
   const fonts = useFonts();
   const t = useTranslations("About");
@@ -81,25 +80,19 @@ const About = () => {
               style={{ fontFamily: `${fonts.tt}` }}
               ref={text}
             >
-              <li>
-              {t("l1")}
-              </li>
+              <li>{t("l1")}</li>
               <li>
                 <span className="font-semibold">{t("l2-")}</span> {t("l2")}
               </li>
-              <li>
-              {t("l3")}
-              </li>
-              <li>
-              {t("l4")}
-              </li>
+              <li>{t("l3")}</li>
+              <li>{t("l4")}</li>
               <li>
                 <span
                   className="uppercase font-semibold mr-1"
                   style={{ fontFamily: `${fonts.cf}` }}
                 >
                   KLTP EXCHANGE
-                </span> 
+                </span>
                 {t("l5")}
               </li>
             </ul>

@@ -9,17 +9,37 @@ import { useFonts } from "@/providers/FontProvider";
 import { useTranslations } from "next-intl";
 
 const Main = () => {
-
   const t = useTranslations("Main");
   const fonts = useFonts();
 
   return (
     <>
       <section className=" max-w-screen-2xl m-auto">
-        <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20 relative">
-          <div className="px-5 text-center lg:text-justify pt-32">
+        <div
+          className="
+        lg:grid
+        lg:grid-cols-2 
+        text-white 
+        mb-10 
+        md:mb-32 
+        lg:mb-20 
+        relative"
+        >
+          <div
+            className="px-5 
+          text-center 
+          lg:text-justify 
+          pt-32"
+          >
             <h1
-              className="text-3xl md:text-6xl uppercase mb-5 font-bold relative"
+              className="text-2xl
+              sm:text-3xl 
+              md:text-6xl 
+              uppercase 
+              mb-0
+              sm:mb-5 
+              font-bold 
+              relative"
               style={{ fontFamily: `${fonts.ct}` }}
             >
               Cryptocurrency exchange
@@ -32,14 +52,10 @@ const Main = () => {
               className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
               style={{ fontFamily: `${fonts.tt}` }}
             >
-              <span className="font-semibold">
-              {t("p1")}
-              </span>
+              <span className="font-semibold">{t("p1")}</span>
               <br />
               <br />
-              <span className="font-light">
-              {t("p2")}
-              </span>
+              <span className="font-light">{t("p2")}</span>
             </p>
             <div className="hidden lg:block mt-10">
               <Button>

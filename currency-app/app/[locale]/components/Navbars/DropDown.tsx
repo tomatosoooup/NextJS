@@ -3,25 +3,21 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const DropDown = () => {
+const DropDown = ({ locale }: { locale?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState();
+  const selectedLanguage = locale ? locale.toUpperCase() : "ENG";
+
+  const linksList = ["en", "pl", "ua", "ru"];
+  const filteredList = linksList.filter(
+    (el) => el.toLowerCase() != selectedLanguage.toLowerCase()
+  );
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeDropdown = () => {
-    setIsOpen(false);
-  };
-
-  const changeLanguage = (language) => {
-    setSelectedLanguage(language);
-    closeDropdown();
-  };
-
   return (
-    <div className="max-w-fit fixed right-5 lg:right-10 top-8 lg:top-10">
+    <div className="max-w-fit fixed right-5 lg:right-10 top-8 lg:top-10 z-20">
       <div className="relative inline-block z-10">
         <button
           type="button"
@@ -47,29 +43,18 @@ const DropDown = () => {
         </button>
 
         {isOpen && (
-          <div className="origin-top-right absolute right-0 mt-2 w-20 rounded-lg shadow-lg ring-1 ring-black ">
-            <ul className="text-white">
-            <Link
-                href="/pl"
-                className="block px-4 py-2 text-sm"
-                onClick={()=> changeLanguage("PL")}
-              >
-                PL
-              </Link>
-              <Link
-                href="/ua"
-                className="block px-4 py-2 text-sm"
-                onClick={()=> changeLanguage("UA")}
-              >
-                UA
-              </Link>
-              <Link
-                href="/ru"
-                className="block px-4 py-2 text-sm "
-                onClick={()=> changeLanguage("RU")}
-              >
-                RU
-              </Link>
+          <div className="origin-top-right absolute right-0 mt-2 w-20">
+            <ul className="text-white pl-5">
+              {filteredList.map((link) => (
+                <Link
+                  href={`${link.toLowerCase()}`}
+                  className="block px-4 py-2 text-sm cursor-pointer border border-white/10 font-extralight bg-[#181818]"
+                  onClick={toggleDropdown}
+                  key={link}
+                >
+                  {link.toUpperCase()}
+                </Link>
+              ))}
             </ul>
           </div>
         )}
