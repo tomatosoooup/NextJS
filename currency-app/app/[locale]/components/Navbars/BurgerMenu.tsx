@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MobileMenu from "./MovileMenu";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +10,12 @@ const BurgerMenu = () => {
     setIsOpen(!isOpen);
   };
 
+
   return (
+    <>
     <button
       onClick={handleClick}
-      className="flex flex-col justify-center items-center h-14"
+      className="flex flex-col justify-center items-center h-14 z-[999] relative"
     >
       <span
         className={`bg-slate-100 block transition-all duration-300 ease-out 
@@ -37,6 +40,8 @@ const BurgerMenu = () => {
                      }`}
       ></span>
     </button>
+    <MobileMenu isVisible={isOpen} onChange={handleClick}/>
+    </>
   );
 };
 

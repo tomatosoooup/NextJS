@@ -25,7 +25,6 @@ const About = () => {
         start: "top-=300px 90%",
         end: "top+=100px 80%",
         scrub: true,
-        markers: true,
       },
     });
 
@@ -35,7 +34,7 @@ const About = () => {
   }, []);
   return (
     <>
-      <section className="max-w-screen-2xl m-auto">
+      <section className="max-w-screen-2xl m-auto" id="about">
         <h2
           className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
           style={{ fontFamily: `${fonts.tt}` }}

@@ -1,8 +1,34 @@
 "use client";
 
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useFonts } from "@/providers/FontProvider";
+
+import { Link as ScrollLink } from 'react-scroll';
+
+interface SmoothScrollLinkProps { 
+  to: string; 
+  offset?: number, 
+  children: React.ReactNode, 
+  className?: string }
+
+const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
+  to,
+  offset = 0,
+  children,
+  className
+}) => (
+  <ScrollLink
+    activeClass="active"
+    to={to}
+    spy={true}
+    smooth={true}
+    offset={offset-70}
+    duration={1000} // Длительность анимации в миллисекундах
+    className={className}
+  >
+    {children}
+  </ScrollLink>
+);
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -17,12 +43,8 @@ const Navbar = () => {
           className="flex list-none items-center justify-between h-full text-[20px] uppercase text-white w-full font-extralight"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          <Link href="/" className="flex-shrink-0 mt-7">
-            {t("main")}
-          </Link>
-          <Link href="/" className="flex-shrink-0 mt-7">
-            {t("contacts")}
-          </Link>
+          <SmoothScrollLink className="flex-shrink-0 mt-7" to="form" >{t("main")}</SmoothScrollLink>
+          <SmoothScrollLink className="flex-shrink-0 mt-7" to="footer" >{t("contacts")}</SmoothScrollLink>
           <div className="text-center flex flex-col font-medium flex-shrink relative">
             <div className="w-16 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-28 top-14"></div>
             <span
@@ -39,12 +61,8 @@ const Navbar = () => {
             </span>
             <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-14"></div>
           </div>
-          <Link href="/" className="flex-shrink-0 mt-7">
-            {t("about")}
-          </Link>
-          <Link href="/" className="flex-shrink-0 mt-7">
-            {t("services")}
-          </Link>
+          <SmoothScrollLink className="flex-shrink-0 mt-7" to="about" >{t("about")}</SmoothScrollLink>
+          <SmoothScrollLink className="flex-shrink-0 mt-7" to="services" >{t("services")}</SmoothScrollLink>
           {/* <DropDown /> */}
         </ul>
       </div>

@@ -1,17 +1,16 @@
 import "../globals.css";
 import type { Metadata } from "next";
-// import { FontProvider } from "@/providers/FontProvides";
+
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
-import DropDown from "./components/navbars/DropDown";
+import DropDown from "./components/Navbars/DropDown";
 import { FontProvider } from "@/providers/FontProvider";
 
 export const metadata: Metadata = {
   title: "Trading company",
   description: "Trading company",
 };
-
 interface RootLayoutProps {
   children: React.ReactNode;
   params: {
@@ -23,12 +22,14 @@ export default async function RootLayout({
   children,
   params: { locale },
 }: RootLayoutProps) {
+
   let messages: Record<string, any>;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
+
   return (
     <html lang={locale}>
       <body>

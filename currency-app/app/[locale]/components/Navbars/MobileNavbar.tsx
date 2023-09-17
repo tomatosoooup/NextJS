@@ -4,7 +4,7 @@
 import BurgerMenu from "./BurgerMenu";
 import DropDown from "./DropDown";
 
-const Navbar = () => {
+const MobileNavbar = () => {
   // const t = useTranslations("Navbar");
 
   return (
@@ -25,4 +25,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MobileNavbar;

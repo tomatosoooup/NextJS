@@ -36,6 +36,7 @@
     "use-asset": "^1.0.4"
   },
   "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.1",
     "@types/next": "^9.0.0",
     "@types/node": "^20.5.9",
     "@types/react": "^18.2.21",

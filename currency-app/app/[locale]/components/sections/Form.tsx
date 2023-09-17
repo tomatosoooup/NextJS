@@ -41,7 +41,6 @@ const Form = () => {
         start: "top-=900px",
         end: "+=500px",
         scrub: true,
-        // markers: true,
       },
     });
   }, []);
@@ -60,7 +59,8 @@ const Form = () => {
   return (
     <>
       <form
-        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10"
+      id="form"
+        className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 h-fit bg-[#171717] rounded-2xl mt-10 mb-10 lg:my-32 relative pt-5 pb-10 z-20"
         ref={form}
       >
         {/* Selects */}
@@ -82,7 +82,7 @@ const Form = () => {
           <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
             <div className="w-1/2">
               <div className="mb-2">{t("sum")}</div>
-              <Input disabled={true} id="input-1" />
+              <Input id="input-1" />
             </div>
             <div className="w-1/2">
               <Input disabled={true} id="input-2" />

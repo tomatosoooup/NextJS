@@ -1,12 +1,34 @@
 "use client";
 
 import { useFonts } from "@/providers/FontProvider";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useLayoutEffect, useRef } from "react";
 
 const Services = () => {
   const fonts = useFonts();
   const t = useTranslations("Services");
+  const ul1 = useRef(null)
+  const ul2 = useRef(null)
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ul1.current,
+        start: "top-=300px 80%",
+        end: "top-=30px 50%",
+        scrub: true,
+      },
+    });
+
+    timeline
+      .from(ul1.current, { y: 200, x: -100, opacity: 0, rotate: 180 })
+      .from(ul2.current, { opacity: 0, scale: 0 }, 0);
+  }, []);
   return (
     <>
       <section className="max-w-screen-2xl m-auto">
@@ -15,14 +37,14 @@ const Services = () => {
             className="pt-32 pb-16 md:pb-28 px-5 relative z-20"
             style={{ fontFamily: `${fonts.tt}` }}
           >
-            <h2 className="text-5xl font-bold text-center md:text-left">
+            <h2 className="text-5xl font-bold text-center md:text-left" id="services">
             {t("h1")}
             </h2>
             <div className="flex">
               <div className="my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
               <div className="my-10 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
             </div>
-            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal">
+            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative" ref={ul1}>
               <li className="relative pl-4">
               {t("l1")}
                 <span className="text-[#9F9F9F]">{t("l1-")}</span>
@@ -46,7 +68,7 @@ const Services = () => {
               </li>
             </ul>
             {/* Second ul */}
-            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%]">
+            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%] relative" ref={ul2}>
               <li className="relative pl-4">
                 Широкий спектр юрисдикций и компаний для специализированого
                 обслуживания клиентов

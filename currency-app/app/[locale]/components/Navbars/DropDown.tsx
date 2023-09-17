@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -13,15 +14,21 @@ const DropDown = () => {
   const closeDropdown = () => {
     setIsOpen(false);
   };
+
+  const changeLanguage = (language) => {
+    setSelectedLanguage(language);
+    closeDropdown();
+  };
+
   return (
-    <div className="max-w-fit fixed right-5 lg:right-10 top-8 lg:top-10 ">
-      <div className="relative inline-block">
+    <div className="max-w-fit fixed right-5 lg:right-10 top-8 lg:top-10">
+      <div className="relative inline-block z-10">
         <button
           type="button"
           className="px-4 py-2 text-white bg-transparent font-medium rounded-lg text-sm inline-flex items-center"
           onClick={toggleDropdown}
         >
-          ENG{" "}
+          {selectedLanguage}
           <svg
             className="w-2.5 h-2.5 ml-2.5"
             aria-hidden="true"
@@ -40,26 +47,26 @@ const DropDown = () => {
         </button>
 
         {isOpen && (
-          <div className="origin-top-right absolute right-0 mt-2 w-20 rounded-lg shadow-lg  ring-1 ring-black ">
+          <div className="origin-top-right absolute right-0 mt-2 w-20 rounded-lg shadow-lg ring-1 ring-black ">
             <ul className="text-white">
-              <Link
-                href="/ua"
-                className="block px-4 py-2 text-sm"
-                onClick={closeDropdown}
-              >
-                UA
-              </Link>
-              <Link
+            <Link
                 href="/pl"
                 className="block px-4 py-2 text-sm"
-                onClick={closeDropdown}
+                onClick={()=> changeLanguage("PL")}
               >
                 PL
               </Link>
               <Link
+                href="/ua"
+                className="block px-4 py-2 text-sm"
+                onClick={()=> changeLanguage("UA")}
+              >
+                UA
+              </Link>
+              <Link
                 href="/ru"
                 className="block px-4 py-2 text-sm "
-                onClick={closeDropdown}
+                onClick={()=> changeLanguage("RU")}
               >
                 RU
               </Link>
