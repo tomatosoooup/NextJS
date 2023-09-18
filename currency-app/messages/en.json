@@ -6,39 +6,39 @@
     "services": "Services"
   },
   "Main": {
-    "p1": "Bezpieczny i wiarygodny partner w świecie finansów i kryptowalut.",
-    "p2": "Nasza misja  polega na tym, aby każda operacja była szybka, prosta i zabezpieczona. Dzięki temu możesz skupić się na swoim biznesie, zamiast martwić się o aspekty finansowe.",
-    "button": "Wymień Teraz"
+    "p1": "Secured partner in finance and cryptocurrency world.",
+    "p2": "Our mission - is to create every operation fast, simple and secured. So that you can focus on your business, instead of worrying about financial aspects.",
+    "button": "MAKE A DEAL"
   },
   "Form": {
-    "give": "Dajesz",
-    "get": "Otrzymujesz",
-    "sum": "Kwota",
-    "iban": "IBAN/ MIASTO",
-    "reciever": "Nazwa odbiorcy",
-    "button": "Zostawić zlecenie",
+    "give": "You Give",
+    "get": "You Receive",
+    "sum": "Amount",
+    "iban": "IBAN/TOWN",
+    "reciever": "PLACE ORDER",
+    "button": "Name of Receiver",
     "chBox1": "",
     "chBox2": ""
   },
   "About": {
-    "h1": "O nas",
-    "p": "Oferujemy szeroki zakres usług finansowych.",
-    "l1": "Nasza firma nieustannie monitoruje trendy na rynku, aby wdrażać najbardziej zaawansowane i bezpieczne rozwiązania w dziedzinie finansów.",
-    "l2-": "Bezpieczeństwo",
-    "l2": "- to nie tylko słowo, ale podstawowa zasada naszej pracy.",
-    "l3": "Łączymy najlepsze tradycje usług bankowych z innowacyjnymi rozwiązaniami w branży  finansów i kryptowalut.",
-    "l4": "Oferujemy usługi zakupu/sprzedaży kryptowalut za gotówkę w ponad 52 krajach na całym świecie.",
-    "l5": "- to certyfikowany kantor wymiany kryptowalut z europejską licencją."
+    "h1": "ABOUT US",
+    "p": "We provide a wide range of financial services.",
+    "l1": "Our company constantly monitors market trends in order to implement the most advanced and secure solutions in the field of finance.",
+    "l2-": "Safety",
+    "l2": " - is not just a word, but out basic principle of work.",
+    "l3": "We combine the best traditions of banking services with innovative solutions in the field of finance and cryptocurrencies.",
+    "l4": "We provide services for buying/selling cryptocurrency for cash in more than 52 countries around the world. ",
+    "l5": "- is a certified cryptocurrency exchange service with a European license."
   },
   "Services": {
-    "h1": "USŁUGI",
-    "l1": "Wymiana gotówkowa kryptowalut ",
-    "l1-": "(kupno/sprzedaż)",
-    "l2": "Transfery gotówkowe między miastami i krajami",
-    "l3": "Przelewy bankowe przy użyciu następujących systemów płatniczych: SEPA, SWIFT, PROSTIR",
-    "l3-": "(Polski Standart Płatności)",
-    "l4": "Doładowania fintechów",
-    "l4-": "(Revolut, Wise, Zen itd.)"
+    "h1": "SERVICES",
+    "l1": "Cash exchange",
+    "l1-": "(but/sell)",
+    "l2": "Cash transfers between cities and countries",
+    "l3": "Bank transfers using next payment systems: SEPA, SWIFT, PROSTIR",
+    "l3-": "(Polski Standart Platnosci)",
+    "l4": "Fintech banks top up",
+    "l4-": "(Revolut, Wise, Zen, etc.)"
   },
   "Footer": {}
 }

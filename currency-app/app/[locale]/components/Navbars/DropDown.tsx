@@ -17,7 +17,7 @@ const DropDown = ({ locale }: { locale?: string }) => {
   };
 
   return (
-    <div className="max-w-fit fixed right-5 lg:right-10 top-8 lg:top-10 z-20">
+    <div className="h-[70px] fixed right-5 lg:right-10 top-8 lg:top-10 z-40">
       <div className="relative inline-block">
         <button
           type="button"
