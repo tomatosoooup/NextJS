@@ -4,7 +4,7 @@ import BurgerMenu from "./BurgerMenu";
 
 const MobileNavbar = () => {
   return (
-    <div className="fixed inset-0 min-h-fit lg:hidden z-10">
+    <div className="fixed inset-0 h-[70px] lg:hidden z-30">
       <div className="max-w-full m-auto mt-5 px-5 mb-5 flex items-center">
         <BurgerMenu />
         <div className="text-center flex flex-col font-medium ml-6 text-white">

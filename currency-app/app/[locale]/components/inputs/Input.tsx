@@ -38,11 +38,10 @@ const Input: React.FC<InputProps> = ({
             ring-[#828282]
             border
             bg-transparent 
-            placeholder:text-[#555]
-            text-[#555]
-            opacity-50
+            placeholder:text-[#929292]
+            text-[#929292]
 `,
-            disabled && "cursor-default bg-transparent  "
+            disabled && "cursor-default bg-transparent opacity-50"
           )}
         />
       </div>

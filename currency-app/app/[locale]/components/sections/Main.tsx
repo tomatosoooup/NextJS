@@ -32,8 +32,7 @@ const Main = () => {
           pt-32"
           >
             <h1
-              className="text-2xl
-              sm:text-3xl 
+              className="text-3xl
               md:text-6xl 
               uppercase 
               mb-0

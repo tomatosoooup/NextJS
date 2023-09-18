@@ -156,7 +156,8 @@ const Form = () => {
         lg:my-32 
         relative 
         pt-5 
-        pb-10"
+        pb-10
+        z-10"
         ref={form}
       >
         {/* Selects */}
@@ -186,7 +187,7 @@ const Form = () => {
               <div className="mb-2 ">{t("sum")}</div>
               <Input id="input-1" onChange={handleAmountChange} />
               {bothCurrenciesSelected && (
-                <span className="absolute left-6 -bottom-7 text-sm text-[#555555] font-semibold">
+                <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
                   1 {fromCurrency} = {conversationFromRate} {toCurrency}
                 </span>
               )}
@@ -194,7 +195,7 @@ const Form = () => {
             <div className="w-1/2 relative">
               <Input disabled={true} id="input-2" value={result} />
               {bothCurrenciesSelected && (
-                <span className="absolute left-6 -bottom-7 text-sm text-[#555555] font-semibold">
+                <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
                   1 {toCurrency} = {conversationToRate} {fromCurrency}
                 </span>
               )}
