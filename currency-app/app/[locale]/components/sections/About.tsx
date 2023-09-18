@@ -45,7 +45,7 @@ const About = () => {
           <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
         </div>
         <p
-          className="text-center text-white text-xl mt-3 font-semibold"
+          className="text-center text-white text-lg mt-3 font-semibold px-5"
           style={{ fontFamily: `${fonts.tt}` }}
         >
           {t("p")}
@@ -76,7 +76,7 @@ const About = () => {
           </div>
           <div>
             <ul
-              className="flex flex-col gap-5 my-20 text-[#EAEAEA] font-thin text-lg px-5 relative"
+              className="flex flex-col gap-5 my-10 md:my-20 text-[#EAEAEA] font-thin text-lg px-5 relative"
               style={{ fontFamily: `${fonts.tt}` }}
               ref={text}
             >

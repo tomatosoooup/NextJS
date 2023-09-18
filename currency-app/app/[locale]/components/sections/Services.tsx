@@ -10,8 +10,8 @@ import { useLayoutEffect, useRef } from "react";
 const Services = () => {
   const fonts = useFonts();
   const t = useTranslations("Services");
-  const ul1 = useRef(null)
-  const ul2 = useRef(null)
+  const ul1 = useRef(null);
+  const ul2 = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +20,7 @@ const Services = () => {
       scrollTrigger: {
         trigger: ul1.current,
         start: "top-=300px 80%",
-        end: "top-=30px 50%",
+        end: "top-=30px 60%",
         scrub: true,
       },
     });
@@ -37,38 +37,46 @@ const Services = () => {
             className="pt-32 pb-16 md:pb-28 px-5 relative"
             style={{ fontFamily: `${fonts.tt}` }}
           >
-            <h2 className="text-5xl font-bold text-center md:text-left" id="services">
-            {t("h1")}
+            <h2
+              className="text-5xl font-bold text-center md:text-left"
+              id="services"
+            >
+              {t("h1")}
             </h2>
             <div className="flex">
               <div className="my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
               <div className="my-10 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
             </div>
-            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative" ref={ul1}>
+            <ul
+              className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative"
+              ref={ul1}
+            >
               <li className="relative pl-4">
-              {t("l1")}
+                {t("l1")}
                 <span className="text-[#9F9F9F]">{t("l1-")}</span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-              {t("l2")}
+                {t("l2")}
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-              {t("l3")}<span className="text-[#9F9F9F]">(UAH)</span>, PSP
+                {t("l3")}
+                <span className="text-[#9F9F9F]">(UAH)</span>, PSP
                 <span>{t("l3-")}</span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
               <li className="relative pl-4">
-              {t("l4")}
-                <span className="text-[#9F9F9F]">
-                  {t("l4-")}
-                </span>
+                {t("l4")}
+                <span className="text-[#9F9F9F]">{t("l4-")}</span>
                 <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
               </li>
             </ul>
             {/* Second ul */}
-            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%] relative" ref={ul2}>
+            <ul
+              className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%] relative"
+              ref={ul2}
+            >
               <li className="relative pl-4">
                 Широкий спектр юрисдикций и компаний для специализированого
                 обслуживания клиентов
