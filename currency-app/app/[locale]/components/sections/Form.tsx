@@ -141,7 +141,8 @@ const Form = () => {
     <>
       <form
         id="form"
-        className="flex 
+        className="
+        flex 
         flex-col 
         lg:grid 
         max-w-screen-xl 

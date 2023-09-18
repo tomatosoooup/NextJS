@@ -8,6 +8,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 
+const images = [
+  {
+    alt: "BTC-small-left",
+    src: "./images/BTC-left.svg",
+    width: 400,
+    height: 400,
+    class: "absolute z-10 top-10 -left-20 pointer-events-none",
+  },
+  {
+    alt: "BTC",
+    src: "./images/BTC.svg",
+    width: 525,
+    height: 525,
+    class: "absolute z-20 left-16 pointer-events-none",
+  },
+  {
+    alt: "BTC-small-right",
+    src: "./images/BTC-right.svg",
+    width: 400,
+    height: 400,
+    class: "absolute z-10 top-10 left-80 pointer-events-none",
+  },
+];
+
 const About = () => {
   const fonts = useFonts();
   const t = useTranslations("About");
@@ -52,31 +76,31 @@ const About = () => {
         </p>
         <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
           <div className="relative hidden lg:block" ref={image}>
-            <Image
-              alt="BTC-small-left"
-              src={"./images/BTC-left.svg"}
-              width={400}
-              height={400}
-              className="absolute z-10 top-10 -left-20 pointer-events-none"
-            />
-            <Image
-              alt="BTC"
-              src={"./images/BTC.svg"}
-              width={525}
-              height={525}
-              className="absolute z-20 left-16 pointer-events-none"
-            />
-            <Image
-              alt="BTC-small-right"
-              src={"./images/BTC-right.svg"}
-              width={400}
-              height={400}
-              className="absolute z-10 top-10 left-80 pointer-events-none"
-            />
+            {/* images */}
+            {images.map((img) => (
+              <Image
+                alt={img.alt}
+                src={img.src}
+                width={img.width}
+                height={img.height}
+                className={img.class}
+                key={img.alt}
+              />
+            ))}
           </div>
           <div>
+            {/* text */}
             <ul
-              className="flex flex-col gap-5 my-10 md:my-20 text-[#EAEAEA] font-thin text-lg px-5 relative"
+              className="flex 
+              flex-col 
+              gap-5 
+              my-10 
+              md:my-20 
+              text-[#EAEAEA] 
+              font-thin 
+              text-lg 
+              px-5 
+              relative"
               style={{ fontFamily: `${fonts.tt}` }}
               ref={text}
             >

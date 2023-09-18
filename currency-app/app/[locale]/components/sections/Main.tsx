@@ -8,6 +8,23 @@ import Button from "../buttons/Button";
 import { useFonts } from "@/providers/FontProvider";
 import { useTranslations } from "next-intl";
 
+const images = [
+  {
+    alt: "Bank",
+    src: "./images/Bank.svg",
+    width: 700,
+    height: 700,
+    class: "hidden lg:block pointer-events-none",
+  },
+  {
+    alt: "Bank-2",
+    src: "./images/Bank-2.svg",
+    width: 500,
+    height: 500,
+    class: "lg:hidden mx-auto !relative pointer-events-none",
+  },
+];
+
 const Main = () => {
   const t = useTranslations("Main");
   const fonts = useFonts();
@@ -63,20 +80,17 @@ const Main = () => {
             </div>
           </div>
           <div>
-            <Image
-              alt="Bank"
-              src={"./images/Bank.svg"}
-              width={700}
-              height={700}
-              className="hidden lg:block pointer-events-none"
-            />
-            <Image
-              alt="Bank-2"
-              src={"./images/Bank-2.svg"}
-              width={500}
-              height={500}
-              className="lg:hidden mx-auto !relative pointer-events-none"
-            />
+            {/* images */}
+            {images.map((img) => (
+              <Image
+                alt={img.alt}
+                src={img.src}
+                width={img.width}
+                height={img.height}
+                className={img.class}
+                key={img.alt}
+              />
+            ))}
           </div>
         </div>
         <Image

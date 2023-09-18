@@ -37,9 +37,6 @@ const SelectDrop: React.FC<SelectDropProps> = ({
     if (onCurrencyToChoose) {
       onCurrencyToChoose(option.type);
     }
-    // if (value) {
-    //   onChange(value);
-    // }
   };
 
   return (
