@@ -15,8 +15,8 @@
     "get": "You Receive",
     "sum": "Amount",
     "iban": "IBAN/TOWN",
-    "reciever": "PLACE ORDER",
-    "button": "Name of Receiver",
+    "reciever": "Name of Receiver",
+    "button": "Place order",
     "chBox1": "",
     "chBox2": ""
   },

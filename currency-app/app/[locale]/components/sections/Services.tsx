@@ -7,6 +7,46 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 
+import classes from "@/app/animations/Image.module.css";
+
+const images = [
+  {
+    alt: "sepa",
+    width: 475,
+    height: 475,
+    class: `hidden lg:block absolute right-12 top-20 z-10 pointer-events-none ${classes.img}`,
+    src: "./images/sepa.svg",
+  },
+  {
+    alt: "dollar",
+    width: 1100,
+    height: 1100,
+    class: `hidden lg:block absolute -left-40 -bottom-80 pointer-events-none ${classes.img}`,
+    src: "./images/dollar.svg",
+  },
+  {
+    alt: "dollar-2",
+    width: 400,
+    height: 400,
+    class: `lg:hidden absolute -left-0 -bottom-44 pointer-events-none ${classes.img}`,
+    src: "./images/dollar-2.svg",
+  },
+  {
+    alt: "swift",
+    width: 375,
+    height: 375,
+    class: `hidden lg:block absolute -right-0 bottom-32 pointer-events-none ${classes.img}`,
+    src: "./images/swift.svg",
+  },
+  {
+    alt: "swift-mobile",
+    width: 250,
+    height: 250,
+    class: `absolute right-0 top-32 lg:hidden pointer-events-none ${classes.img}`,
+    src: "./images/swift-2.svg",
+  },
+];
+
 const Services = () => {
   const fonts = useFonts();
   const t = useTranslations("Services");
@@ -99,42 +139,16 @@ const Services = () => {
               </li>
             </ul>
           </div>
-          <Image
-            alt="sepa"
-            width={475}
-            height={475}
-            className="hidden lg:block absolute right-12 top-20 z-10 pointer-events-none"
-            src={"./images/sepa.svg"}
-            priority
-          />
-          <Image
-            alt="dollar"
-            width={1100}
-            height={1100}
-            className="hidden lg:block absolute -left-40 -bottom-80 pointer-events-none"
-            src={"./images/dollar.svg"}
-          />
-          <Image
-            alt="dollar-2"
-            width={400}
-            height={400}
-            className="lg:hidden absolute -left-0 -bottom-44 pointer-events-none"
-            src={"./images/dollar-2.svg"}
-          />
-          <Image
-            alt="swift"
-            width={375}
-            height={375}
-            className="hidden lg:block absolute -right-0 bottom-32 pointer-events-none"
-            src={"./images/swift.svg"}
-          />
-          <Image
-            alt="swift-mobile"
-            width={250}
-            height={250}
-            className="absolute right-0 top-32 lg:hidden pointer-events-none"
-            src={"./images/swift-2.svg"}
-          />
+          {images.map((img) => (
+            <Image
+              alt={img.alt}
+              src={img.src}
+              width={img.width}
+              height={img.height}
+              className={img.class}
+              key={img.alt}
+            />
+          ))}
         </div>
       </section>
     </>
