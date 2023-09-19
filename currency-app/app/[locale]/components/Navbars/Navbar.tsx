@@ -24,7 +24,7 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
     spy={true}
     smooth={true}
     offset={offset - 150}
-    duration={1000}
+    duration={2000}
     className={className}
   >
     {children}

@@ -1,9 +1,24 @@
 .img {
-  animation-name: move;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
+}
+
+.imgTop {
+  animation-name: move;
+}
+
+.imgLeft {
+  animation-name: moveLeft;
+}
+
+.imgCenter {
+  animation-name: moveCenter;
+}
+
+.imgRight {
+  animation-name: moveRight;
 }
 
 @keyframes move {
@@ -13,5 +28,38 @@
 
   to {
     transform: translate3d(0, 8px, 0);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translate3d(-9px, -8px, 0);
+  }
+
+  to {
+    transform: translate3d(9px, 8px, 0);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes moveCenter {
+  0% {
+    transform: translate3d(0, -8px, -2px);
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: translate3d(0, 8px, 2px);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translate3d(-9px, 8px, 0);
+  }
+
+  to {
+    transform: translate3d(9px, -8px, 0);
+    transform: scale(1.1);
   }
 }

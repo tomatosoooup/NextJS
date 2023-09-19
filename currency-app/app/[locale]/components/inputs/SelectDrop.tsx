@@ -8,6 +8,7 @@ import Image from "next/image";
 type Option = {
   type: string;
   name: string;
+  cur: string;
 };
 
 interface SelectDropProps {
@@ -32,10 +33,10 @@ const SelectDrop: React.FC<SelectDropProps> = ({
     setSelectedOption(option);
     setIsOpen(false);
     if (onCurrencyFromChoose) {
-      onCurrencyFromChoose(option.type);
+      onCurrencyFromChoose(option.cur);
     }
     if (onCurrencyToChoose) {
-      onCurrencyToChoose(option.type);
+      onCurrencyToChoose(option.cur);
     }
   };
 
@@ -65,7 +66,7 @@ const SelectDrop: React.FC<SelectDropProps> = ({
         >
           {options.map((opt: Option) => (
             <li
-              key={opt.name}
+              key={opt.name + opt.type}
               onClick={() => handleOptionClick(opt)}
               className={`cursor-pointer flex justify-around border border-white/10 font-extralight py-1 ${
                 selectedOption &&

@@ -100,11 +100,22 @@ const Form = () => {
 
   // заменим на динамические
   const options = [
-    { type: "USD", name: "TRC20" },
-    { type: "RUB", name: "TRC21" },
-    { type: "EUR", name: "TRC22" },
-    { type: "UAH", name: "TRC23" },
+    { type: "USDT", name: "TRC20", cur: "USD" },
+    { type: "USDT", name: "ERC20", cur: "USD" },
+    { type: "USDT", name: "BEP20", cur: "USD" },
+    { type: "USDC", name: "ERC20", cur: "USD" },
+    { type: "USDC", name: "BEP20", cur: "USD" },
   ];
+
+  const options2 = [
+    { type: "Cash", name: "EUR", cur: "EUR" },
+    { type: "Cash", name: "USD", cur: "USD" },
+    { type: "Cash", name: "PLN", cur: "PLN" },
+    { type: "BLIK", name: "PLN", cur: "PLN" },
+    { type: "SEPA", name: "EUR", cur: "EUR" },
+  ];
+
+  console.log(fromCurrency, toCurrency);
 
   const form = useRef(null);
   const telegram = useRef(null);
@@ -115,7 +126,7 @@ const Form = () => {
     gsap.from(form.current, {
       opacity: 0,
       right: 1000,
-      duration: 1,
+      duration: 5,
       smoothOrigin: true,
       scrollTrigger: {
         trigger: form.current,
@@ -168,7 +179,8 @@ const Form = () => {
         rounded-2xl 
         mt-10 
         mb-10 
-        lg:my-32 
+        lg:mt-20
+        lg:mb-28  
         relative 
         pt-5 
         pb-10
@@ -177,7 +189,7 @@ const Form = () => {
         >
           {/* Selects */}
           <div
-            className="flex flex-col justify-center mt-12 order-1 lg:order-none"
+            className="flex flex-col justify-center mt-5 lg:mt-12 order-1 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
@@ -192,7 +204,7 @@ const Form = () => {
               <div className="w-1/2">
                 <div className="mb-2">{t("get")}</div>
                 <SelectDrop
-                  options={options}
+                  options={options2}
                   onCurrencyToChoose={setToCurrency}
                 />
               </div>
@@ -219,7 +231,7 @@ const Form = () => {
           </div>
           {/* Inputs */}
           <div
-            className="flex flex-col gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
+            className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <div>
