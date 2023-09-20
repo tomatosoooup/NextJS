@@ -2,6 +2,7 @@
 
 import { useFonts } from "@/providers/FontProvider";
 import Link from "next/link";
+import Numbers from "./Numbers";
 
 const Footer = () => {
   const fonts = useFonts();
@@ -10,6 +11,8 @@ const Footer = () => {
       className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8 relative z-10"
       id="footer"
     >
+        <Numbers containerClass="text-5xl -top-20 left-56" spanClass="blur opacity-30" nums={[1,1,0,1,0]}/>
+        <Numbers containerClass="text-8xl -top-56 right-96" spanClass="blur opacity-20" nums={[0,0,0,1,0]}/>
       <div className="flex flex-col lg:flex-row w-full items-center justify-between">
         <div
           className="w-full order-1 lg:order-none"
