@@ -266,7 +266,7 @@ const Form = () => {
           {/* Checkbox */}
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
-            style={{ fontFamily: `${fonts.tt}` }}
+            style={{ fontFamily: `${fonts.ct}` }}
           >
             <div className="flex items-center gap-x-3">
               <div

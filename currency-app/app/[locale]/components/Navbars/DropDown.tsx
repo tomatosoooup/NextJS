@@ -1,11 +1,14 @@
 "use client";
 
+import { useFonts } from "@/providers/FontProvider";
 import Link from "next/link";
 import { useState } from "react";
 
 const DropDown = ({ locale }: { locale?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectedLanguage = locale ? locale.toUpperCase() : "ENG";
+
+    const fonts = useFonts();
 
   const linksList = ["en", "pl", "ua", "ru"];
   const filteredList = linksList.filter(
@@ -17,8 +20,7 @@ const DropDown = ({ locale }: { locale?: string }) => {
   };
 
   return (
-    <div className="h-[70px] fixed right-5 lg:right-10 top-8 lg:top-10 z-40">
-      <div className="relative inline-block">
+    <div className="h-[35px] fixed right-5 lg:right-2 top-8 lg:top-5 z-40" style={{ fontFamily: `${fonts.tt}` }}>
         <button
           type="button"
           className="px-4 py-2 text-white bg-transparent font-medium rounded-lg text-sm inline-flex items-center"
@@ -58,7 +60,6 @@ const DropDown = ({ locale }: { locale?: string }) => {
             </ul>
           </div>
         )}
-      </div>
     </div>
   );
 };

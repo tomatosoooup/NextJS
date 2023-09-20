@@ -28,16 +28,16 @@ const Footer = () => {
         </div>
         <div
           className="text-center flex flex-col font-medium flex-shrink relative text-white order-3 mt-10 md:mt-0 lg:order-none"
-          style={{ fontFamily: `${fonts.ct}` }}
+          style={{ fontFamily: `${fonts.cf}` }}
         >
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-40 top-12 lg:top-24"></div>
-          <span className="text-5xl lg:text-8xl  tracking-[0.7rem] font-extrabold">
+          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-48 top-12 lg:top-32"></div>
+          <span className="text-5xl lg:text-9xl tracking-[0.7rem] font-extrabold">
             KLTP
           </span>
-          <span className="text-sm lg:text-4xl tracking-[0.7rem] lowercase font-light leading-4">
+          <span className="text-sm lg:text-5xl tracking-[0.7rem] lg:tracking-[1rem] lowercase font-light leading-4" style={{ fontFamily: `${fonts.ct}` }}>
             exchange
           </span>
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-40 top-12 lg:top-24"></div>
+          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-48 top-12 lg:top-32"></div>
         </div>
         <div
           className="w-full order-2 lg:order-none"
@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="text-center mt-12 mb-3 text-white/50 text-xs ">
+      <div className="text-center mt-12 mb-3 text-white/50 text-sm" style={{ fontFamily: `${fonts.tt}` }}>
         © 2023 KLTP - crypto and financial solutions
       </div>
     </div>
