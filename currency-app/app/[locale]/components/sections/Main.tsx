@@ -7,6 +7,7 @@ import Button from "../buttons/Button";
 
 import { useFonts } from "@/providers/FontProvider";
 import { useTranslations } from "next-intl";
+import Numbers from "@/components/Numbers";
 
 const images = [
   {
@@ -32,6 +33,7 @@ const Main = () => {
   return (
     <>
       <div className="max-w-screen-2xl m-auto">
+        <Numbers containerClass="text-8xl top-0 left-20" spanClass="blur-xl" nums={[1,0,1,0,0,1]}/>
         <section>
           <div
             className="
@@ -45,10 +47,12 @@ const Main = () => {
           >
             <div
               className="px-5 
-          text-center 
-          lg:text-justify 
-          pt-32"
+                        text-center 
+                        lg:text-justify 
+                        pt-32
+                        relative"
             >
+              <Numbers containerClass="text-5xl top-0 right-64 pt-32" spanClass="blur" nums={[0,1,1,0,1]}/>
               <h1
                 className="text-3xl
               md:text-6xl 
