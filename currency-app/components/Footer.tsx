@@ -2,15 +2,17 @@
 
 import { useFonts } from "@/providers/FontProvider";
 import Link from "next/link";
+import Image from "next/image";
+
 import Numbers from "./Numbers";
 
 const Footer = () => {
   const fonts = useFonts();
   return (
     <div className="max-w-screen-2xl m-auto relative z-10" id="footer">
-      <div className="lg:grid lg:grid-cols-4 mt-20">
+      <div className="flex flex-col items-center lg:grid lg:grid-cols-4 mt-20">
         <div
-          className="text-center flex flex-col font-medium text-white"
+          className="text-center hidden font-medium text-white pt-4 lg:flex flex-col"
           style={{ fontFamily: `${fonts.cf}` }}
         >
           <span className="text-5xl lg:text-6xl tracking-[0.7rem] font-extrabold">
@@ -23,14 +25,81 @@ const Footer = () => {
             exchange
           </span>
         </div>
-        <div className="">
-          <h4>Локализация</h4>
-          <div className="flex">
-            <div>ul 1</div>
-            <div>ul 2</div>
+        <div className="order-2">
+          <h4
+            className="uppercase text-white text-lg font-black pb-8"
+            style={{ fontFamily: `${fonts.tt}` }}
+          >
+            Локализация
+          </h4>
+          <div className="lg:flex text-[#D9D9D9] text-sm">
+            <div
+              className="flex-grow font-bold flex flex-col gap-1 "
+              style={{ fontFamily: `${fonts.ct}` }}
+            >
+              <span>Wrocław</span>
+              <span className="font-medium">Ofiar Oswiecimskich 17</span>
+              <span>10:00-20:00</span>
+            </div>
+            <div
+              className="flex-grow font-bold flex flex-col gap-1 pl-2"
+              style={{ fontFamily: `${fonts.ct}` }}
+            >
+              <span>Poznań</span>
+              <span className="font-medium">Poznańska 1/36 60-848</span>
+              <span>10:00-20:00</span>
+            </div>
           </div>
         </div>
-        <div></div>
+        <div className="lg:ml-20 order-3">
+          <h4
+            className="uppercase text-white text-lg font-black pb-8"
+            style={{ fontFamily: `${fonts.tt}` }}
+          >
+            Контакт
+          </h4>
+          <div className="flex flex-col gap-5">
+            <p
+              className="text-[#D9D9D9] text-base"
+              style={{ fontFamily: `${fonts.ct}` }}
+            >
+              kltp.finance@gmail.com
+            </p>
+            <div className="flex gap-5">
+              <Link href={"/"}>
+                <Image
+                  alt="telegram"
+                  src={"./images/telegram.svg"}
+                  width={28}
+                  height={28}
+                />
+              </Link>
+              <Link href={"/"}>
+                <Image
+                  alt="instagram"
+                  src={"./images/instagram.svg"}
+                  width={28}
+                  height={28}
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="ml-10 order-1">
+          <h4
+            className="uppercase text-white text-lg font-black pb-8"
+            style={{ fontFamily: `${fonts.tt}` }}
+          >
+            Документы
+          </h4>
+          <div
+            className="flex flex-col text-white text-sm gap-2 font-light"
+            style={{ fontFamily: `${fonts.ct}` }}
+          >
+            <Link href={"/"}>AML / CTF terms</Link>
+            <Link href={"/"}>Terms and conditions of service</Link>
+          </div>
+        </div>
       </div>
       <div
         className="text-center mt-12 mb-3 text-white/50 text-sm"
