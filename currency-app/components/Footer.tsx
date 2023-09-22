@@ -7,11 +7,45 @@ import Numbers from "./Numbers";
 const Footer = () => {
   const fonts = useFonts();
   return (
-    <div
-      className="min-h-fit max-w-screen-2xl m-auto pt-16 pb-8 relative z-10"
-      id="footer"
-    >
-        <Numbers containerClass="text-5xl -top-20 left-56" spanClass="blur opacity-30" nums={[1,1,0,1,0]}/>
+    <div className="max-w-screen-2xl m-auto relative z-10" id="footer">
+      <div className="lg:grid lg:grid-cols-4 mt-20">
+        <div
+          className="text-center flex flex-col font-medium text-white"
+          style={{ fontFamily: `${fonts.cf}` }}
+        >
+          <span className="text-5xl lg:text-6xl tracking-[0.7rem] font-extrabold">
+            KLTP
+          </span>
+          <span
+            className="text-sm lg:text-xl tracking-[0.7rem] lowercase font-light leading-4"
+            style={{ fontFamily: `${fonts.ct}` }}
+          >
+            exchange
+          </span>
+        </div>
+        <div className="">
+          <h4>Локализация</h4>
+          <div className="flex">
+            <div>ul 1</div>
+            <div>ul 2</div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div
+        className="text-center mt-12 mb-3 text-white/50 text-sm"
+        style={{ fontFamily: `${fonts.tt}` }}
+      >
+        © 2023 KLTP - crypto and financial solutions
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
+
+{
+  /* <Numbers containerClass="text-5xl -top-20 left-56" spanClass="blur opacity-30" nums={[1,1,0,1,0]}/>
         <Numbers containerClass="text-8xl -top-56 right-96" spanClass="blur opacity-20" nums={[0,0,0,1,0]}/>
       <div className="flex flex-col lg:flex-row w-full items-center justify-between">
         <div
@@ -51,12 +85,5 @@ const Footer = () => {
             <Link href={"/"}>Connect to TV</Link>
           </ul>
         </div>
-      </div>
-      <div className="text-center mt-12 mb-3 text-white/50 text-sm" style={{ fontFamily: `${fonts.tt}` }}>
-        © 2023 KLTP - crypto and financial solutions
-      </div>
-    </div>
-  );
-};
-
-export default Footer;
+      </div> */
+}

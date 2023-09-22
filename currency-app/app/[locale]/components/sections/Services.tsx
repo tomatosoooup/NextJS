@@ -155,8 +155,16 @@ const Services = () => {
   return (
     <>
       <section className="max-w-screen-2xl m-auto relative">
-        <Numbers containerClass="text-4xl -top-20 left-6" spanClass="blur" nums={[0,0,0,1,0]}/>
-        <Numbers containerClass="text-7xl top-0 left-36" spanClass="blur opacity-40" nums={[0,1,0,0,0]}/>
+        <Numbers
+          containerClass="text-4xl -top-20 left-6"
+          spanClass="blur"
+          nums={[0, 0, 0, 1, 0]}
+        />
+        <Numbers
+          containerClass="text-7xl top-0 left-36"
+          spanClass="blur opacity-40"
+          nums={[0, 1, 0, 0, 0]}
+        />
         <div className="text-white relative">
           <div
             className="pt-10 lg:pt-32 pb-16 md:pb-28 px-5 relative"

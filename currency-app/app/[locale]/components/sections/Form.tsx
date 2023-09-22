@@ -116,7 +116,7 @@ const Form = () => {
     { type: "SEPA", name: "EUR", cur: "EUR" },
   ];
 
-  console.log(fromCurrency, toCurrency);
+  // console.log(fromCurrency, toCurrency);
 
   const form = useRef(null);
   const telegram = useRef(null);
@@ -175,7 +175,6 @@ const Form = () => {
         m-auto 
         grid-cols-2 
         grid-rows-2 
-        h-fit 
         bg-[#171717] 
         rounded-2xl 
         mt-10 
@@ -188,10 +187,26 @@ const Form = () => {
         z-10"
           ref={form}
         >
-          <Numbers containerClass="text-3xl bottom-10 left-28" spanClass="blur" nums={[0,1,1,0,1]}/>
-          <Numbers containerClass="text-2xl top-16 left-52" spanClass="blur" nums={[0,1,1,0,1]}/>
-          <Numbers containerClass="text-8xl -top-10 left-[450px]" spanClass="blur opacity-20" nums={[0,0,0,1,0]}/>
-          <Numbers containerClass="text-6xl -top-16 -right-20" spanClass="blur" nums={[0,0,1,0]}/>
+          <Numbers
+            containerClass="text-3xl bottom-10 left-28"
+            spanClass="blur"
+            nums={[0, 1, 1, 0, 1]}
+          />
+          <Numbers
+            containerClass="text-2xl top-16 left-52"
+            spanClass="blur"
+            nums={[0, 1, 1, 0, 1]}
+          />
+          <Numbers
+            containerClass="text-8xl -top-10 left-[450px] z-0"
+            spanClass="blur opacity-20"
+            nums={[0, 0, 0, 1, 0]}
+          />
+          <Numbers
+            containerClass="text-6xl -top-16 -right-20"
+            spanClass="blur"
+            nums={[0, 0, 1, 0]}
+          />
           {/* Selects */}
           <div
             className="flex flex-col justify-center mt-5 lg:mt-12 order-1 lg:order-none"
