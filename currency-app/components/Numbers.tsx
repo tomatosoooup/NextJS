@@ -1,18 +1,18 @@
-import { nanoid } from "nanoid";
-
 interface NumbersProps {
   containerClass: string;
   spanClass: string;
   nums: number[];
+  key: string;
 }
 
 const Numbers: React.FC<NumbersProps> = ({
   containerClass,
   spanClass,
   nums,
+  key,
 }) => {
   const numbers = nums.map((num) => (
-    <span className={spanClass} key={nanoid()}>
+    <span className={spanClass} key={key}>
       {num}
     </span>
   ));

@@ -34,9 +34,10 @@ const Main = () => {
     <>
       <div className="max-w-screen-2xl m-auto">
         <Numbers
-          containerClass="text-8xl top-0 left-20"
+          containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
           nums={[1, 0, 1, 0, 0, 1]}
+          key="numbers-main-1"
         />
         <section>
           <div
@@ -57,9 +58,10 @@ const Main = () => {
                         relative"
             >
               <Numbers
-                containerClass="text-5xl top-0 right-64 pt-32"
+                containerClass="text-5xl top-0 right-64 pt-32 main"
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
+                key="numbers-main-2"
               />
               <h1
                 className="text-3xl
