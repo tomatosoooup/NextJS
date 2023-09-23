@@ -123,8 +123,12 @@ const About = () => {
   }, []);
   return (
     <>
-      <div className="relative ">
-      <Numbers containerClass="text-7xl -top-32 left-24" spanClass="blur opacity-40" nums={[0,0,1,0]}/>
+      <div className="relative">
+        <Numbers
+          containerClass="text-7xl -top-32 left-24"
+          spanClass="blur opacity-40"
+          nums={[0, 0, 1, 0]}
+        />
         <section className="relative max-w-screen-2xl m-auto" id="about">
           <h2
             className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
@@ -180,7 +184,8 @@ const About = () => {
               font-thin 
               text-lg 
               px-5 
-              relative"
+              relative
+              "
                 style={{ fontFamily: `${fonts.tt}` }}
               >
                 {liList.map((li) => (

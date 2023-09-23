@@ -184,7 +184,8 @@ const Form = () => {
         relative 
         pt-5 
         pb-10
-        z-10"
+        z-10
+        duration-700"
           ref={form}
         >
           <Numbers

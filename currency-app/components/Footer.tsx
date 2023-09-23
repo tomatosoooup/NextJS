@@ -10,7 +10,9 @@ const Footer = () => {
   const fonts = useFonts();
   return (
     <div className="max-w-screen-2xl m-auto relative z-10" id="footer">
-      <div className="flex flex-col items-center lg:grid lg:grid-cols-4 mt-20">
+      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 mt-20 px-5 lg:px-0">
+        <div className="absolute min-w-full bg-white/10 h-[2px] top-28 sm:top-24 left-0 lg:hidden"></div>
+        <div className="absolute min-w-full bg-white/10 h-[2px] bottom-44 sm:bottom-40 left-0 lg:hidden"></div>
         <div
           className="text-center hidden font-medium text-white pt-4 lg:flex flex-col"
           style={{ fontFamily: `${fonts.cf}` }}
@@ -25,16 +27,16 @@ const Footer = () => {
             exchange
           </span>
         </div>
-        <div className="order-2">
+        <div className="order-2 relative">
           <h4
-            className="uppercase text-white text-lg font-black pb-8"
+            className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             Локализация
           </h4>
-          <div className="lg:flex text-[#D9D9D9] text-sm">
+          <div className="flex gap-10 lg:gap-2 text-[#D9D9D9] text-sm">
             <div
-              className="flex-grow font-bold flex flex-col gap-1 "
+              className="flex-grow font-bold flex flex-col gap-1 text-center lg:text-left"
               style={{ fontFamily: `${fonts.ct}` }}
             >
               <span>Wrocław</span>
@@ -42,7 +44,7 @@ const Footer = () => {
               <span>10:00-20:00</span>
             </div>
             <div
-              className="flex-grow font-bold flex flex-col gap-1 pl-2"
+              className="flex-grow font-bold flex flex-col gap-1 pl-2 text-center lg:text-left"
               style={{ fontFamily: `${fonts.ct}` }}
             >
               <span>Poznań</span>
@@ -51,14 +53,14 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="lg:ml-20 order-3">
+        <div className="lg:ml-20 order-3 ">
           <h4
-            className="uppercase text-white text-lg font-black pb-8"
+            className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             Контакт
           </h4>
-          <div className="flex flex-col gap-5">
+          <div className="flex lg:flex-col gap-20 lg:gap-5">
             <p
               className="text-[#D9D9D9] text-base"
               style={{ fontFamily: `${fonts.ct}` }}
@@ -85,15 +87,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="ml-10 order-1">
+        <div className="lg:ml-10 order-1">
           <h4
-            className="uppercase text-white text-lg font-black pb-8"
+            className="uppercase text-white text-lg font-black pb-6 lg:pb-8 text-center lg:text-left"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             Документы
           </h4>
           <div
-            className="flex flex-col text-white text-sm gap-2 font-light"
+            className="flex lg:flex-col text-white text-sm gap-10 font-light lg:gap-2"
             style={{ fontFamily: `${fonts.ct}` }}
           >
             <Link href={"/"}>AML / CTF terms</Link>
@@ -102,7 +104,7 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="text-center mt-12 mb-3 text-white/50 text-sm"
+        className="text-center mt-8 lg:mt-12 mb-3 text-white/50 text-sm"
         style={{ fontFamily: `${fonts.tt}` }}
       >
         © 2023 KLTP - crypto and financial solutions
@@ -112,47 +114,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-{
-  /* <Numbers containerClass="text-5xl -top-20 left-56" spanClass="blur opacity-30" nums={[1,1,0,1,0]}/>
-        <Numbers containerClass="text-8xl -top-56 right-96" spanClass="blur opacity-20" nums={[0,0,0,1,0]}/>
-      <div className="flex flex-col lg:flex-row w-full items-center justify-between">
-        <div
-          className="w-full order-1 lg:order-none"
-          style={{ fontFamily: `${fonts.gt}` }}
-        >
-          <ul className="flex flex-col px-5 gap-2 text-[#D3D3D3] text-lg font-light">
-            <span className="text-white text-xl font-normal">Контакт</span>
-            <Link href={"/"}>About us</Link>
-            <Link href={"/"}>Contacts for mass media</Link>
-            <Link href={"/"}>How else to pay</Link>
-            <Link href={"/"}>Add a podcast</Link>
-          </ul>
-        </div>
-        <div
-          className="text-center flex flex-col font-medium flex-shrink relative text-white order-3 mt-10 md:mt-0 lg:order-none"
-          style={{ fontFamily: `${fonts.cf}` }}
-        >
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-48 top-12 lg:top-32"></div>
-          <span className="text-5xl lg:text-9xl tracking-[0.7rem] font-extrabold">
-            KLTP
-          </span>
-          <span className="text-sm lg:text-5xl tracking-[0.7rem] lg:tracking-[1rem] lowercase font-light leading-4" style={{ fontFamily: `${fonts.ct}` }}>
-            exchange
-          </span>
-          <div className="w-12 md:w-24 lg:w-36 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-48 top-12 lg:top-32"></div>
-        </div>
-        <div
-          className="w-full order-2 lg:order-none"
-          style={{ fontFamily: `${fonts.gt}` }}
-        >
-          <ul className="flex flex-col px-5 text-right gap-2 text-[#D3D3D3] text-lg font-light">
-            <span className="text-white text-xl font-normal">Адреса</span>
-            <Link href={"/"}>Крислаотя 2</Link>
-            <Link href={"/"}>Mobile devices</Link>
-            <Link href={"/"}>Computer</Link>
-            <Link href={"/"}>Connect to TV</Link>
-          </ul>
-        </div>
-      </div> */
-}
