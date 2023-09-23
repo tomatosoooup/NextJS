@@ -28,7 +28,7 @@ const LoadingModal = () => {
     //     </div>
     //   </Dialog>
     // </Transition.Root>
-    <div className="h-screen relative z-50 bg-slate-400"></div>
+    <div className="h-screen w-screen relative z-50 bg-slate-800"></div>
   );
 };
 

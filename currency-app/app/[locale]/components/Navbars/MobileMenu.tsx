@@ -1,5 +1,6 @@
 "use client";
 
+import { useFonts } from "@/providers/FontProvider";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,62 +37,81 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
 );
 
 const MobileMenu = ({ isVisible, onClick }) => {
+  const fonts = useFonts();
+
   return (
     <div
       className={clsx(
         `
-    h-screen
-    bg-[#121212] 
-    w-screen 
-    fixed 
-    inset-0 
-    -translate-x-full 
-    transition-all 
-    duration-500 
-    py-20
+        h-screen
+        w-72
+        md:w-80
+        bg-[#121212]/95
+        fixed 
+        inset-0 
+        -translate-x-full 
+        transition-all 
+        duration-500 
+        py-20
+        rounded-tr-3xl
+        
     `,
         isVisible && "translate-x-0 flex flex-col"
       )}
       onClick={onClick}
     >
-      <ul className="flex flex-col text-[#ffffff] px-5 gap-6 font-semibold text-2xl mt-5">
-        <SmoothScrollLink to="form" onClick={onClick}>
+      <div className="z-10 w-full h-screen absolute bg-[#121212]/95 blur-sm inset-0 rounded-tr-3xl"></div>
+      <ul
+        className="flex flex-col text-[#ffffff] px-5 gap-10 font-bold text-2xl mt-5 relative uppercase z-20"
+        style={{ fontFamily: `${fonts.tt}` }}
+      >
+        <SmoothScrollLink to="form" onClick={onClick} className="ml-5 pt-2">
           Головна
         </SmoothScrollLink>
-        <SmoothScrollLink to="footer" onClick={onClick}>
-          Контакти
-        </SmoothScrollLink>
-        <SmoothScrollLink to="about" onClick={onClick}>
+        <div className="absolute h-[1px] left-0 top-14 w-full bg-white/10"></div>
+        <SmoothScrollLink to="about" onClick={onClick} className="ml-5">
           О нас
         </SmoothScrollLink>
-        <SmoothScrollLink to="services" onClick={onClick}>
+        <div className="absolute h-[1px] left-0 top-32 w-full bg-white/10"></div>
+        <SmoothScrollLink to="services" onClick={onClick} className="ml-5">
           Послуги
         </SmoothScrollLink>
+        <div className="absolute h-[1px] left-0 top-[200px] w-full bg-white/10"></div>
+        <SmoothScrollLink to="footer" onClick={onClick} className="ml-5">
+          Контакти
+        </SmoothScrollLink>
+        <div className="absolute h-[1px] left-0 -bottom-4 w-full bg-white/10"></div>
       </ul>
 
-      <ul className="flex flex-col px-5 gap-3 text-[#D3D3D3] text-lg font-light mt-10">
-        <span className="text-white text-xl font-normal">Контакт</span>
-        <Link href={"/"}>About us</Link>
-        <Link href={"/"}>Contacts for mass media</Link>
-        <Link href={"/"}>How else to pay</Link>
-        <Link href={"/"}>Add a podcast</Link>
-      </ul>
+      <div className="flex flex-col px-5 mt-8 text-[#D9D9D9] font-extrabold z-20">
+        <span>Wrocław</span>
+        <span className="font-medium">Ofiar Oswiecimskich 17</span>
+        <span className="text-right my-6">10:00-20:00</span>
+        <span>Poznań</span>
+        <span className="font-medium">Poznańska 1/36 60-848</span>
+        <Link href={"/"} className="my-4 font-medium">
+          kltp.finance@gmail.com
+        </Link>
 
-      <ul className="flex flex-col px-5 text-right gap-3 text-[#D3D3D3] text-lg font-light">
-        <span className="text-white text-xl font-normal">Адреса</span>
-        <Link href={"/"}>Крислаотя 2</Link>
-        <Link href={"/"}>Mobile devices</Link>
-        <Link href={"/"}>Computer</Link>
-        <Link href={"/"}>Connect to TV</Link>
-      </ul>
-
-      <Image
-        alt="Bitcoin Mobile"
-        src={"./images/Bitcoin.svg"}
-        width={375}
-        height={375}
-        className="absolute left-0 -bottom-36 pointer-events-none"
-      />
+        <div className="flex gap-5 mt-4" style={{ fontFamily: `${fonts.ct}` }}>
+          <Link href={"/"}>
+            <Image
+              alt="telegram"
+              src={"./images/telegram.svg"}
+              width={30}
+              height={30}
+            />
+          </Link>
+          <Link href={"/"}>
+            <Image
+              alt="instagram"
+              src={"./images/instagram.svg"}
+              width={30}
+              height={30}
+            />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
