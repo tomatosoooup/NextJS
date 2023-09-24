@@ -1,6 +1,6 @@
 "use client";
 
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import Image from "next/image";
 
 import gsap from "gsap";
@@ -9,7 +9,7 @@ import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 
 import classes from "@/app/animations/Image.module.css";
-import Numbers from "@/components/Numbers";
+import Numbers from "components/Numbers";
 
 const images = [
   {

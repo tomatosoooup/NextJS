@@ -1,6 +1,6 @@
 "use client";
 
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import Link from "next/link";
 import Image from "next/image";
 

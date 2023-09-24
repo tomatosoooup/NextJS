@@ -5,9 +5,9 @@ import Button from "../buttons/Button";
 
 // import Bank from "./Bank";
 
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
-import Numbers from "@/components/Numbers";
+import Numbers from "components/Numbers";
 
 const images = [
   {

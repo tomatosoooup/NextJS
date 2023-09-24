@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 
 import { Link as ScrollLink } from "react-scroll";
 

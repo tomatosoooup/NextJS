@@ -6,7 +6,7 @@ import Button from "../buttons/Button";
 
 import Link from "next/link";
 
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
 import Image from "next/image";
@@ -23,7 +23,7 @@ import {
 import { useTranslations } from "next-intl";
 
 import { getCurrencyConversionRate } from "../../../api/getCurrency";
-import Numbers from "@/components/Numbers";
+import Numbers from "components/Numbers";
 
 type Rate = number | null;
 

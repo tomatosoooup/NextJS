@@ -1,6 +1,6 @@
 "use client";
 
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
 import { TfiReload } from "react-icons/tfi";
 import classes from "./Button.module.css";

@@ -1,4 +1,4 @@
-import { useFonts } from "@/providers/FontProvider";
+import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";

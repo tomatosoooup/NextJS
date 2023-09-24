@@ -1,7 +1,7 @@
 import "../globals.css";
 import type { Metadata } from "next";
 
-import { FontProvider } from "@/providers/FontProvider";
+import { FontProvider } from "providers/FontProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
