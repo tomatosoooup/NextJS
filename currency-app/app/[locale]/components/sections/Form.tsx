@@ -80,9 +80,7 @@ const Form = () => {
       setConversationFromRate(1);
       setConversationToRate(1);
     }
-  }, []);
-
-  console.log(fromCurrency, toCurrency);
+  }, [fromCurrency, toCurrency]);
 
   // Вызываем функцию convertCurrency только если оба поля выбраны
   useEffect(() => {
