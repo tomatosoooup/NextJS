@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 
-import classes from "@/app/animations/Image.module.css";
+import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
 
 const images = [

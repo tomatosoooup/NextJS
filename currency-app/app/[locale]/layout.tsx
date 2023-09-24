@@ -4,8 +4,9 @@ import type { Metadata } from "next";
 import { FontProvider } from "providers/FontProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-
 import DropDown from "./components/navbars/DropDown";
+
+
 
 export const metadata: Metadata = {
   title: "KLTP",
