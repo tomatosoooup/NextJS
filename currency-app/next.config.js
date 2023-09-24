@@ -2,41 +2,25 @@
 
 const path = require("path");
 
-const nextConfig = {
+module.exports = {
   webpack: (config, { dev, isServer }) => {
-    // Add the PostCSS loader for CSS files
+    // Добавляем правило для обработки CSS файлов
     config.module.rules.push({
       test: /\.css$/,
       use: [
+        "style-loader", // или MiniCssExtractPlugin.loader, если вы хотите вынести CSS в отдельные файлы
+        "css-loader",
         {
-          loader: "style-loader", // Inject styles into the DOM
-        },
-        {
-          loader: "css-loader", // Translate CSS into CommonJS
-        },
-        {
-          loader: "postcss-loader", // Process CSS with PostCSS
+          loader: "postcss-loader",
           options: {
             postcssOptions: {
-              plugins: [
-                require("tailwindcss"), // Include Tailwind CSS
-                require("autoprefixer"), // Add vendor prefixes
-              ],
+              plugins: [require("tailwindcss"), require("autoprefixer")],
             },
           },
         },
       ],
-      include: path.resolve(__dirname, "./app"), // Specify the directory containing your CSS files
     });
 
     return config;
   },
 };
-
-// const withTM = require("next-transpile-modules")([
-//   "three",
-//   "@react-three/fiber",
-//   "@react-three/drei",
-// ]);
-
-module.exports = nextConfig;
