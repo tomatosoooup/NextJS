@@ -1,22 +1,21 @@
+import { useId } from "react";
+
 interface NumbersProps {
   containerClass: string;
   spanClass: string;
   nums: number[];
-  key: string;
 }
+
+export const Number = ({ children }) => {
+  const id = useId();
+  return <span key={id}>{children}</span>;
+};
 
 const Numbers: React.FC<NumbersProps> = ({
   containerClass,
   spanClass,
   nums,
-  key,
 }) => {
-  const numbers = nums.map((num) => (
-    <span className={spanClass} key={key}>
-      {num}
-    </span>
-  ));
-
   return (
     <div
       className={`
@@ -30,7 +29,11 @@ const Numbers: React.FC<NumbersProps> = ({
     text-[#D3D3D3]
     ${containerClass}`}
     >
-      {numbers}
+      {nums.map((num) => (
+        <span className={spanClass} key={useId()}>
+          <Number key={useId()}>{num}</Number>
+        </span>
+      ))}
     </div>
   );
 };

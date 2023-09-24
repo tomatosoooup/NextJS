@@ -159,13 +159,11 @@ const Services = () => {
           containerClass="text-4xl -top-20 left-6"
           spanClass="blur"
           nums={[0, 0, 0, 1, 0]}
-          key="numbers-services-1"
         />
         <Numbers
           containerClass="text-7xl top-0 left-36"
           spanClass="blur opacity-40"
           nums={[0, 1, 0, 0, 0]}
-          key="numbers-services-2"
         />
         <div className="text-white relative">
           <div

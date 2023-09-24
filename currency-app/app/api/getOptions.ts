@@ -1,1 +1,1 @@
-export default await function GET() {};
+export async function getOptions() {}

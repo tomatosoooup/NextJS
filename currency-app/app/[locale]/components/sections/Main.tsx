@@ -37,7 +37,6 @@ const Main = () => {
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
           nums={[1, 0, 1, 0, 0, 1]}
-          key="numbers-main-1"
         />
         <section>
           <div
@@ -61,7 +60,6 @@ const Main = () => {
                 containerClass="text-5xl top-0 right-64 pt-32 main"
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
-                key="numbers-main-2"
               />
               <h1
                 className="text-3xl
@@ -104,7 +102,6 @@ const Main = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
-                  priority
                 />
               ))}
             </div>
@@ -115,7 +112,6 @@ const Main = () => {
             width={375}
             height={375}
             className="absolute left-0 -bottom-36 hidden lg:block pointer-events-none"
-            priority
           />
         </section>
       </div>

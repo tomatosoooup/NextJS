@@ -128,7 +128,6 @@ const About = () => {
           containerClass="text-7xl -top-32 left-24"
           spanClass="blur opacity-40"
           nums={[0, 0, 1, 0]}
-          key="numbers-about"
         />
         <section className="relative max-w-screen-2xl m-auto" id="about">
           <h2

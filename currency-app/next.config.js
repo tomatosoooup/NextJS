@@ -1,17 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {};
-
 const path = require("path");
-const withTM = require("next-transpile-modules")([
-  "three",
-  "@react-three/fiber",
-  "@react-three/drei",
-]);
 
-module.exports = withTM({
-  // Your next-transpile-modules configuration here...
-
+const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     // Add the PostCSS loader for CSS files
     config.module.rules.push({
@@ -40,4 +31,12 @@ module.exports = withTM({
 
     return config;
   },
-});
+};
+
+// const withTM = require("next-transpile-modules")([
+//   "three",
+//   "@react-three/fiber",
+//   "@react-three/drei",
+// ]);
+
+module.exports = nextConfig;

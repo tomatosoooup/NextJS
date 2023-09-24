@@ -192,25 +192,21 @@ const Form = () => {
             containerClass="text-3xl bottom-10 left-28"
             spanClass="blur"
             nums={[0, 1, 1, 0, 1]}
-            key="numbers-form-1"
           />
           <Numbers
             containerClass="text-2xl top-16 left-52"
             spanClass="blur"
             nums={[0, 1, 1, 0, 1]}
-            key="numbers-form-2"
           />
           <Numbers
             containerClass="text-8xl -top-10 left-[450px] z-0"
             spanClass="blur opacity-20"
             nums={[0, 0, 0, 1, 0]}
-            key="numbers-form-3"
           />
           <Numbers
             containerClass="text-6xl -top-16 -right-20"
             spanClass="blur"
             nums={[0, 0, 1, 0]}
-            key="numbers-form-4"
           />
           {/* Selects */}
           <div
