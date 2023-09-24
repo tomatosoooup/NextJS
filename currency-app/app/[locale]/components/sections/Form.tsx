@@ -2,7 +2,6 @@
 
 import SelectDrop from "../inputs/SelectDrop";
 import Input from "../inputs/Input";
-import Button from "../buttons/Button";
 
 import Link from "next/link";
 
@@ -24,6 +23,9 @@ import { useTranslations } from "next-intl";
 
 import { getCurrencyConversionRate } from "../../../api/getCurrency";
 import Numbers from "components/Numbers";
+import FormLogo from "./FormSections/FormLogo";
+import FormButtons from "./FormSections/FormButtons";
+import { getOptions } from "app/api/getOptions";
 
 type Rate = number | null;
 
@@ -106,21 +108,9 @@ const Form = () => {
   };
 
   // заменим на динамические
-  const options = [
-    { type: "USDT", name: "TRC20", cur: "USD" },
-    { type: "USDT", name: "ERC20", cur: "USD" },
-    { type: "USDT", name: "BEP20", cur: "USD" },
-    { type: "USDC", name: "ERC20", cur: "USD" },
-    { type: "USDC", name: "BEP20", cur: "USD" },
-  ];
+  const options = getOptions({option: "first"})
 
-  const options2 = [
-    { type: "Cash", name: "EUR", cur: "EUR" },
-    { type: "Cash", name: "USD", cur: "USD" },
-    { type: "Cash", name: "PLN", cur: "PLN" },
-    { type: "BLIK", name: "PLN", cur: "PLN" },
-    { type: "SEPA", name: "EUR", cur: "EUR" },
-  ];
+  const options2 = getOptions({option: "second"})
 
   // console.log(fromCurrency, toCurrency);
 
@@ -275,16 +265,7 @@ const Form = () => {
             </div>
           </div>
           {/* Two buttons */}
-          <div className="hidden lg:flex justify-center h-[50px] mt-10 px-5">
-            <Button>
-              <span className="text-white  pt-1">{t("button")}</span>
-            </Button>
-          </div>
-          <div className="lg:hidden justify-center h-[50px] mt-10 px-5 order-4 lg:order-none">
-            <Button fullWidth>
-              <span className="text-white  pt-1">{t("button")}</span>
-            </Button>
-          </div>
+                <FormButtons/>
           {/* Checkbox */}
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
@@ -322,20 +303,7 @@ const Form = () => {
               className="absolute hidden lg:block right-20 top-0"
             />
           </div>
-          {/* Logo */}
-          <div
-            className="text-center flex flex-col font-medium relative text-white w-fit mx-auto mt-10 lg:absolute lg:bottom-20 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
-            style={{ fontFamily: `${fonts.ct}` }}
-          >
-            <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-64 top-11 lg:top-16"></div>
-            <span className="text-5xl lg:text-7xl  tracking-[0.7rem] font-extrabold">
-              KLTP
-            </span>
-            <span className="text-sm md:text- lg:text-3xl tracking-[0.7rem] lowercase font-light leading-4">
-              exchange
-            </span>
-            <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-64 top-11 lg:top-16"></div>
-          </div>
+              <FormLogo/>
         </form>
         <Link href={"/"}>
           <Image

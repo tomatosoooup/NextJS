@@ -49,7 +49,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
         inset-0 
         -translate-x-full 
         transition-all 
-        duration-500 
+        duration-1000 
         py-20
         rounded-tr-3xl
     `,
