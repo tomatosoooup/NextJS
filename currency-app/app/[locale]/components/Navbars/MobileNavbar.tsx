@@ -1,5 +1,3 @@
-"use client";
-
 import BurgerMenu from "./BurgerMenu";
 
 const MobileNavbar = () => {
