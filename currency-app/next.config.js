@@ -1,26 +1,31 @@
 /** @type {import('next').NextConfig} */
+const nextConfig = {};
 
-const path = require("path");
+module.exports = nextConfig;
 
-module.exports = {
-  webpack: (config, { dev, isServer }) => {
-    // Добавляем правило для обработки CSS файлов
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        "style-loader", // или MiniCssExtractPlugin.loader, если вы хотите вынести CSS в отдельные файлы
-        "css-loader",
-        {
-          loader: "postcss-loader",
-          options: {
-            postcssOptions: {
-              plugins: [require("tailwindcss"), require("autoprefixer")],
-            },
-          },
-        },
-      ],
-    });
+// const withTM = require("next-transpile-modules")([
+//   "three",
+//   "@react-three/fiber",
+//   "@react-three/drei",
+// ]);
 
-    return config;
-  },
-};
+// webpack: (config, { dev, isServer }) => {
+//   // Добавляем правило для обработки CSS файлов
+//   config.module.rules.push({
+//     test: /\.css$/,
+//     use: [
+//       "style-loader", // или MiniCssExtractPlugin.loader, если вы хотите вынести CSS в отдельные файлы
+//       "css-loader",
+//       {
+//         loader: "postcss-loader",
+//         options: {
+//           postcssOptions: {
+//             plugins: [require("tailwindcss"), require("autoprefixer")],
+//           },
+//         },
+//       },
+//     ],
+//   });
+
+//   return config;
+// },
