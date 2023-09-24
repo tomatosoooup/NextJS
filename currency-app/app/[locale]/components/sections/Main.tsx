@@ -102,7 +102,6 @@ const Main = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
-                  layout="fixed"
                   loading="lazy"
                 />
               ))}
