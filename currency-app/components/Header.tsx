@@ -1,7 +1,7 @@
 "use client";
 
-import MobileNavbar from "@/components/navbars/MobileNavbar";
-import Navbar from "@/components/navbars/Navbar";
+import MobileNavbar from "@/components/Navbars/MobileNavbar";
+import Navbar from "@/components/Navbars/Navbar";
 
 
 const Header = () => {
