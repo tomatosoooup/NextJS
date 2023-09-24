@@ -29,9 +29,9 @@ const Numbers: React.FC<NumbersProps> = ({
     text-[#D3D3D3]
     ${containerClass}`}
     >
-      {nums.map((num) => (
-        <span className={spanClass} key={useId()}>
-          <Number key={useId()}>{num}</Number>
+      {nums.map((num, index) => (
+        <span className={spanClass} key={index}>
+          <Number key={index}>{num}</Number>
         </span>
       ))}
     </div>

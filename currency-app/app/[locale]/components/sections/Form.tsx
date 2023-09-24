@@ -13,7 +13,13 @@ import Image from "next/image";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { useTranslations } from "next-intl";
 
 import { getCurrencyConversionRate } from "../../../api/getCurrency";
@@ -34,7 +40,7 @@ const Form = () => {
   const [amount, setAmount] = useState<string>("");
   const [result, setResult] = useState("");
 
-  const convertCurrency = async () => {
+  const convertCurrency = useCallback(async () => {
     // from currency
     try {
       const data = await getCurrencyConversionRate(fromCurrency, toCurrency);
@@ -74,14 +80,16 @@ const Form = () => {
       setConversationFromRate(1);
       setConversationToRate(1);
     }
-  };
+  }, []);
+
+  console.log(fromCurrency, toCurrency);
 
   // Вызываем функцию convertCurrency только если оба поля выбраны
   useEffect(() => {
     if (bothCurrenciesSelected) {
       convertCurrency();
     }
-  }, [bothCurrenciesSelected, fromCurrency, toCurrency]);
+  }, [bothCurrenciesSelected, fromCurrency, toCurrency, convertCurrency]);
 
   useEffect(() => {
     const newAmount = amount;
@@ -92,7 +100,7 @@ const Form = () => {
     } else {
       setResult("");
     }
-  }, [amount, convertCurrency]);
+  }, [amount, convertCurrency, conversationFromRate]);
 
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = event.target.value;
