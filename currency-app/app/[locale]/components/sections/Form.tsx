@@ -123,7 +123,7 @@ const Form = () => {
     gsap.from(form.current, {
       opacity: 0,
       right: 1000,
-      duration: 5,
+      duration: 1,
       smoothOrigin: true,
       scrollTrigger: {
         trigger: form.current,
