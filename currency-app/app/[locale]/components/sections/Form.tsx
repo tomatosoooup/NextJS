@@ -4,11 +4,11 @@ import SelectDrop from "../inputs/SelectDrop";
 import Input from "../inputs/Input";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
-import Image from "next/image";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -54,25 +54,16 @@ const Form = () => {
         const result = parseFloat(percentage.toFixed(6));
 
         setConversationFromRate(result);
-      } else {
-        throw new Error("Некорректный формат данных в ответе");
       }
-    } catch (error) {
-      console.error(error.message);
-    }
-    // to currency
-    try {
-      const data = await getCurrencyConversionRate(toCurrency, fromCurrency);
+      const data2 = await getCurrencyConversionRate(toCurrency, fromCurrency);
 
-      if (Array.isArray(data.to) && data.to.length > 0) {
-        const conversionInfo = data.to[0];
+      if (Array.isArray(data2.to) && data2.to.length > 0) {
+        const conversionInfo = data2.to[0];
         const mid = parseFloat(conversionInfo.mid);
         const percentage = mid * 0.98; // Вычитание 2%
-        const result = parseFloat(percentage.toFixed(6));
+        const result2 = parseFloat(percentage.toFixed(6));
 
-        setConversationToRate(result);
-      } else {
-        throw new Error("Некорректный формат данных в ответе");
+        setConversationToRate(result2);
       }
     } catch (error) {
       console.error(error.message);
@@ -100,19 +91,15 @@ const Form = () => {
     } else {
       setResult("");
     }
-  }, [amount, convertCurrency, conversationFromRate]);
+  }, [amount, conversationFromRate, convertCurrency]);
 
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = event.target.value;
     setAmount(newAmount);
   };
 
-  // заменим на динамические
   const options = getOptions({ option: "first" });
-
   const options2 = getOptions({ option: "second" });
-
-  // console.log(fromCurrency, toCurrency);
 
   const form = useRef(null);
   const telegram = useRef(null);
@@ -122,8 +109,7 @@ const Form = () => {
 
     gsap.from(form.current, {
       opacity: 0,
-      right: 1000,
-      duration: 1,
+      right: 800,
       scrollTrigger: {
         trigger: form.current,
         start: "top-=900px",
@@ -135,7 +121,6 @@ const Form = () => {
     gsap.from(telegram.current, {
       opacity: 0,
       scale: 0,
-      duration: 1,
       scrollTrigger: {
         trigger: telegram.current,
         start: "top-=600px 50%",
@@ -161,25 +146,7 @@ const Form = () => {
       <div className="relative">
         <form
           id="form"
-          className="
-        flex 
-        flex-col 
-        lg:grid 
-        max-w-screen-xl 
-        m-auto 
-        grid-cols-2 
-        grid-rows-2 
-        bg-[#171717] 
-        rounded-2xl 
-        mt-10 
-        mb-10 
-        lg:mt-20
-        lg:mb-28  
-        relative 
-        pt-5 
-        pb-10
-        z-10
-        "
+          className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-20 lg:mb-28 relative pt-5 pb-10 z-10"
           ref={form}
         >
           <Numbers
@@ -262,9 +229,7 @@ const Form = () => {
               <Input id="input-5" />
             </div>
           </div>
-          {/* Two buttons */}
           <FormButtons />
-          {/* Checkbox */}
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
             style={{ fontFamily: `${fonts.ct}` }}

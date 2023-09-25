@@ -6,8 +6,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import DropDown from "./components/Navbars/DropDown";
 
-
-
 export const metadata: Metadata = {
   title: "KLTP",
   description: "KLTP ",

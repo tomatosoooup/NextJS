@@ -4,8 +4,6 @@ import { useFonts } from "providers/FontProvider";
 import Link from "next/link";
 import Image from "next/image";
 
-// import Numbers from "./Numbers";
-
 const Footer = () => {
   const fonts = useFonts();
   return (
