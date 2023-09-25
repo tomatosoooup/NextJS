@@ -108,9 +108,9 @@ const Form = () => {
   };
 
   // заменим на динамические
-  const options = getOptions({option: "first"})
+  const options = getOptions({ option: "first" });
 
-  const options2 = getOptions({option: "second"})
+  const options2 = getOptions({ option: "second" });
 
   // console.log(fromCurrency, toCurrency);
 
@@ -124,7 +124,6 @@ const Form = () => {
       opacity: 0,
       right: 1000,
       duration: 1,
-      smoothOrigin: true,
       scrollTrigger: {
         trigger: form.current,
         start: "top-=900px",
@@ -137,7 +136,6 @@ const Form = () => {
       opacity: 0,
       scale: 0,
       duration: 1,
-      smoothOrigin: true,
       scrollTrigger: {
         trigger: telegram.current,
         start: "top-=600px 50%",
@@ -265,7 +263,7 @@ const Form = () => {
             </div>
           </div>
           {/* Two buttons */}
-                <FormButtons/>
+          <FormButtons />
           {/* Checkbox */}
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
@@ -303,7 +301,7 @@ const Form = () => {
               className="absolute hidden lg:block right-20 top-0"
             />
           </div>
-              <FormLogo/>
+          <FormLogo />
         </form>
         <Link href={"/"}>
           <Image
