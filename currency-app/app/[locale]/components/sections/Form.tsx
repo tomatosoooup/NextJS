@@ -1,33 +1,22 @@
-"use client";
-
 import Input from "../inputs/Input";
-
 import Link from "next/link";
 import Image from "next/image";
-
 import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import Numbers from "components/Numbers";
-import FormLogo from "./FormSections/FormLogo";
-import FormButtons from "./FormSections/FormButtons";
 import FormInputs from "./FormSections/FormInputs";
-
-
+import FormButtons from "./FormSections/FormButtons";
+import FormLogo from "./FormSections/FormLogo";
 
 const Form = () => {
   const fonts = useFonts();
   const t = useTranslations("Form");
-
 
   const form = useRef(null);
   const telegram = useRef(null);
@@ -35,27 +24,33 @@ const Form = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(form.current, {
-      opacity: 0,
-      right: 800,
-      scrollTrigger: {
-        trigger: form.current,
-        start: "top-=900px",
-        end: "+=500px",
-        scrub: true,
-      },
+    let ctx = gsap.context(() => {
+      gsap.from(form.current, {
+        opacity: 0,
+        right: 800,
+        scrollTrigger: {
+          trigger: form.current,
+          start: "top-=900px",
+          end: "+=500px",
+          scrub: true,
+        },
+      });
+
+      gsap.from(telegram.current, {
+        opacity: 0,
+        scale: 0,
+        scrollTrigger: {
+          trigger: telegram.current,
+          start: "top-=600px 50%",
+          end: "top-=100px 50%",
+          scrub: true,
+        },
+      });
     });
 
-    gsap.from(telegram.current, {
-      opacity: 0,
-      scale: 0,
-      scrollTrigger: {
-        trigger: telegram.current,
-        start: "top-=600px 50%",
-        end: "top-=100px 50%",
-        scrub: true,
-      },
-    });
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   const [isClicked, setIsClicked] = useState(false);
@@ -97,9 +92,9 @@ const Form = () => {
             spanClass="blur"
             nums={[0, 0, 1, 0]}
           />
-          
+
           {/* Inputs */}
-          <FormInputs/>
+          <FormInputs />
           <div
             className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
