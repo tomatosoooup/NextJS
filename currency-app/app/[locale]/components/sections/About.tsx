@@ -188,8 +188,8 @@ const About = () => {
               "
                 style={{ fontFamily: `${fonts.tt}` }}
               >
-                {liList.map((li) => (
-                  <AnimatedText key={li.content}>
+                {liList.map((li, index) => (
+                  <AnimatedText key={index}>
                     {li?.subcontent} {li.content}
                   </AnimatedText>
                 ))}

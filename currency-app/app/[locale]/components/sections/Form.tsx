@@ -33,6 +33,7 @@ const Form = () => {
           start: "top-=900px",
           end: "+=500px",
           scrub: true,
+          markers: true,
         },
       });
 

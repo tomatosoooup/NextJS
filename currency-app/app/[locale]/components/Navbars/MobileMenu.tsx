@@ -48,12 +48,10 @@ const MobileMenu = ({ isVisible, onClick }) => {
         fixed 
         inset-0 
         -translate-x-full 
-        transition-all 
-        duration-1000 
         py-20
         rounded-tr-3xl
     `,
-        isVisible && "translate-x-0 flex flex-col"
+        isVisible && "translate-x-0 flex flex-col transition-all duration-700 "
       )}
       onClick={onClick}
     >

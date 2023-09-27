@@ -31,7 +31,6 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
-
   const fonts = useFonts();
 
   return (

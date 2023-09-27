@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Функция для выполнения запроса к API
 export async function getCurrencyConversionRate(
   fromCurrency: string,
   toCurrency: string

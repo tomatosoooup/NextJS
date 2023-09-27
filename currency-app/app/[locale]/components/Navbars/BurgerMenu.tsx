@@ -15,7 +15,7 @@ const BurgerMenu = () => {
         className="flex flex-col justify-center items-center h-14 z-20 relative"
       >
         <span
-          className={`bg-slate-100 block transition-all duration-300 ease-out 
+          className={`bg-slate-100 block transition-all duration-700 ease-out 
                      w-8 rounded-sm h-[3px] ${
                        isOpen
                          ? "rotate-45 translate-y-[8.5px]"
@@ -23,13 +23,13 @@ const BurgerMenu = () => {
                      }`}
         ></span>
         <span
-          className={`bg-slate-100 block transition-all duration-300 ease-out 
+          className={`bg-slate-100 block transition-all duration-700 ease-out 
                      w-8 rounded-sm my-1.5 h-[3px] ${
                        isOpen ? "opacity-0" : "opacity-100"
                      }`}
         ></span>
         <span
-          className={`bg-slate-100 block transition-all duration-300 ease-out 
+          className={`bg-slate-100 block transition-all duration-700 ease-out 
                      w-8 rounded-sm h-[3px] ${
                        isOpen
                          ? "-rotate-45 -translate-y-[8.5px]"
