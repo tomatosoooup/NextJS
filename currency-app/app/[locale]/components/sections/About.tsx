@@ -17,21 +17,21 @@ const images = [
     src: "./images/BTC-left.svg",
     width: 375,
     height: 375,
-    class: `absolute z-10 top-10 -left-20 pointer-events-none ${classes.imgLeft} ${classes.img}`,
+    class: `absolute z-10 top-10 -left-20 pointer-events-none filter ${classes.imgLeft} ${classes.img}`,
   },
   {
     alt: "BTC",
     src: "./images/BTC.svg",
     width: 475,
     height: 475,
-    class: `absolute z-20 left-16 pointer-events-none ${classes.imgCenter} ${classes.img}`,
+    class: `absolute z-20 left-16 pointer-events-none filter ${classes.imgCenter} ${classes.img}`,
   },
   {
     alt: "BTC-small-right",
     src: "./images/BTC-right.svg",
     width: 375,
     height: 375,
-    class: `absolute z-10 top-10 left-72 pointer-events-none ${classes.imgRight} ${classes.img}`,
+    class: `absolute z-10 top-10 left-72 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
   },
 ];
 
@@ -41,7 +41,7 @@ const imagesMobile = [
     src: "./images/BTC-left.svg",
     width: 225,
     height: 225,
-    class: `absolute z-10 top-0 -left-8 pointer-events-none ${classes.imgLeft} ${classes.img}`,
+    class: `absolute z-10 top-0 -left-8 pointer-events-none filter ${classes.imgLeft} ${classes.img}`,
   },
   //
   {
@@ -49,14 +49,14 @@ const imagesMobile = [
     src: "./images/BTC.svg",
     width: 275,
     height: 275,
-    class: `absolute z-20 -top-4 left-14 pointer-events-none ${classes.imgCenter} ${classes.img}`,
+    class: `absolute z-20 -top-4 left-14 pointer-events-none filter ${classes.imgCenter} ${classes.img}`,
   },
   {
     alt: "BTC-small-right",
     src: "./images/BTC-right.svg",
     width: 225,
     height: 225,
-    class: `absolute z-10 top-0 left-44 pointer-events-none ${classes.imgRight} ${classes.img}`,
+    class: `absolute z-10 top-0 left-44 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
   },
 ];
 
@@ -156,6 +156,7 @@ const About = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
+                  loading="eager"
                 />
               ))}
             </div>
@@ -169,6 +170,7 @@ const About = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
+                  loading="eager"
                 />
               ))}
             </div>
@@ -203,6 +205,7 @@ const About = () => {
           width={500}
           height={500}
           className={`absolute right-0 -top-20 pointer-events-none hidden lg:block ${classes.img} ${classes.imgTop}`}
+          loading="eager"
         />
       </div>
     </>

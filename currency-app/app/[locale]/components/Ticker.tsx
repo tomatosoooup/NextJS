@@ -1,5 +1,4 @@
 import { useFonts } from "providers/FontProvider";
-import "./Ticker.css";
 
 const Ticker = () => {
   const fonts = useFonts();

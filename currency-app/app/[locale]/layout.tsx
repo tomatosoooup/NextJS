@@ -31,12 +31,12 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <FontProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <FontProvider>
             <DropDown locale={locale} />
             {children}
-          </NextIntlClientProvider>
-        </FontProvider>
+          </FontProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

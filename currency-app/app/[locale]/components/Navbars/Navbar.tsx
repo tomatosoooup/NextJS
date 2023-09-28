@@ -66,7 +66,7 @@ const Navbar = () => {
           text-center 
           flex 
           flex-col 
-          font-medium 
+          font-bold
           flex-shrink 
           relative"
           >

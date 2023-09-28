@@ -26,15 +26,15 @@ const Form = () => {
 
     let ctx = gsap.context(() => {
       gsap.from(form.current, {
-        opacity: 0,
-        right: 800,
         scrollTrigger: {
           trigger: form.current,
-          start: "top-=900px",
-          end: "+=500px",
+          start: "0px bottom",
+          end: "bottom-=100px bottom",
           scrub: true,
-          markers: true,
+          fastScrollEnd: 1000,
         },
+        opacity: 0,
+        right: 800,
       });
 
       gsap.from(telegram.current, {
@@ -67,11 +67,10 @@ const Form = () => {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative" ref={form}>
         <form
           id="form"
           className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-20 lg:mb-28 relative pt-5 pb-10 z-10"
-          ref={form}
         >
           <Numbers
             containerClass="text-3xl bottom-10 left-28"
@@ -115,10 +114,10 @@ const Form = () => {
           </div>
           <FormButtons />
           <div
-            className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none"
+            className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2"
             style={{ fontFamily: `${fonts.ct}` }}
           >
-            <div className="flex items-center gap-x-3">
+            <div className="flex items-center gap-x-3 lg:ml-[52%]">
               <div
                 className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
                   isClicked ? "bg-[#9b9b9b]" : "bg-transparent"
@@ -130,7 +129,7 @@ const Form = () => {
               I agree with
               <Link href={"/"}>Terms and conditions of service</Link>
             </div>
-            <div className="flex items-center gap-x-3 mt-2">
+            <div className="flex items-center gap-x-3 mt-2 lg:ml-[52%]">
               <div
                 className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
                   isClickedTwo ? "bg-[#9b9b9b]" : "bg-transparent"
@@ -147,7 +146,8 @@ const Form = () => {
               src={"./images/qr.svg"}
               width={100}
               height={100}
-              className="absolute hidden lg:block right-20 top-0"
+              className="absolute hidden lg:block right-20 top-0 pointer-events-none"
+              loading="eager"
             />
           </div>
           <FormLogo />
@@ -160,6 +160,7 @@ const Form = () => {
             height={150}
             className="absolute top-64 right-20 hidden 2xl:block"
             ref={telegram}
+            loading="eager"
           />
         </Link>
       </div>
