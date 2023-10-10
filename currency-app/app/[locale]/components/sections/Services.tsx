@@ -91,31 +91,28 @@ const Services = () => {
 
   const liListSecond = [
     {
-      content:
-        "Широкий спектр юрисдикций и компаний для специализированого обслуживания клиентов",
+      content: t("l5"),
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
     },
     {
-      content: "Прием/выставление инвойсов и контрактов",
+      content: t("l6"),
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
     },
     {
-      content: "Пополнение физ.лиц ",
+      content: t("l7"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">
-            (оплаты квартир, обучений, переводы семье)
-          </span>
+          <span className="text-[#9F9F9F]">{t("l7-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
     },
     {
-      content: "Оплата товаров и автомобильных аукционов по всему миру",
+      content: t("l8"),
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 
 
 /* Integral CF Regular */
@@ -12,29 +11,11 @@
 /* Gotham */
 @import url("https://fonts.cdnfonts.com/css/gotham-6");
 
-=======
->>>>>>> 78efa5ac11c7bb33460b175646c211ad9d6f3765
 /* Основной текст */
 @font-face {
   font-family: "TT Interfaces";
   src: url("../fonts/FontsFree-Net-TTInterfaces-Light-1.ttf") format("truetype");
 }
-
-<<<<<<< HEAD
-img {
-  width: "auto";
-  height: "auto";
-  /* Other styles */
-}
-
-=======
-/* Integral CF Regular */
-@import url("https://db.onlinewebfonts.com/c/f1fcc5aed1e20fc0cdb9f8a7573625bd?family=Integral+CF+Regular");
-/* Campton */
-@import url("https://fonts.cdnfonts.com/css/campton");
-/* Gotham */
-@import url("https://fonts.cdnfonts.com/css/gotham-6");
->>>>>>> 78efa5ac11c7bb33460b175646c211ad9d6f3765
 
 html,
 body {
@@ -77,7 +58,7 @@ body {
   justify-content: space-around;
 }
 
-.items > div {
+.items>div {
   width: 20px;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.17);
@@ -87,22 +68,26 @@ body {
 .marquee {
   animation: scroll 100s linear infinite;
 }
+
 .reverse {
   animation-direction: reverse;
 }
 
 .items-wrap .text-6xl,
 .items-wrap .text-5xl {
-  color: rgba(255, 255, 255, 0.1); /* Цвет букв */
-  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 1); /* Обводка букв */
-  text-stroke: 1px rgba(255, 255, 255, 1); /* Обводка букв для не-WebKit браузеров */
+  color: rgba(255, 255, 255, 0.1);
+  /* Цвет букв */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 1);
+  /* Обводка букв */
+  text-stroke: 1px rgba(255, 255, 255, 1);
+  /* Обводка букв для не-WebKit браузеров */
 }
 
 .items-wrap .text-xs {
   color: rgba(255, 255, 255, 0.2);
 }
 
-.rotate > span {
+.rotate>span {
   transform: rotate(180deg);
 }
 
@@ -110,6 +95,7 @@ body {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-100% - 20px));
   }

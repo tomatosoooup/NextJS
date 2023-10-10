@@ -29,14 +29,8 @@ const Form = () => {
         scrollTrigger: {
           trigger: form.current,
           start: "0px bottom",
-<<<<<<< HEAD
           end: "bottom-=300px bottom",
           scrub: true,
-=======
-          end: "bottom-=100px bottom",
-          scrub: true,
-          fastScrollEnd: 1000,
->>>>>>> 78efa5ac11c7bb33460b175646c211ad9d6f3765
         },
         opacity: 0,
         right: 800,

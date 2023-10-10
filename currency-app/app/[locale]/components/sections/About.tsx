@@ -156,11 +156,7 @@ const About = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
-<<<<<<< HEAD
                   quality={10}
-=======
-                  loading="eager"
->>>>>>> 78efa5ac11c7bb33460b175646c211ad9d6f3765
                 />
               ))}
             </div>
