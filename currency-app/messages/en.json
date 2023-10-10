@@ -33,12 +33,12 @@
   "Services": {
     "h1": "SERVICES",
     "l1": "Cash exchange",
-    "l1-": "(buy/sell)",
+    "l1-": " (buy/sell)",
     "l2": "Cash transfers between cities and countries",
     "l3": "Bank transfers using next payment systems: SEPA, SWIFT, PROSTIR",
-    "l3-": "(Polski Standart Platnosci)",
+    "l3-": " (Polski Standart Platnosci)",
     "l4": "Fintech banks top up",
-    "l4-": "(Revolut, Wise, Zen, etc.)"
+    "l4-": " (Revolut, Wise, Zen, etc.)"
   },
   "Footer": {}
 }

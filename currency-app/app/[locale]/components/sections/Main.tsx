@@ -15,14 +15,14 @@ const images = [
     src: "./images/Bank.svg",
     width: 700,
     height: 700,
-    class: "hidden lg:block pointer-events-none",
+    class: "hidden lg:block pointer-events-none filter",
   },
   {
     alt: "Bank-2",
-    src: "./images/Bank-2.svg",
+    src: "./images/Bank.svg",
     width: 500,
     height: 500,
-    class: "lg:hidden mx-auto !relative pointer-events-none",
+    class: "lg:hidden mx-auto relative pointer-events-none filter",
   },
 ];
 
@@ -32,7 +32,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl m-auto">
+      <div className="max-w-screen-2xl m-auto ">
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
@@ -113,6 +113,7 @@ const Main = () => {
             width={375}
             height={375}
             className="absolute left-0 -bottom-36 hidden lg:block pointer-events-none"
+            loading="eager"
           />
         </section>
       </div>

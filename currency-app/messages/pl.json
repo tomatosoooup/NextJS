@@ -33,12 +33,12 @@
   "Services": {
     "h1": "USŁUGI",
     "l1": "Wymiana gotówkowa kryptowalut ",
-    "l1-": "(kupno/sprzedaż)",
+    "l1-": " (kupno/sprzedaż)",
     "l2": "Transfery gotówkowe między miastami i krajami",
     "l3": "Przelewy bankowe przy użyciu następujących systemów płatniczych: SEPA, SWIFT, PROSTIR",
-    "l3-": "(Polski Standart Płatności)",
+    "l3-": " (Polski Standart Płatności)",
     "l4": "Doładowania fintechów",
-    "l4-": "(Revolut, Wise, Zen itd.)"
+    "l4-": " (Revolut, Wise, Zen itd.)"
   },
   "Footer": {}
 }

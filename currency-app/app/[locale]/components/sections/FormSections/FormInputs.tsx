@@ -1,3 +1,4 @@
+import Button from "@/components/buttons/Button";
 import Input from "@/components/inputs/Input";
 import SelectDrop from "@/components/inputs/SelectDrop";
 import { getCurrencyConversionRate } from "app/api/getCurrency";
@@ -12,12 +13,11 @@ const FormInputs = () => {
 
   const [fromCurrency, setFromCurrency] = useState("");
   const [toCurrency, setToCurrency] = useState("");
-  const [conversationFromRate, setConversationFromRate] = useState<Rate>(null);
-  const [conversationToRate, setConversationToRate] = useState<Rate>(null);
+  const [conversationRate, setConversationRate] = useState<Rate>(null);
   const bothCurrenciesSelected = fromCurrency && toCurrency;
 
   const [amount, setAmount] = useState<string>("");
-  const [result, setResult] = useState("");
+  const [result2, setResult] = useState("");
 
   const convertCurrency = useCallback(async () => {
     try {
@@ -29,45 +29,40 @@ const FormInputs = () => {
         const percentage = mid * 0.98;
         const result = parseFloat(percentage.toFixed(6));
 
-        setConversationFromRate(result);
-      }
-      const data2 = await getCurrencyConversionRate(toCurrency, fromCurrency);
+        setConversationRate(result);
 
-      if (Array.isArray(data2.to) && data2.to.length > 0) {
-        const conversionInfo = data2.to[0];
-        const mid = parseFloat(conversionInfo.mid);
-        const percentage = mid * 0.98;
-        const result2 = parseFloat(percentage.toFixed(6));
+        if (fromCurrency === toCurrency) {
+          setConversationRate(1);
+        }
 
-        setConversationToRate(result2);
+        if (amount.length !== 0) {
+          const newAmount = amount;
+          if (newAmount) {
+            const convertedAmount = parseFloat(newAmount) * conversationRate;
+            const roundedAmount = convertedAmount.toFixed(2);
+            setResult(roundedAmount);
+            console.log(result2);
+          } else {
+            setResult("");
+          }
+        }
       }
     } catch (error) {
       console.error(error.message);
     }
+  }, [fromCurrency, toCurrency, bothCurrenciesSelected]);
 
-    if (fromCurrency === toCurrency) {
-      setConversationFromRate(1);
-      setConversationToRate(1);
-    }
-  }, [fromCurrency, toCurrency]);
-
-  // Вызываем функцию convertCurrency только если оба поля выбраны
   useEffect(() => {
     if (bothCurrenciesSelected) {
       convertCurrency();
     }
-  }, [bothCurrenciesSelected, fromCurrency, toCurrency, convertCurrency]);
-
-  useEffect(() => {
-    const newAmount = amount;
-    if (newAmount) {
-      const convertedAmount = parseFloat(newAmount) * conversationFromRate;
-      const roundedAmount = convertedAmount.toFixed(2);
-      setResult(roundedAmount);
-    } else {
-      setResult("");
-    }
-  }, [amount, conversationFromRate, convertCurrency]);
+  }, [
+    bothCurrenciesSelected,
+    fromCurrency,
+    toCurrency,
+    convertCurrency,
+    amount,
+  ]);
 
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = event.target.value;
@@ -76,6 +71,7 @@ const FormInputs = () => {
 
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
+
   const fonts = useFonts();
   const t = useTranslations("Form");
   return (
@@ -91,29 +87,26 @@ const FormInputs = () => {
             onCurrencyFromChoose={setFromCurrency}
           />
         </div>
-        <TfiReload size={18} color="#828282" className="mt-5" />
+        <TfiReload size={18} color="#828282" className="mt-7" />
         <div className="w-1/2">
           <div className="mb-2">{t("get")}</div>
           <SelectDrop options={options2} onCurrencyToChoose={setToCurrency} />
         </div>
       </div>
       <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
-        <div className="w-1/2 relative">
+        <div className="w-full lg:w-1/2 relative">
           <div className="mb-2 ">{t("sum")}</div>
           <Input id="input-1" onChange={handleAmountChange} />
           {bothCurrenciesSelected && (
             <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
-              1 {fromCurrency} = {conversationFromRate} {toCurrency}
+              1 {fromCurrency} = {conversationRate} {toCurrency}
             </span>
           )}
         </div>
-        <div className="w-1/2 relative">
-          <Input disabled={true} id="input-2" value={result} />
-          {bothCurrenciesSelected && (
-            <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
-              1 {toCurrency} = {conversationToRate} {fromCurrency}
-            </span>
-          )}
+        <div className="w-1/2 relative hidden lg:flex h-[45px]">
+          <Button fullWidth>
+            <span className="text-white pt-1 text-xs">{t("button")}</span>
+          </Button>
         </div>
       </div>
     </div>
