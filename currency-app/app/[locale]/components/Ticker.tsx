@@ -140,7 +140,7 @@ const Ticker = () => {
         </div>
       </div>
       {/* REVERSE */}
-      <div className="items-wrap" style={{ fontFamily: `${fonts.tt}` }}>
+      <div className="items-wrap gap-2" style={{ fontFamily: `${fonts.tt}` }}>
         <div className="items marquee reverse rotate text-xs leading-none">
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>

@@ -156,6 +156,7 @@ const About = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
+                  quality={10}
                 />
               ))}
             </div>

@@ -30,10 +30,9 @@ const Form = () => {
         right: 800,
         scrollTrigger: {
           trigger: form.current,
-          start: "top-=900px",
-          end: "+=500px",
+          start: "0px bottom",
+          end: "bottom-=300px bottom",
           scrub: true,
-          markers: true,
         },
       });
 

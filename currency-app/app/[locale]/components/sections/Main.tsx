@@ -102,6 +102,7 @@ const Main = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
+                  loading="eager"
                 />
               ))}
             </div>
