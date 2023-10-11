@@ -3,11 +3,10 @@
 import Image from "next/image";
 import Button from "../buttons/Button";
 
-// import Bank from "./Bank";
-
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "components/Numbers";
+import { Reveal } from "../Reveal";
 
 const images = [
   {
@@ -61,49 +60,60 @@ const Main = () => {
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
               />
-              <h1
-                className="text-3xl
+              <Reveal options={{ opc: 0, x: -500, del: 0.25 }}>
+                <h1
+                  className="text-3xl
               md:text-6xl 
               uppercase 
               mb-0
               sm:mb-5 
               font-bold 
               relative"
-                style={{ fontFamily: `${fonts.ct}` }}
-              >
-                Cryptocurrency exchange
-              </h1>
-              <div className="flex justify-center lg:justify-start">
-                <div className="my-5 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
-                <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
-              </div>
-              <p
-                className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
-                style={{ fontFamily: `${fonts.tt}` }}
-              >
-                <span className="font-semibold">{t("p1")}</span>
-                <br />
-                <br />
-                <span className="font-light">{t("p2")}</span>
-              </p>
-              <div className="hidden lg:block mt-10">
-                <Button>
-                  <span className="pt-1">{t("button")}</span>
-                </Button>
-              </div>
+                  style={{ fontFamily: `${fonts.ct}` }}
+                >
+                  Cryptocurrency exchange
+                </h1>
+              </Reveal>
+              <Reveal options={{ opc: 0, x: -500, del: 0.5 }} width="100%">
+                <div className="flex justify-center lg:justify-start">
+                  <div className="my-5 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
+                  <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+                </div>
+              </Reveal>
+              <Reveal options={{ opc: 0, x: -500, del: 0.75 }}>
+                <p
+                  className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
+                  style={{ fontFamily: `${fonts.tt}` }}
+                >
+                  <span className="font-semibold">{t("p1")}</span>
+                  <br />
+                  <br />
+
+                  <span className="font-light">{t("p2")}</span>
+                </p>
+              </Reveal>
+
+              <Reveal options={{ opc: 0, x: -500, del: 1 }}>
+                <div className="hidden lg:block mt-10">
+                  <Button>
+                    <span className="pt-1">{t("button")}</span>
+                  </Button>
+                </div>
+              </Reveal>
             </div>
             <div>
-              {/* images */}
-              {images.map((img) => (
-                <Image
-                  alt={img.alt}
-                  src={img.src}
-                  width={img.width}
-                  height={img.height}
-                  className={img.class}
-                  key={img.alt}
-                  loading="eager"
-                />
+              {images.map((img, index) => (
+                <Reveal options={{ opc: 0, x: 500, del: 1 }} key={index}>
+                  <Image
+                    alt={img.alt}
+                    src={img.src}
+                    width={img.width}
+                    height={img.height}
+                    className={img.class}
+                    key={img.alt}
+                    loading="eager"
+                  />
+                </Reveal>
               ))}
             </div>
           </div>

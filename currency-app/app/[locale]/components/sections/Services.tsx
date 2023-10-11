@@ -2,13 +2,11 @@
 
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
 
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
+import { Reveal } from "../Reveal";
 
 const images = [
   {
@@ -119,34 +117,8 @@ const Services = () => {
     },
   ];
 
-  function AnimatedText({
-    children,
-    className,
-  }: {
-    children: React.ReactNode;
-    className: string;
-  }) {
-    const text = useRef(null);
-
-    useLayoutEffect(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.from(text.current, {
-        scrollTrigger: {
-          trigger: text.current,
-          start: "0px bottom",
-          end: "bottom+=175px bottom",
-          scrub: true,
-        },
-        x: -400,
-        opacity: 0,
-      });
-    }, []);
-    return (
-      <li ref={text} className={className}>
-        {children}
-      </li>
-    );
+  function AnimatedText({ children }) {
+    return <Reveal options={{ opc: 0, x: -500, del: 0.25 }}>{children}</Reveal>;
   }
 
   return (
@@ -179,18 +151,22 @@ const Services = () => {
             </div>
             <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative mt-3">
               {liList.map((li) => (
-                <AnimatedText className="relative pl-4" key={li.content}>
-                  {li.content}
-                  {li.subcontent}
+                <AnimatedText key={li.content}>
+                  <li className="relative pl-4">
+                    {li.content}
+                    {li.subcontent}
+                  </li>
                 </AnimatedText>
               ))}
             </ul>
             {/* Second ul */}
             <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%] relative">
               {liListSecond.map((li) => (
-                <AnimatedText className="relative pl-4" key={li.content}>
-                  {li.content}
-                  {li.subcontent}
+                <AnimatedText key={li.content}>
+                  <li className="relative pl-4">
+                    {li.content}
+                    {li.subcontent}
+                  </li>
                 </AnimatedText>
               ))}
             </ul>
