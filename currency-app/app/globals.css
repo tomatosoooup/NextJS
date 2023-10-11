@@ -97,6 +97,6 @@ body {
   }
 
   to {
-    transform: translateX(calc(-100% - 20px));
+    transform: translateX(-100%);
   }
 }
