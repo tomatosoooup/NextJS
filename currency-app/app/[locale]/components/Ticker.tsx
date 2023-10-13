@@ -1,7 +1,7 @@
 import { useFonts } from "providers/FontProvider";
 import React from "react";
 
-const Ticker = React.memo((props) => {
+const Ticker = React.memo(() => {
   const fonts = useFonts();
   return (
     <>
