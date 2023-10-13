@@ -1,6 +1,7 @@
 import { useFonts } from "providers/FontProvider";
+import React from "react";
 
-const Ticker = () => {
+const Ticker = React.memo((props) => {
   const fonts = useFonts();
   return (
     <>
@@ -187,6 +188,6 @@ const Ticker = () => {
       </div>
     </>
   );
-};
+});
 
 export default Ticker;

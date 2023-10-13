@@ -1,5 +1,3 @@
-"use client";
-
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 
