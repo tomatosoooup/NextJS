@@ -1,12 +1,12 @@
 "use client";
 
 import { useFonts } from "providers/FontProvider";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 
 const DropDown = ({ locale }: { locale?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const selectedLanguage = locale ? locale.toUpperCase() : "ENG";
+  const selectedLanguage = locale ? locale.toUpperCase() : "EN";
 
   const fonts = useFonts();
 
