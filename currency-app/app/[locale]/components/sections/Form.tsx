@@ -4,9 +4,7 @@ import Image from "next/image";
 import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 import Numbers from "components/Numbers";
@@ -17,42 +15,6 @@ import FormLogo from "./FormSections/FormLogo";
 const Form = () => {
   const fonts = useFonts();
   const t = useTranslations("Form");
-
-  const form = useRef(null);
-  const telegram = useRef(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    let ctx = gsap.context(() => {
-      gsap.from(form.current, {
-        scrollTrigger: {
-          trigger: form.current,
-          start: "0px bottom",
-          end: "bottom-=100px bottom",
-          scrub: true,
-          fastScrollEnd: 1000,
-        },
-        opacity: 0,
-        right: 800,
-      });
-
-      gsap.from(telegram.current, {
-        opacity: 0,
-        scale: 0,
-        scrollTrigger: {
-          trigger: telegram.current,
-          start: "top-=600px 50%",
-          end: "top-=100px 50%",
-          scrub: true,
-        },
-      });
-    });
-
-    return () => {
-      ctx.revert();
-    };
-  }, []);
 
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedTwo, setIsClickedTwo] = useState(false);
@@ -67,7 +29,7 @@ const Form = () => {
 
   return (
     <>
-      <div className="relative" ref={form}>
+      <div className="relative">
         <form
           id="form"
           className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-20 lg:mb-28 relative pt-5 pb-10 z-10"
@@ -159,7 +121,6 @@ const Form = () => {
             width={150}
             height={150}
             className="absolute top-64 right-20 hidden 2xl:block"
-            ref={telegram}
             loading="eager"
           />
         </Link>

@@ -1,15 +1,11 @@
-"use client";
-
 import { useFonts } from "providers/FontProvider";
 import Image from "next/image";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 
 import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
+import { Reveal } from "../Reveal";
 
 const images = [
   {
@@ -86,41 +82,9 @@ const About = () => {
   ];
 
   function AnimatedText({ children }) {
-    const text = useRef(null);
-
-    useLayoutEffect(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.from(text.current, {
-        scrollTrigger: {
-          trigger: text.current,
-          start: "0px bottom",
-          end: "bottom+=300px bottom",
-          scrub: true,
-        },
-        x: 400,
-        opacity: 0,
-      });
-    }, []);
-    return <li ref={text}>{children}</li>;
+    return <Reveal options={{ opc: 0, x: 500, del: 0.25 }}>{children}</Reveal>;
   }
 
-  const image = useRef(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(image.current, {
-      scrollTrigger: {
-        trigger: image.current,
-        start: "0px bottom",
-        end: "bottom+=300px bottom",
-        scrub: true,
-      },
-      opacity: 0,
-      scale: 0,
-    });
-  }, []);
   return (
     <>
       <div className="relative">
@@ -156,11 +120,11 @@ const About = () => {
                   height={img.height}
                   className={img.class}
                   key={img.alt}
-                  loading="eager"
+                  quality={10}
                 />
               ))}
             </div>
-            <div className="relative hidden lg:block" ref={image}>
+            <div className="relative hidden lg:block">
               {/* images */}
               {images.map((img) => (
                 <Image

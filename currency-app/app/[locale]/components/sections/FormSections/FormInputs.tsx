@@ -50,7 +50,14 @@ const FormInputs = () => {
     } catch (error) {
       console.error(error.message);
     }
-  }, [fromCurrency, toCurrency, bothCurrenciesSelected]);
+  }, [
+    fromCurrency,
+    toCurrency,
+    bothCurrenciesSelected,
+    conversationRate,
+    amount,
+    result2,
+  ]);
 
   useEffect(() => {
     if (bothCurrenciesSelected) {

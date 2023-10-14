@@ -1,6 +1,7 @@
 import { useFonts } from "providers/FontProvider";
+import React from "react";
 
-const Ticker = () => {
+const Ticker = React.memo(() => {
   const fonts = useFonts();
   return (
     <>
@@ -139,7 +140,7 @@ const Ticker = () => {
         </div>
       </div>
       {/* REVERSE */}
-      <div className="items-wrap" style={{ fontFamily: `${fonts.tt}` }}>
+      <div className="items-wrap gap-2" style={{ fontFamily: `${fonts.tt}` }}>
         <div className="items marquee reverse rotate text-xs leading-none">
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
@@ -187,6 +188,6 @@ const Ticker = () => {
       </div>
     </>
   );
-};
+});
 
 export default Ticker;
