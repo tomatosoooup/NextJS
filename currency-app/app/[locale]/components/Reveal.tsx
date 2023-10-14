@@ -4,7 +4,13 @@ import { motion, useInView, useAnimation } from "framer-motion";
 interface IProps {
   children: JSX.Element;
   width?: "fit-content" | "100%";
-  options?: Record<string, any>;
+  options?: {
+    opc?: number;
+    x?: number;
+    del?: number;
+    bottom?: number;
+    pos?: string;
+  };
 }
 
 export const Reveal = ({
@@ -24,21 +30,23 @@ export const Reveal = ({
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ width }}>
       <motion.div
         variants={{
           hidden: {
-            opacity: options.opc,
-            x: options.x,
+            opacity: options.opc || 0,
+            x: options.x || 0,
+            y: options.bottom || 0,
           },
           visible: {
             opacity: 1,
             x: 0,
+            y: 0,
           },
         }}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        transition={{ duration: 1, delay: options.del }}
+        transition={{ duration: 1, delay: options.del || 0.5 }}
       >
         {children}
       </motion.div>

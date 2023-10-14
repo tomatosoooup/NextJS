@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import Button from "@/components/buttons/Button";
 import Input from "@/components/inputs/Input";
 import SelectDrop from "@/components/inputs/SelectDrop";
@@ -88,39 +89,55 @@ const FormInputs = () => {
     >
       <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
         <div className="w-1/2">
-          <div className="mb-2">{t("give")}</div>
-          <SelectDrop
-            options={options}
-            // onCurrencyFromChoose={setFromCurrency}
-          />
+          <Reveal options={{ opc: 0, x: -500, del: 0.85 }} width="100%">
+            <>
+              <div className="mb-2">{t("give")}</div>
+              <SelectDrop
+                options={options}
+                // onCurrencyFromChoose={setFromCurrency}
+              />
+            </>
+          </Reveal>
         </div>
-        <TfiReload size={18} color="#828282" className="mt-7" />
+        <Reveal options={{ opc: 0, x: -500, del: 0.65 }}>
+          <TfiReload size={18} color="#828282" className="mt-7" />
+        </Reveal>
         <div className="w-1/2">
-          <div className="mb-2">{t("get")}</div>
-          <SelectDrop
-            options={options2}
-            // onCurrencyToChoose={setToCurrency}
-          />
+          <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
+            <>
+              <div className="mb-2">{t("get")}</div>
+              <SelectDrop
+                options={options2}
+                // onCurrencyToChoose={setToCurrency}
+              />
+            </>
+          </Reveal>
         </div>
       </div>
       <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
         <div className="w-full lg:w-1/2 relative">
-          <div className="mb-2 ">{t("sum")}</div>
-          <Input
-            id="input-1"
-            // onChange={handleAmountChange}
-          />
-          {/* {bothCurrenciesSelected && (
+          <Reveal options={{ opc: 0, x: -500, del: 0.65 }} width="100%">
+            <>
+              <div className="mb-2 ">{t("sum")}r</div>
+              <Input
+                id="input-1"
+                // onChange={handleAmountChange}
+              />
+              {/* {bothCurrenciesSelected && (
             {fromCurrency} = {conversationRate} {toCurrency}
           )} */}
-          <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
-            1
-          </span>
+              <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
+                1
+              </span>
+            </>
+          </Reveal>
         </div>
         <div className="w-1/2 relative hidden lg:flex h-[45px]">
-          <Button fullWidth>
-            <span className="text-white pt-1 text-xs">{t("button")}</span>
-          </Button>
+          <Reveal options={{ opc: 0, x: -500, del: 0.45 }}>
+            <Button fullWidth>
+              <span className="text-white pt-1 text-xs">{t("button")}</span>
+            </Button>
+          </Reveal>
         </div>
       </div>
     </div>

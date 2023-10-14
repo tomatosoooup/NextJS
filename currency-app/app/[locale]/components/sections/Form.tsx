@@ -9,8 +9,10 @@ import { useTranslations } from "next-intl";
 
 import Numbers from "components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
-import FormButtons from "./FormSections/FormButtons";
 import FormLogo from "./FormSections/FormLogo";
+
+import { Reveal } from "../Reveal";
+import Button from "../buttons/Button";
 
 const Form = () => {
   const fonts = useFonts();
@@ -54,64 +56,83 @@ const Form = () => {
             spanClass="blur"
             nums={[0, 0, 1, 0]}
           />
-
           {/* Inputs */}
           <FormInputs />
           <div
             className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
           >
-            <div>
-              <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
-              <Input id="input-3" />
-            </div>
-            <div>
-              <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
-              <Input id="input-4" />
-            </div>
-            <div>
-              <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
-              <Input id="input-5" />
-            </div>
+            <Reveal options={{ opc: 0, x: 500, del: 0.25 }} width="100%">
+              <>
+                <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
+                <Input id="input-3" />
+              </>
+            </Reveal>
+            <Reveal options={{ opc: 0, x: 500, del: 0.35 }} width="100%">
+              <>
+                <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
+                <Input id="input-4" />
+              </>
+            </Reveal>
+            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+              <>
+                <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
+                <Input id="input-5" />
+              </>
+            </Reveal>
           </div>
-          <FormButtons />
+          <section className="lg:hidden">
+            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+              <div className="lg:hidden justify-center h-[50px] mt-10 px-5 order-4 lg:order-none">
+                <Button fullWidth>
+                  <span className="text-white  pt-1">{t("button")}</span>
+                </Button>
+              </div>
+            </Reveal>
+          </section>
+
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2"
             style={{ fontFamily: `${fonts.ct}` }}
           >
-            <div className="flex items-center gap-x-3 lg:ml-[52%]">
-              <div
-                className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
-                  isClicked ? "bg-[#9b9b9b]" : "bg-transparent"
-                }`}
-                onClick={handleCheck}
-              >
-                {isClicked && <BsCheck2 size={19} color="white" />}
-              </div>
-              I agree with
-              <Link href={"/"}>Terms and conditions of service</Link>
-            </div>
-            <div className="flex items-center gap-x-3 mt-2 lg:ml-[52%]">
-              <div
-                className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
-                  isClickedTwo ? "bg-[#9b9b9b]" : "bg-transparent"
-                }`}
-                onClick={handleCheckTwo}
-              >
-                {isClickedTwo && <BsCheck2 size={19} color="white" />}
-              </div>
-              I agree with
-              <Link href={"/"}>AML / CTF Terms</Link>
-            </div>
-            <Image
-              alt="qr-code"
-              src={"./images/qr.svg"}
-              width={100}
-              height={100}
-              className="absolute hidden lg:block right-20 top-0 pointer-events-none"
-              loading="eager"
-            />
+            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+              <>
+                <div className="flex items-center gap-x-3 lg:ml-[52%]">
+                  <div
+                    className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
+                      isClicked ? "bg-[#9b9b9b]" : "bg-transparent"
+                    }`}
+                    onClick={handleCheck}
+                  >
+                    {isClicked && <BsCheck2 size={19} color="white" />}
+                  </div>
+                  I agree with
+                  <Link href={"/"}>Terms and conditions of service</Link>
+                </div>
+                <div className="flex items-center gap-x-3 mt-2 lg:ml-[52%]">
+                  <div
+                    className={`w-5 h-5  border-[#828282] border rounded-sm cursor-pointer ${
+                      isClickedTwo ? "bg-[#9b9b9b]" : "bg-transparent"
+                    }`}
+                    onClick={handleCheckTwo}
+                  >
+                    {isClickedTwo && <BsCheck2 size={19} color="white" />}
+                  </div>
+                  I agree with
+                  <Link href={"/"}>AML / CTF Terms</Link>
+                </div>
+                <Image
+                  alt="qr-code"
+                  src={"./images/qr.svg"}
+                  width={100}
+                  height={100}
+                  className="absolute hidden lg:block right-20 top-0 pointer-events-none"
+                  loading="eager"
+                />
+              </>
+            </Reveal>
           </div>
+
           <FormLogo />
         </form>
         <Link href={"/"}>
