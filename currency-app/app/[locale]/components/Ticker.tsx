@@ -1,7 +1,8 @@
 import { useFonts } from "providers/FontProvider";
 import React from "react";
+import "./Ticker.css";
 
-const Ticker = React.memo(() => {
+const Ticker = React.memo(function Ticker() {
   const fonts = useFonts();
   return (
     <>
@@ -23,16 +24,8 @@ const Ticker = React.memo(() => {
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
         </div>
         <div className="items marquee reverse text-xs leading-none">
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
@@ -53,90 +46,41 @@ const Ticker = React.memo(() => {
       </div>
       {/* End of first marquee */}
       <div className="items-wrap" style={{ fontFamily: `${fonts.cf}` }}>
-        <div className="items marquee text-5xl lg:text-6xl leading-none">
-          <div></div>
+        <div className="items marquee text-5xl lg:text-6xl leading-none dots">
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
-          <span>KNOW ME</span>
-          <div></div>
-          <span>LiKE ME</span>
-          <div></div>
-          <span>TRUST ME</span>
-          <div></div>
-          <span>PAY ME</span>
-          <div></div>
         </div>
-        <div className="items marquee text-5xl lg:text-6xl leading-none">
+        <div className="items marquee text-5xl lg:text-6xl leading-none dots">
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
           <span>KNOW ME</span>
-          <div></div>
           <span>LiKE ME</span>
-          <div></div>
           <span>TRUST ME</span>
-          <div></div>
           <span>PAY ME</span>
-          <div></div>
-          <span>KNOW ME</span>
-          <div></div>
-          <span>LiKE ME</span>
-          <div></div>
-          <span>TRUST ME</span>
-          <div></div>
-          <span>PAY ME</span>
-          <div></div>
         </div>
       </div>
       {/* REVERSE */}
@@ -158,16 +102,8 @@ const Ticker = React.memo(() => {
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
         </div>
         <div className="items marquee reverse rotate text-xs leading-none">
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
-          <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
           <span>IN CRYPTO WE TRUST</span>
@@ -189,5 +125,6 @@ const Ticker = React.memo(() => {
     </>
   );
 });
+Ticker.displayName = "Ticker";
 
 export default Ticker;

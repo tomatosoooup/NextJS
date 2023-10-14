@@ -80,7 +80,7 @@ const Main = () => {
                   <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
                 </div>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500, del: 0.75 }}>
+              <Reveal options={{ opc: 0, x: -500, del: 0.5 }}>
                 <p
                   className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
                   style={{ fontFamily: `${fonts.tt}` }}
@@ -93,7 +93,7 @@ const Main = () => {
                 </p>
               </Reveal>
 
-              <Reveal options={{ opc: 0, x: -500, del: 1 }}>
+              <Reveal options={{ opc: 0, x: -500, del: 0.75 }}>
                 <div className="hidden lg:block mt-10">
                   <Button>
                     <span className="pt-1">{t("button")}</span>
@@ -103,7 +103,7 @@ const Main = () => {
             </div>
             <div>
               {images.map((img, index) => (
-                <Reveal options={{ opc: 0, x: 500, del: 1 }} key={index}>
+                <Reveal options={{ opc: 0, x: 500, del: 0.75 }} key={index}>
                   <Image
                     alt={img.alt}
                     src={img.src}

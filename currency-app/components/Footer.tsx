@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className="lg:ml-10 order-1">
           <h4
-            className="uppercase text-white text-lg font-black pb-6 lg:pb-8 text-center lg:text-left"
+            className="uppercase text-white text-lg font-black pb-6 lg:pb-8 lg:mt-5 text-center lg:text-left"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             Документы
