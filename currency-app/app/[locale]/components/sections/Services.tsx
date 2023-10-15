@@ -1,7 +1,7 @@
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
 import { Reveal } from "../Reveal";

@@ -1,6 +1,6 @@
 import Input from "../inputs/Input";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 

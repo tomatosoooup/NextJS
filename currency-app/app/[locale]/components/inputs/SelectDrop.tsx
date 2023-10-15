@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import classes from "../buttons/Button.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 type Option = {
   type: string;

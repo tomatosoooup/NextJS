@@ -2,7 +2,7 @@
 
 import { useFonts } from "providers/FontProvider";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Footer = () => {
   const fonts = useFonts();

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Button from "../buttons/Button";
 
 import { useFonts } from "providers/FontProvider";

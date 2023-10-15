@@ -1,6 +1,6 @@
 import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 import { Link as ScrollLink } from "react-scroll";
