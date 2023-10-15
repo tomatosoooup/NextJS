@@ -1,5 +1,5 @@
 import { useFonts } from "providers/FontProvider";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { useTranslations } from "next-intl";
 
@@ -85,95 +85,102 @@ const About = () => {
     return <Reveal options={{ opc: 0, x: 500, del: 0.25 }}>{children}</Reveal>;
   }
 
-  return (
-    <>
-      <div className="relative">
-        <Numbers
-          containerClass="text-7xl -top-32 left-24"
-          spanClass="blur opacity-40"
-          nums={[0, 0, 1, 0]}
-        />
-        <section className="relative max-w-screen-2xl m-auto" id="about">
-          <h2
-            className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
-            style={{ fontFamily: `${fonts.tt}` }}
-          >
-            {t("h1")}
-          </h2>
-          <div className="flex justify-center">
-            <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
-            <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+  return <>
+    <div className="relative">
+      <Numbers
+        containerClass="text-7xl -top-32 left-24"
+        spanClass="blur opacity-40"
+        nums={[0, 0, 1, 0]}
+      />
+      <section className="relative max-w-screen-2xl m-auto" id="about">
+        <h2
+          className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
+          style={{ fontFamily: `${fonts.tt}` }}
+        >
+          {t("h1")}
+        </h2>
+        <div className="flex justify-center">
+          <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
+          <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+        </div>
+        <p
+          className="text-center text-white text-xl font-semibold px-5"
+          style={{ fontFamily: `${fonts.tt}` }}
+        >
+          {t("p")}
+        </p>
+        <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
+          <div className="lg:hidden relative h-[250px] max-w-[400px] mx-auto">
+            {imagesMobile.map((img) => (
+              <Image
+                alt={img.alt}
+                src={img.src}
+                width={img.width}
+                height={img.height}
+                className={img.class}
+                key={img.alt}
+                quality={10}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
+            ))}
           </div>
-          <p
-            className="text-center text-white text-xl font-semibold px-5"
-            style={{ fontFamily: `${fonts.tt}` }}
-          >
-            {t("p")}
-          </p>
-          <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
-            <div className="lg:hidden relative h-[250px] max-w-[400px] mx-auto">
-              {imagesMobile.map((img) => (
-                <Image
-                  alt={img.alt}
-                  src={img.src}
-                  width={img.width}
-                  height={img.height}
-                  className={img.class}
-                  key={img.alt}
-                  quality={10}
-                />
-              ))}
-            </div>
-            <div className="relative hidden lg:block">
-              {/* images */}
-              {images.map((img) => (
-                <Image
-                  alt={img.alt}
-                  src={img.src}
-                  width={img.width}
-                  height={img.height}
-                  className={img.class}
-                  key={img.alt}
-                  loading="eager"
-                />
-              ))}
-            </div>
-            <div>
-              {/* text */}
-              <ul
-                className="flex 
-              flex-col 
-              gap-5 
-              my-5 
-              lg:my-20 
-              text-[#EAEAEA] 
-              font-thin 
-              text-lg 
-              px-5 
-              relative
-              "
-                style={{ fontFamily: `${fonts.tt}` }}
-              >
-                {liList.map((li, index) => (
-                  <AnimatedText key={index}>
-                    {li?.subcontent} {li.content}
-                  </AnimatedText>
-                ))}
-              </ul>
-            </div>
+          <div className="relative hidden lg:block">
+            {/* images */}
+            {images.map((img) => (
+              <Image
+                alt={img.alt}
+                src={img.src}
+                width={img.width}
+                height={img.height}
+                className={img.class}
+                key={img.alt}
+                loading="eager"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
+            ))}
           </div>
-        </section>
-        <Image
-          alt="globus"
-          src={"./images/globus.svg"}
-          width={500}
-          height={500}
-          className={`absolute right-0 -top-20 pointer-events-none hidden lg:block ${classes.img} ${classes.imgTop}`}
-          loading="eager"
-        />
-      </div>
-    </>
-  );
+          <div>
+            {/* text */}
+            <ul
+              className="flex 
+            flex-col 
+            gap-5 
+            my-5 
+            lg:my-20 
+            text-[#EAEAEA] 
+            font-thin 
+            text-lg 
+            px-5 
+            relative
+            "
+              style={{ fontFamily: `${fonts.tt}` }}
+            >
+              {liList.map((li, index) => (
+                <AnimatedText key={index}>
+                  {li?.subcontent} {li.content}
+                </AnimatedText>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <Image
+        alt="globus"
+        src={"./images/globus.svg"}
+        width={500}
+        height={500}
+        className={`absolute right-0 -top-20 pointer-events-none hidden lg:block ${classes.img} ${classes.imgTop}`}
+        loading="eager"
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
+    </div>
+  </>;
 };
 
 export default About;

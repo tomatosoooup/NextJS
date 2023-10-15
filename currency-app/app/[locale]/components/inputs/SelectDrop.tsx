@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import classes from "../buttons/Button.module.css";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 type Option = {
   type: string;
@@ -58,7 +58,10 @@ const SelectDrop: React.FC<SelectDropProps> = ({
           height={10}
           src={"./images/triangle.svg"}
           alt="triangle"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
         <ul
           className={`${
             isOpen ? "block" : "hidden"

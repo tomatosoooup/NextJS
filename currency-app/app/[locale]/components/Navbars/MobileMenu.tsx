@@ -1,6 +1,6 @@
 import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Link as ScrollLink } from "react-scroll";
@@ -95,7 +95,10 @@ const MobileMenu = ({ isVisible, onClick }) => {
               src={"./images/telegram.svg"}
               width={30}
               height={30}
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </Link>
           <Link href={"/"}>
             <Image
@@ -103,7 +106,10 @@ const MobileMenu = ({ isVisible, onClick }) => {
               src={"./images/instagram.svg"}
               width={30}
               height={30}
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </Link>
         </div>
       </div>

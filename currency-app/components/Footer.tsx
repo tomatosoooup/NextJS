@@ -2,7 +2,7 @@
 
 import { useFonts } from "providers/FontProvider";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Footer = () => {
   const fonts = useFonts();
@@ -72,7 +72,10 @@ const Footer = () => {
                   src={"./images/telegram.svg"}
                   width={28}
                   height={28}
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Link>
               <Link href={"/"}>
                 <Image
@@ -80,7 +83,10 @@ const Footer = () => {
                   src={"./images/instagram.svg"}
                   width={28}
                   height={28}
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Link>
             </div>
           </div>
