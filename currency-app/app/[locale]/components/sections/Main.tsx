@@ -11,9 +11,9 @@ import { Reveal } from "../Reveal";
 const images = [
   {
     alt: "Bank",
-    src: "./images/Bank.svg",
-    width: 700,
-    height: 700,
+    src: "/images/Bank.png",
+    width: 600,
+    height: 415,
     class: "hidden lg:block pointer-events-none filter",
   },
   {
@@ -112,6 +112,7 @@ const Main = () => {
                     className={img.class}
                     key={img.alt}
                     loading="eager"
+                    layout="responsive"
                   />
                 </Reveal>
               ))}
@@ -124,6 +125,7 @@ const Main = () => {
             height={375}
             className="absolute left-0 -bottom-36 hidden lg:block pointer-events-none"
             loading="eager"
+            quality={100}
           />
         </section>
       </div>

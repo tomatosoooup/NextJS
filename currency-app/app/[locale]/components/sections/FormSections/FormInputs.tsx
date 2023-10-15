@@ -118,7 +118,7 @@ const FormInputs = () => {
         <div className="w-full lg:w-1/2 relative">
           <Reveal options={{ opc: 0, x: -500, del: 0.65 }} width="100%">
             <>
-              <div className="mb-2 ">{t("sum")}r</div>
+              <div className="mb-2 ">{t("sum")}</div>
               <Input
                 id="input-1"
                 // onChange={handleAmountChange}
@@ -133,7 +133,7 @@ const FormInputs = () => {
           </Reveal>
         </div>
         <div className="w-1/2 relative hidden lg:flex h-[45px]">
-          <Reveal options={{ opc: 0, x: -500, del: 0.45 }}>
+          <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
             <Button fullWidth>
               <span className="text-white pt-1 text-xs">{t("button")}</span>
             </Button>

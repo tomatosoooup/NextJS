@@ -12,7 +12,8 @@ const images = [
     width: 475,
     height: 475,
     class: `hidden lg:block absolute right-12 top-20 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
-    src: "./images/sepa.svg",
+    src: "/images/sepa.png",
+    quality: 100,
   },
   {
     alt: "dollar",
@@ -20,6 +21,7 @@ const images = [
     height: 1100,
     class: `hidden lg:block absolute -left-40 -bottom-80 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "./images/dollar.svg",
+    quality: 60,
   },
   {
     alt: "dollar-2",
@@ -27,6 +29,7 @@ const images = [
     height: 400,
     class: `lg:hidden absolute -left-0 -bottom-44 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "./images/dollar-2.svg",
+    quality: 60,
   },
   {
     alt: "swift",
@@ -34,6 +37,7 @@ const images = [
     height: 375,
     class: `hidden lg:block absolute -right-0 bottom-32 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "./images/swift.svg",
+    quality: 10,
   },
   {
     alt: "swift-mobile",
@@ -41,6 +45,7 @@ const images = [
     height: 250,
     class: `absolute right-0 top-32 lg:hidden pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "./images/swift-2.svg",
+    quality: 10,
   },
 ];
 
@@ -178,6 +183,7 @@ const Services = () => {
               className={img.class}
               key={img.alt}
               loading="eager"
+              quality={img.quality}
             />
           ))}
         </div>
