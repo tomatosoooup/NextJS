@@ -92,7 +92,6 @@ const Main = () => {
                   <span className="font-light">{t("p2")}</span>
                 </p>
               </Reveal>
-
               <Reveal options={{ opc: 0, x: -500, del: 0.75 }}>
                 <div className="hidden lg:block mt-10">
                   <Button>
