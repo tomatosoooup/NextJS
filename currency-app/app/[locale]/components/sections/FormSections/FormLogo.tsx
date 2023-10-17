@@ -7,7 +7,7 @@ const FormLogo = () => {
     <>
       <div
         className="text-center font-medium text-white mx-auto  mt-10 lg:absolute lg:bottom-20 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
-        style={{ fontFamily: `${fonts.ct}` }}
+        style={{ fontFamily: `${fonts.cf}` }}
       >
         <Reveal options={{ opc: 0, x: 0, del: 0.45, bottom: 300 }}>
           <>
@@ -18,7 +18,10 @@ const FormLogo = () => {
               <span className="text-5xl lg:text-7xl  tracking-[0.7rem] font-extrabold">
                 KLTP
               </span>
-              <span className="text-sm md:text- lg:text-3xl tracking-[0.7rem] lowercase font-light leading-4">
+              <span
+                className="text-sm md:text- lg:text-3xl tracking-[0.9rem] lowercase font-extralight leading-4"
+                style={{ fontFamily: `${fonts.ct}` }}
+              >
                 exchange
               </span>
               <Reveal options={{ opc: 0, x: 500, del: 0.25 }}>

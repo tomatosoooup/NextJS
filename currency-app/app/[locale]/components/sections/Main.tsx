@@ -67,8 +67,9 @@ const Main = () => {
             uppercase 
             mb-0
             sm:mb-5 
-            font-bold 
-            relative"
+            font-black 
+            relative
+            !leading-tight"
                   style={{ fontFamily: `${fonts.ct}` }}
                 >
                   Cryptocurrency exchange

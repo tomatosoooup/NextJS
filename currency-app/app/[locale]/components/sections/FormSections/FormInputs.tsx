@@ -105,7 +105,7 @@ const FormInputs = () => {
         <div className="w-1/2">
           <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
             <>
-              <div className="mb-2">{t("get")}</div>
+              <div className="mb-1">{t("get")}</div>
               <SelectDrop
                 options={options2}
                 // onCurrencyToChoose={setToCurrency}
@@ -118,7 +118,7 @@ const FormInputs = () => {
         <div className="w-full lg:w-1/2 relative">
           <Reveal options={{ opc: 0, x: -500, del: 0.65 }} width="100%">
             <>
-              <div className="mb-2 ">{t("sum")}</div>
+              <div className="mb-1 ">{t("sum")}</div>
               <Input
                 id="input-1"
                 // onChange={handleAmountChange}

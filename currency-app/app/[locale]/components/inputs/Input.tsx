@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { useFonts } from "providers/FontProvider";
 
 interface InputProps {
   id: string;
@@ -18,6 +19,7 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
 }) => {
+  const fonts = useFonts();
   return (
     <>
       <div>
@@ -33,16 +35,18 @@ const Input: React.FC<InputProps> = ({
             w-full
             rounded-md
             p-2
+            px-5
             ring-1
             ring-inset
-            ring-[#828282]
-            border
+            ring-[#929292]/50
+            outline-none
             bg-transparent 
             placeholder:text-[#929292]
-            text-[#929292]
+            text-[#929292]/60
 `,
             disabled && "cursor-default bg-transparent opacity-50"
           )}
+          style={{ fontFamily: `${fonts.ct}` }}
         />
       </div>
     </>

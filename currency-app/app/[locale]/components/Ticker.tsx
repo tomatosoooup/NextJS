@@ -46,7 +46,7 @@ const Ticker = React.memo(function Ticker() {
       </div>
       {/* End of first marquee */}
       <div className="items-wrap" style={{ fontFamily: `${fonts.cf}` }}>
-        <div className="items marquee text-5xl lg:text-6xl leading-none dots">
+        <div className="items marquee text-5xl lg:text-6xl leading-none dots mb-4">
           <span>KNOW ME</span>
           <span>LiKE ME</span>
           <span>TRUST ME</span>
@@ -64,7 +64,7 @@ const Ticker = React.memo(function Ticker() {
           <span>TRUST ME</span>
           <span>PAY ME</span>
         </div>
-        <div className="items marquee text-5xl lg:text-6xl leading-none dots">
+        <div className="items marquee text-5xl lg:text-6xl leading-none dots mb-4">
           <span>KNOW ME</span>
           <span>LiKE ME</span>
           <span>TRUST ME</span>

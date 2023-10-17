@@ -19,13 +19,13 @@ const Footer = () => {
             KLTP
           </span>
           <span
-            className="text-sm lg:text-xl tracking-[0.7rem] lowercase font-light leading-4"
+            className="text-sm lg:text-xl tracking-[0.8rem] lowercase font-thin leading-4"
             style={{ fontFamily: `${fonts.ct}` }}
           >
             exchange
           </span>
         </div>
-        <div className="order-2 relative">
+        <div className="order-2  lg:order-none relative">
           <h4
             className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10"
             style={{ fontFamily: `${fonts.tt}` }}
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="lg:ml-20 order-3 ">
+        <div className="lg:ml-20 order-3  lg:order-none">
           <h4
             className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10"
             style={{ fontFamily: `${fonts.tt}` }}
@@ -74,8 +74,9 @@ const Footer = () => {
                   height={28}
                   style={{
                     maxWidth: "100%",
-                    height: "auto"
-                  }} />
+                    height: "auto",
+                  }}
+                />
               </Link>
               <Link href={"/"}>
                 <Image
@@ -85,13 +86,14 @@ const Footer = () => {
                   height={28}
                   style={{
                     maxWidth: "100%",
-                    height: "auto"
-                  }} />
+                    height: "auto",
+                  }}
+                />
               </Link>
             </div>
           </div>
         </div>
-        <div className="lg:ml-10 order-1">
+        <div className="lg:ml-10 order-1 lg:order-none">
           <h4
             className="uppercase text-white text-lg font-black pb-6 lg:pb-8 lg:mt-5 text-center lg:text-left"
             style={{ fontFamily: `${fonts.tt}` }}
@@ -99,7 +101,7 @@ const Footer = () => {
             Документы
           </h4>
           <div
-            className="flex lg:flex-col text-white text-sm gap-10 font-light lg:gap-2"
+            className="flex lg:flex-col text-white/70 text-sm gap-10 font-extralight lg:gap-2"
             style={{ fontFamily: `${fonts.ct}` }}
           >
             <Link href={"/"}>AML / CTF terms</Link>

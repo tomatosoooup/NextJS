@@ -65,7 +65,7 @@ const About = React.memo(function About() {
     { content: t("l1") },
     {
       content: t("l2"),
-      subcontent: <span className="font-semibold">{t("l2-")}</span>,
+      subcontent: <span className="font-bold">{t("l2-")}</span>,
     },
     { content: t("l3") },
     { content: t("l4") },
@@ -73,7 +73,7 @@ const About = React.memo(function About() {
       content: t("l5"),
       subcontent: (
         <span
-          className="uppercase font-semibold mr-1"
+          className="uppercase font-bold mr-1"
           style={{ fontFamily: `${fonts.cf}` }}
         >
           KLTP EXCHANGE
@@ -96,17 +96,17 @@ const About = React.memo(function About() {
         />
         <section className="relative max-w-screen-2xl m-auto" id="about">
           <h2
-            className="text-center text-white text-4xl mt-12 lg:mt-24 font-semibold"
+            className="text-center text-white text-4xl mt-12 lg:mt-24 font-black uppercase"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             {t("h1")}
           </h2>
           <div className="flex justify-center">
-            <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
-            <div className="my-5 w-40 lg:w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+            <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
+            <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
           </div>
           <p
-            className="text-center text-white text-xl font-semibold px-5"
+            className="text-center text-white text-lg font-semibold px-5"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             {t("p")}

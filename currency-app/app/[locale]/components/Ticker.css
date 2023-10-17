@@ -19,8 +19,9 @@
 }
 
 .dots > span {
-  display: block;
+  display: flex;
   position: relative;
+  justify-content: center;
 }
 
 .dots > span::before {
@@ -30,8 +31,8 @@
   height: 20px;
   background-color: rgba(255, 255, 255, 0.17);
   border-radius: 50%;
-  left: -45px;
-  top: 20px;
+  left: -50px;
+  top: 50%;
 }
 
 .marquee {

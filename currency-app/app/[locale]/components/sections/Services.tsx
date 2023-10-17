@@ -59,7 +59,7 @@ const Services = React.memo(function Services() {
       content: t("l1"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l1-")}</span>
+          <span className="text-[#9F9F9F] font-semibold">{t("l1-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -74,7 +74,7 @@ const Services = React.memo(function Services() {
       content: t("l3"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]"> (UAH)</span>, PSP
+          <span className="text-[#9F9F9F] font-semibold"> (UAH)</span>, PSP
           <span>{t("l3-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
@@ -84,7 +84,7 @@ const Services = React.memo(function Services() {
       content: t("l4"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l4-")}</span>
+          <span className="text-[#9F9F9F] font-semibold">{t("l4-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -108,7 +108,7 @@ const Services = React.memo(function Services() {
       content: t("l7"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l7-")}</span>
+          <span className="text-[#9F9F9F] font-semibold">{t("l7-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -138,22 +138,23 @@ const Services = React.memo(function Services() {
           spanClass="blur opacity-40"
           nums={[0, 1, 0, 0, 0]}
         />
-        <div className="text-white relative">
+        <div className="text-white relative ">
           <div
             className="pt-10 lg:pt-32 pb-16 md:pb-28 px-5 relative"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <h2
-              className="text-5xl font-bold text-center md:text-left"
+              className="text-4xl font-semibold text-center md:text-left uppercase"
               id="services"
+              style={{ fontFamily: `${fonts.ct}` }}
             >
               {t("h1")}
             </h2>
             <div className="flex">
-              <div className="my-5 lg:my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
-              <div className="my-5 lg:my-10 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+              <div className="my-4 lg:my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>
+              <div className="my-4 lg:my-6 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
             </div>
-            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative mt-3">
+            <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal relative mt-2">
               {liList.map((li) => (
                 <AnimatedText key={li.content}>
                   <li className="relative pl-4">
