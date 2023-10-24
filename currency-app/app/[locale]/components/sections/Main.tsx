@@ -31,7 +31,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto aspect-auto">
+      <div className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto aspect-auto">
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"

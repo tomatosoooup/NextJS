@@ -74,7 +74,7 @@ const FormInputs = () => {
         <div className="w-1/2">
           <Reveal options={{ opc: 0, x: -500, del: 0.85 }} width="100%">
             <>
-              <div className="mb-2">{t("give")}</div>
+              <div className="mb-1">{t("give")}</div>
               <SelectDrop
                 options={options}
                 onCurrencyFromChoose={setFromCurrency}

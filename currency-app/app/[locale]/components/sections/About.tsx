@@ -95,7 +95,7 @@ const About = React.memo(function About() {
           nums={[0, 0, 1, 0]}
         />
         <section
-          className="relative max-w-[1125px] 2xl:max-w-screen-2xl mx-auto"
+          className="relative max-w-[1225px] 2xl:max-w-screen-2xl mx-auto"
           id="about"
         >
           <h2
