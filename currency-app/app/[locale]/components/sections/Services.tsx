@@ -16,14 +16,7 @@ const images = [
     src: "/images/sepa.png",
     quality: 100,
   },
-  {
-    alt: "dollar",
-    width: 1100,
-    height: 1100,
-    class: `hidden lg:block absolute -left-40 -bottom-80 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
-    src: "./images/dollar.svg",
-    quality: 60,
-  },
+
   {
     alt: "dollar-2",
     width: 400,
@@ -193,6 +186,14 @@ const Services = React.memo(function Services() {
             />
           ))}
         </div>
+        <Image
+          alt="dollar"
+          width={1000}
+          height={1000}
+          className={`hidden lg:block absolute -left-72 -bottom-80 pointer-events-none filter ${classes.img} ${classes.imgTop}`}
+          src="./images/dollar.svg"
+          quality={60}
+        />
       </section>
     </>
   );
