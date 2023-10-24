@@ -83,7 +83,7 @@ const About = React.memo(function About() {
   ];
 
   function AnimatedText({ children }) {
-    return <Reveal options={{ opc: 0, x: 500, del: 0.25 }}>{children}</Reveal>;
+    return <Reveal options={{ opc: 0, x: 500 }}>{children}</Reveal>;
   }
 
   return (
@@ -94,7 +94,10 @@ const About = React.memo(function About() {
           spanClass="blur opacity-40"
           nums={[0, 0, 1, 0]}
         />
-        <section className="relative max-w-screen-2xl m-auto" id="about">
+        <section
+          className="relative max-w-[950px] 2xl:max-w-screen-2xl mx-auto"
+          id="about"
+        >
           <h2
             className="text-center text-white text-4xl mt-12 lg:mt-24 font-black uppercase"
             style={{ fontFamily: `${fonts.tt}` }}

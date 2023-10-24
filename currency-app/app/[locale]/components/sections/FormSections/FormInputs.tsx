@@ -10,7 +10,7 @@ import { useFonts } from "providers/FontProvider";
 import { useEffect, useState } from "react";
 import { TfiReload } from "react-icons/tfi";
 
-const API_BASE_URL = "https://openexchangerates.org/api";
+// const API_BASE_URL = "https://openexchangerates.org/api";
 
 const FormInputs = () => {
   const [exchangeRate, setExchangeRate] = useState<string | number | null>(
@@ -36,30 +36,30 @@ const FormInputs = () => {
     );
   };
 
-  useEffect(() => {
-    const fetchExchangeRate = async () => {
-      try {
-        const response = await axios.get(`${API_BASE_URL}/latest.json`, {
-          params: {
-            app_id: "981a1220849b4f8ca4f0168e9c7f1027",
-          },
-        });
-        const rates = response.data.rates;
-        if (fromCurrency === toCurrency) {
-          setExchangeRate(1);
-        } else {
-          const conversionRate = (
-            rates[toCurrency] / rates[fromCurrency]
-          ).toFixed(4);
-          setExchangeRate(conversionRate);
-        }
-      } catch (error) {
-        console.error("Error fetching exchange rate", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchExchangeRate = async () => {
+  //     try {
+  //       const response = await axios.get(`${API_BASE_URL}/latest.json`, {
+  //         params: {
+  //           app_id: "981a1220849b4f8ca4f0168e9c7f1027",
+  //         },
+  //       });
+  //       const rates = response.data.rates;
+  //       if (fromCurrency === toCurrency) {
+  //         setExchangeRate(1);
+  //       } else {
+  //         const conversionRate = (
+  //           rates[toCurrency] / rates[fromCurrency]
+  //         ).toFixed(4);
+  //         setExchangeRate(conversionRate);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching exchange rate", error);
+  //     }
+  //   };
 
-    fetchExchangeRate();
-  }, [fromCurrency, toCurrency]);
+  //   fetchExchangeRate();
+  // }, [fromCurrency, toCurrency]);
 
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
@@ -100,11 +100,11 @@ const FormInputs = () => {
       </div>
       <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
         <div className="w-full lg:w-1/2 relative">
-          <Reveal options={{ opc: 0, x: -500, del: 0.65 }} width="100%">
+          <Reveal options={{ opc: 0, x: -500 }} width="100%">
             <>
               <div className="mb-1 ">{t("sum")}</div>
               <Input id="input-1" onChange={handleAmountChange} />
-              <span className="absolute left-3 -bottom-5 md:left-6 md:-bottom-7 text-xs md:text-sm text-[#555555] font-semibold">
+              <span className="absolute left-3 -bottom-5 md:-bottom-6 text-xs md:text-sm text-[#555555] font-semibold block overflow-x-hidden">
                 1 {fromCurrency} = {exchangeRate} {toCurrency}
               </span>
             </>

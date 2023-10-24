@@ -31,7 +31,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl m-auto ">
+      <div className="max-w-[950px] 2xl:max-w-screen-2xl mx-auto ">
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
@@ -60,7 +60,7 @@ const Main = () => {
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
               />
-              <Reveal options={{ opc: 0, x: -500, del: 0.25 }}>
+              <Reveal options={{ opc: 0, x: -500 }}>
                 <h1
                   className="text-3xl
             md:text-6xl 
@@ -75,13 +75,13 @@ const Main = () => {
                   Cryptocurrency exchange
                 </h1>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500, del: 0.5 }} width="100%">
+              <Reveal options={{ opc: 0, x: -500 }} width="100%">
                 <div className="flex justify-center lg:justify-start">
                   <div className="my-5 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
                   <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
                 </div>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500, del: 0.5 }}>
+              <Reveal options={{ opc: 0, x: -500 }}>
                 <p
                   className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
                   style={{ fontFamily: `${fonts.tt}` }}
@@ -93,7 +93,7 @@ const Main = () => {
                   <span className="font-light">{t("p2")}</span>
                 </p>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500, del: 0.75 }}>
+              <Reveal options={{ opc: 0, x: -500 }}>
                 <div className="hidden lg:block mt-10">
                   <Button>
                     <span className="pt-1">{t("button")}</span>
@@ -101,13 +101,9 @@ const Main = () => {
                 </div>
               </Reveal>
             </div>
-            <div>
+            <div className="my-auto lg:ml-24 xl:ml-0">
               {images.map((img, index) => (
-                <Reveal
-                  options={{ opc: 0, x: 500, del: 0.75 }}
-                  key={index}
-                  width="100%"
-                >
+                <Reveal options={{ opc: 0, x: 500 }} key={index} width="100%">
                   <Image
                     alt={img.alt}
                     src={img.src}

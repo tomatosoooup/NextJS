@@ -4,8 +4,12 @@ import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { saveNewTodo } from "@/api";
+import { useRouter } from "next/navigation";
+
+import { v4 as uuidv4 } from "uuid";
 
 const AddTask = () => {
+  const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [newTodo, setNewTodo] = useState("");
 
@@ -16,10 +20,12 @@ const AddTask = () => {
     e.preventDefault();
 
     await saveNewTodo({
-      id: "4",
+      id: uuidv4(),
       text: newTodo,
     });
     setNewTodo("");
+    setModalOpen(false);
+    router.refresh();
   };
 
   return (

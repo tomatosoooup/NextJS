@@ -53,15 +53,16 @@ const SelectDrop: React.FC<SelectDropProps> = ({
           {selectedOption ? selectedOption.name : "TRC20"}
         </span>
         <Image
-          className="absolute right-4 top-4 hidden md:block"
+          className="absolute right-2 top-5 hidden md:block"
           width={10}
           height={10}
           src={"./images/triangle.svg"}
           alt="triangle"
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
         <ul
           className={`${
             isOpen ? "block" : "hidden"

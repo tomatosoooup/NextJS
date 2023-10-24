@@ -122,12 +122,12 @@ const Services = React.memo(function Services() {
   ];
 
   function AnimatedText({ children }) {
-    return <Reveal options={{ opc: 0, x: -500, del: 0.25 }}>{children}</Reveal>;
+    return <Reveal options={{ opc: 0, x: -500 }}>{children}</Reveal>;
   }
 
   return (
     <>
-      <section className="max-w-screen-2xl m-auto relative">
+      <section className="max-w-[950px] 2xl:max-w-screen-2xl mx-auto relative">
         <Numbers
           containerClass="text-4xl -top-20 left-6"
           spanClass="blur"

@@ -62,19 +62,19 @@ const Form = () => {
             className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
           >
-            <Reveal options={{ opc: 0, x: 500, del: 0.25 }} width="100%">
+            <Reveal options={{ opc: 0, x: 500 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
                 <Input id="input-3" />
               </>
             </Reveal>
-            <Reveal options={{ opc: 0, x: 500, del: 0.35 }} width="100%">
+            <Reveal options={{ opc: 0, x: 500 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
                 <Input id="input-4" />
               </>
             </Reveal>
-            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+            <Reveal options={{ opc: 0, x: 500 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
                 <Input id="input-5" />
@@ -82,7 +82,7 @@ const Form = () => {
             </Reveal>
           </div>
           <section className="lg:hidden">
-            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+            <Reveal options={{ opc: 0, x: 500 }} width="100%">
               <div className="lg:hidden justify-center h-[50px] mt-10 px-5 order-4 lg:order-none">
                 <Button fullWidth>
                   <span className="text-white  pt-1">{t("button")}</span>
@@ -95,7 +95,7 @@ const Form = () => {
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2"
             style={{ fontFamily: `${fonts.ct}` }}
           >
-            <Reveal options={{ opc: 0, x: 500, del: 0.45 }} width="100%">
+            <Reveal options={{ opc: 0, x: 500 }} width="100%">
               <>
                 <div className="flex items-center gap-x-3 lg:ml-[52%]">
                   <div

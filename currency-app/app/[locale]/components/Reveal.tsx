@@ -46,7 +46,7 @@ export const Reveal = ({
         }}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        transition={{ duration: 1, delay: options.del || 0.5 }}
+        transition={{ duration: 1, delay: 0.1 }}
       >
         {children}
       </motion.div>
