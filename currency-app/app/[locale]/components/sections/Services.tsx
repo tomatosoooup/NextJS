@@ -127,7 +127,7 @@ const Services = React.memo(function Services() {
 
   return (
     <>
-      <section className="max-w-[950px] 2xl:max-w-screen-2xl mx-auto relative">
+      <section className="max-w-[1050px] 2xl:max-w-screen-2xl mx-auto relative">
         <Numbers
           containerClass="text-4xl -top-20 left-6"
           spanClass="blur"
