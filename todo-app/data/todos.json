@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "1",
-      "text": "Buy some coffe"
+      "text": "Buy some coffee"
     },
     {
       "id": "2",
@@ -11,14 +11,6 @@
     {
       "id": 3,
       "text": "New Todo test"
-    },
-    {
-      "id": "4",
-      "text": "egegeg"
-    },
-    {
-      "id": "5",
-      "text": "adding new task no cache"
     },
     {
       "id": "ab1b5a04-d1f2-4fb6-af5b-cf139f406be2",
