@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import { Reveal } from "@/components/Reveal";
 import Button from "@/components/buttons/Button";
 import Input from "@/components/inputs/Input";
@@ -7,15 +7,14 @@ import SelectDrop from "@/components/inputs/SelectDrop";
 import { getOptions } from "app/api/getOptions";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
-import { useEffect, useState } from "react";
+// useEffect,
+import { useState } from "react";
 import { TfiReload } from "react-icons/tfi";
 
 // const API_BASE_URL = "https://openexchangerates.org/api";
 
 const FormInputs = () => {
-  const [exchangeRate, setExchangeRate] = useState<string | number | null>(
-    null
-  );
+  const [exchangeRate] = useState<string | number | null>(null);
   const [amount, setAmount] = useState<number>(1);
   const [fromCurrency, setFromCurrency] = useState<string>("USD");
   const [toCurrency, setToCurrency] = useState<string>("EUR");
