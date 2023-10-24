@@ -55,7 +55,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
       )}
       onClick={onClick}
     >
-      <div className="z-10 w-full h-screen absolute bg-[#121212]/95 blur-sm inset-0 rounded-tr-3xl"></div>
+      <div className="z-10 w-full h-screen absolute bg-[#121212]/80 blur-sm inset-0 rounded-tr-3xl"></div>
       <ul
         className="flex flex-col text-[#ffffff] px-5 gap-10 font-bold text-2xl mt-5 relative uppercase z-20"
         style={{ fontFamily: `${fonts.tt}` }}
@@ -97,8 +97,9 @@ const MobileMenu = ({ isVisible, onClick }) => {
               height={30}
               style={{
                 maxWidth: "100%",
-                height: "auto"
-              }} />
+                height: "auto",
+              }}
+            />
           </Link>
           <Link href={"/"}>
             <Image
@@ -108,8 +109,9 @@ const MobileMenu = ({ isVisible, onClick }) => {
               height={30}
               style={{
                 maxWidth: "100%",
-                height: "auto"
-              }} />
+                height: "auto",
+              }}
+            />
           </Link>
         </div>
       </div>

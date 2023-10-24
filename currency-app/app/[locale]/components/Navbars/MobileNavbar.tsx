@@ -15,7 +15,7 @@ const MobileNavbar = () => {
             KLTP
           </span>
           <span
-            className="text-xs tracking-[0.2rem] lowercase font-normal"
+            className="text-xs tracking-[0.4rem] lowercase font-normal"
             style={{ fontFamily: `${fonts.ct}` }}
           >
             exchange
