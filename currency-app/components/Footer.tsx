@@ -8,7 +8,7 @@ const Footer = () => {
   const fonts = useFonts();
   return (
     <div
-      className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto relative z-10 "
+      className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto relative z-10 "
       id="footer"
     >
       <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 mt-20 px-5 lg:px-0">
