@@ -42,8 +42,7 @@ const Input: React.FC<InputProps> = ({
             outline-none
             bg-transparent 
             placeholder:text-[#929292]
-            text-[#929292]/60
-`,
+            text-[#929292]/60`,
             disabled && "cursor-default bg-transparent opacity-50"
           )}
           style={{ fontFamily: `${fonts.ct}` }}

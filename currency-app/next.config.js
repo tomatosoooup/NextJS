@@ -1,31 +1,37 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
-
-// const withTM = require("next-transpile-modules")([
-//   "three",
-//   "@react-three/fiber",
-//   "@react-three/drei",
-// ]);
-
-// webpack: (config, { dev, isServer }) => {
-//   // Добавляем правило для обработки CSS файлов
-//   config.module.rules.push({
-//     test: /\.css$/,
-//     use: [
-//       "style-loader", // или MiniCssExtractPlugin.loader, если вы хотите вынести CSS в отдельные файлы
-//       "css-loader",
-//       {
-//         loader: "postcss-loader",
-//         options: {
-//           postcssOptions: {
-//             plugins: [require("tailwindcss"), require("autoprefixer")],
-//           },
-//         },
-//       },
-//     ],
-//   });
-
-//   return config;
-// },
+// next.config.js
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/getCurrency",
+        destination: "https://api.binance.com/api/v3/avgPrice?symbol=:path*", // Replace with your API's URL
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/api/:path*", // Apply headers to your custom route
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "http://localhost:3000", // Replace with your frontend domain
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, POST, OPTIONS",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "Content-Type",
+          },
+          {
+            key: "Access-Control-Allow-Credentials",
+            value: "true",
+          },
+        ],
+      },
+    ];
+  },
+};

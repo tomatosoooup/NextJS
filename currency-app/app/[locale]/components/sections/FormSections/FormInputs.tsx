@@ -1,23 +1,52 @@
-// import axios from "axios";
-import { Reveal } from "@/components/Reveal";
+"use client";
+
 import Button from "@/components/buttons/Button";
 import Input from "@/components/inputs/Input";
-import SelectDrop from "@/components/inputs/SelectDrop";
+import { Reveal } from "@/components/Reveal";
+import { TfiReload } from "react-icons/tfi";
 
 import { getOptions } from "app/api/getOptions";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
-// useEffect,
-import { useState } from "react";
-import { TfiReload } from "react-icons/tfi";
 
-// const API_BASE_URL = "https://openexchangerates.org/api";
+import { useEffect, useState } from "react";
+import { GET } from "app/api/getCurrency/route";
+import Select from "@/components/inputs/Select";
 
 const FormInputs = () => {
-  const [exchangeRate] = useState<string | number | null>(null);
   const [amount, setAmount] = useState<number>(1);
-  const [fromCurrency, setFromCurrency] = useState<string>("USD");
-  const [toCurrency, setToCurrency] = useState<string>("EUR");
+  const [fromCurrency, setFromCurrency] = useState<string>();
+  const [toCurrency, setToCurrency] = useState<string>();
+  const [avgPrice, setAvgPrice] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<boolean>();
+
+  const fetchData = async () => {
+    try {
+      const { avgPrice, error } = await GET(fromCurrency, toCurrency);
+      setAvgPrice(avgPrice);
+      if (error) {
+        setErrorMessage(true);
+      } else {
+        setErrorMessage(false);
+      }
+    } catch (error) {
+      return;
+    }
+  };
+
+  const handleFromChoose = (cur: string) => {
+    setFromCurrency(cur);
+  };
+
+  const handleToChoose = (cur: string) => {
+    setToCurrency(cur);
+  };
+
+  useEffect(() => {
+    if (fromCurrency && toCurrency) {
+      fetchData();
+    }
+  }, [fromCurrency, toCurrency]);
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = parseFloat(e.target.value);
@@ -27,38 +56,13 @@ const FormInputs = () => {
   };
 
   const handleResult = () => {
-    const result = Number(exchangeRate) * Number(amount);
+    const result = Number(amount);
     alert(
       `${result.toFixed(
         4
-      )} of ${fromCurrency} to ${toCurrency} with - ${amount} and ${exchangeRate}`
+      )} of ${fromCurrency} to ${toCurrency} with - ${amount} and ${avgPrice}`
     );
   };
-
-  // useEffect(() => {
-  //   const fetchExchangeRate = async () => {
-  //     try {
-  //       const response = await axios.get(`${API_BASE_URL}/latest.json`, {
-  //         params: {
-  //           app_id: "981a1220849b4f8ca4f0168e9c7f1027",
-  //         },
-  //       });
-  //       const rates = response.data.rates;
-  //       if (fromCurrency === toCurrency) {
-  //         setExchangeRate(1);
-  //       } else {
-  //         const conversionRate = (
-  //           rates[toCurrency] / rates[fromCurrency]
-  //         ).toFixed(4);
-  //         setExchangeRate(conversionRate);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching exchange rate", error);
-  //     }
-  //   };
-
-  //   fetchExchangeRate();
-  // }, [fromCurrency, toCurrency]);
 
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
@@ -75,10 +79,11 @@ const FormInputs = () => {
           <Reveal options={{ opc: 0, x: -500, del: 0.85 }} width="100%">
             <>
               <div className="mb-1">{t("give")}</div>
-              <SelectDrop
+              <Select
                 options={options}
-                onCurrencyFromChoose={setFromCurrency}
-              />
+                initialValues={["TRC20", "USDT"]}
+                onChoose={handleFromChoose}
+              ></Select>
             </>
           </Reveal>
         </div>
@@ -89,10 +94,11 @@ const FormInputs = () => {
           <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
             <>
               <div className="mb-1">{t("get")}</div>
-              <SelectDrop
+              <Select
                 options={options2}
-                onCurrencyToChoose={setToCurrency}
-              />
+                initialValues={["Cash", "EUR"]}
+                onChoose={handleToChoose}
+              ></Select>
             </>
           </Reveal>
         </div>
@@ -104,15 +110,19 @@ const FormInputs = () => {
               <div className="mb-1 ">{t("sum")}</div>
               <Input id="input-1" onChange={handleAmountChange} />
               <span className="absolute left-3 -bottom-5 md:-bottom-6 text-xs md:text-sm text-[#555555] font-semibold block overflow-x-hidden">
-                1 {fromCurrency} = {exchangeRate} {toCurrency}
+                {avgPrice
+                  ? `1 ${fromCurrency} = ${avgPrice} ${toCurrency}`
+                  : `${errorMessage ? "No such pair" : ""}`}
               </span>
             </>
           </Reveal>
         </div>
         <div className="w-1/2 relative hidden lg:flex h-[45px]">
           <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
-            <Button fullWidth type="button" onClick={handleResult}>
-              <span className="text-white pt-1 text-xs">{t("button")}</span>
+            <Button fullWidth type="button">
+              <span className="text-white pt-1 text-xs" onClick={handleResult}>
+                {t("button")}
+              </span>
             </Button>
           </Reveal>
         </div>

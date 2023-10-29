@@ -1,0 +1,63 @@
+"use client";
+import Option from "./Option";
+import classes from "../buttons/Button.module.css";
+import Image from "next/image";
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
+type TValue = {
+  type: string;
+  name: string;
+  cur: string;
+};
+
+const Select = ({ options, initialValues, onChoose }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [values, setValues] = useState<TValue | null>(null);
+
+  const handleOptionChoose = (type: string, name: string, cur: string) => {
+    setValues({ type, name, cur });
+    setIsOpen(false);
+    onChoose(cur);
+  };
+
+  return (
+    <div className="relative text-white font-bold ">
+      <div
+        className={`rounded-lg p-2 flex justify-around cursor-pointer ${classes.btn}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="pt-1">{values ? values.type : initialValues[0]}</span>
+        <span className="pt-1">{values ? values.name : initialValues[1]}</span>
+        <Image
+          className="absolute right-2 top-5 hidden md:block"
+          width={10}
+          height={10}
+          src={"./images/triangle.svg"}
+          alt="triangle"
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
+        />
+        <ul
+          className={`${
+            isOpen ? "block" : "hidden"
+          } absolute left-0 top-11 w-full bg-[#181818] flex flex-col overflow-y-auto max-h-[115px] lg:max-h-[200px] select-dropdown font-semibold z-10`}
+        >
+          {options.map((opt) => (
+            <Option
+              val1={opt.type}
+              val2={opt.name}
+              val3={opt.cur}
+              onChoose={handleOptionChoose}
+              key={uuidv4()}
+            ></Option>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Select;
