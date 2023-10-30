@@ -12,9 +12,7 @@ const FormLogo = () => {
         <Reveal options={{ opc: 0, x: 0, del: 0.45, bottom: 300 }}>
           <>
             <div className="flex flex-col relative">
-              <Reveal options={{ opc: 0, x: -500, del: 0.25 }}>
-                <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-64 top-11 lg:top-16"></div>
-              </Reveal>
+              <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-64 top-11 lg:top-16"></div>
               <span className="text-5xl lg:text-7xl  tracking-[0.7rem] font-extrabold">
                 KLTP
               </span>
@@ -24,9 +22,7 @@ const FormLogo = () => {
               >
                 exchange
               </span>
-              <Reveal options={{ opc: 0, x: 500, del: 0.25 }}>
-                <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-64 top-11 lg:top-16"></div>
-              </Reveal>
+              <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-16 md:-right-32 lg:-right-64 top-11 lg:top-16"></div>
             </div>
           </>
         </Reveal>
