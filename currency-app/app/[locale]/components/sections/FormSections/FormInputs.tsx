@@ -1,5 +1,7 @@
 "use client";
 
+import axios from "axios";
+
 import Button from "@/components/buttons/Button";
 import Input from "@/components/inputs/Input";
 import { Reveal } from "@/components/Reveal";
@@ -9,44 +11,48 @@ import { getOptions } from "app/api/getOptions";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
-import { useEffect, useState } from "react";
-import { GET } from "app/api/getCurrency/route";
+import { useState } from "react";
 import Select from "@/components/inputs/Select";
 
 const FormInputs = () => {
   const [amount, setAmount] = useState<number>(1);
-  const [fromCurrency, setFromCurrency] = useState<string>();
-  const [toCurrency, setToCurrency] = useState<string>();
   const [avgPrice, setAvgPrice] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<boolean>();
 
-  const fetchData = async () => {
+  const fetchData = async (currency: string) => {
+    const req = currency;
     try {
-      const { avgPrice, error } = await GET(fromCurrency, toCurrency);
+      const apiUrl = `https://api.binance.com/api/v3/avgPrice?symbol=${req}`;
+      const response = await axios.get(apiUrl);
+      const avgPrice = response.data.price;
       setAvgPrice(avgPrice);
-      if (error) {
-        setErrorMessage(true);
-      } else {
-        setErrorMessage(false);
-      }
+      setErrorMessage(false);
     } catch (error) {
-      return;
+      setErrorMessage(true);
     }
   };
 
   const handleFromChoose = (cur: string) => {
-    setFromCurrency(cur);
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("cur1", cur);
+      const currency =
+        localStorage.getItem("cur1") + localStorage.getItem("cur2");
+      fetchData(currency);
+
+      console.log(currency);
+    }
   };
 
   const handleToChoose = (cur: string) => {
-    setToCurrency(cur);
-  };
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("cur2", cur);
 
-  useEffect(() => {
-    if (fromCurrency && toCurrency) {
-      fetchData();
+      const currency =
+        localStorage.getItem("cur1") + localStorage.getItem("cur2");
+      fetchData(currency);
+      console.log(currency);
     }
-  }, [fromCurrency, toCurrency]);
+  };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = parseFloat(e.target.value);
@@ -58,9 +64,9 @@ const FormInputs = () => {
   const handleResult = () => {
     const result = Number(amount);
     alert(
-      `${result.toFixed(
-        4
-      )} of ${fromCurrency} to ${toCurrency} with - ${amount} and ${avgPrice}`
+      `${result.toFixed(4)} of ${localStorage.getItem(
+        "cur1"
+      )} to ${localStorage.getItem("cur2")} with - ${amount} and ${avgPrice}`
     );
   };
 
@@ -111,7 +117,9 @@ const FormInputs = () => {
               <Input id="input-1" onChange={handleAmountChange} />
               <span className="absolute left-3 -bottom-5 md:-bottom-6 text-xs md:text-sm text-[#555555] font-semibold block overflow-x-hidden">
                 {avgPrice
-                  ? `1 ${fromCurrency} = ${avgPrice} ${toCurrency}`
+                  ? `1 ${localStorage.getItem(
+                      "cur1"
+                    )} = ${avgPrice} ${localStorage.getItem("cur2")}`
                   : `${errorMessage ? "No such pair" : ""}`}
               </span>
             </>
