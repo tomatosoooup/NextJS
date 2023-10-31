@@ -38,7 +38,6 @@ const FormInputs = () => {
       const currency =
         localStorage.getItem("cur1") + localStorage.getItem("cur2");
       fetchData(currency);
-
       console.log(currency);
     }
   };
