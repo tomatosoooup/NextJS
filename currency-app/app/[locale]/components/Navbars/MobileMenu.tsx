@@ -60,7 +60,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
         className="flex flex-col text-[#ffffff] px-5 gap-10 font-bold text-2xl mt-5 relative uppercase z-20"
         style={{ fontFamily: `${fonts.tt}` }}
       >
-        <SmoothScrollLink to="form" onClick={onClick} className="ml-5 pt-2">
+        <SmoothScrollLink to="main" onClick={onClick} className="ml-5 pt-2">
           Головна
         </SmoothScrollLink>
         <div className="absolute h-[1px] left-0 top-14 w-full bg-white/10"></div>

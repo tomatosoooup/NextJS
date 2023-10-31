@@ -7,6 +7,29 @@ import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "components/Numbers";
 import { Reveal } from "../Reveal";
+import { Link as ScrollLink } from "react-scroll";
+
+interface SmoothScrollLinkProp {
+  to: string;
+  offset?: number;
+  children: React.ReactNode;
+}
+
+const SmoothScrollLink: React.FC<SmoothScrollLinkProp> = ({
+  to,
+  offset = 0,
+  children,
+}) => (
+  <ScrollLink
+    activeClass="active"
+    to={to}
+    smooth={true}
+    offset={offset - 150}
+    duration={1500}
+  >
+    {children}
+  </ScrollLink>
+);
 
 const images = [
   {
@@ -31,7 +54,10 @@ const Main = () => {
 
   return (
     <>
-      <div className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto aspect-auto">
+      <div
+        className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto aspect-auto"
+        id="main"
+      >
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
@@ -89,15 +115,16 @@ const Main = () => {
                   <span className="font-semibold">{t("p1")}</span>
                   <br />
                   <br />
-
                   <span className="font-light">{t("p2")}</span>
                 </p>
               </Reveal>
               <Reveal options={{ opc: 0, x: -500 }}>
                 <div className="hidden lg:block mt-10">
-                  <Button>
-                    <span className="pt-1">{t("button")}</span>
-                  </Button>
+                  <SmoothScrollLink to="form">
+                    <Button>
+                      <span className="pt-1">{t("button")}</span>
+                    </Button>
+                  </SmoothScrollLink>
                 </div>
               </Reveal>
             </div>

@@ -20,7 +20,6 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
   <ScrollLink
     activeClass="active"
     to={to}
-    spy={true}
     smooth={true}
     offset={offset - 150}
     duration={1500}
@@ -52,7 +51,7 @@ const Navbar = () => {
         >
           <SmoothScrollLink
             className="flex-shrink-0 mt-7 cursor-pointer"
-            to="form"
+            to="main"
           >
             {t("main")}
           </SmoothScrollLink>
