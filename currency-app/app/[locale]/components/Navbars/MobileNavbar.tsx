@@ -1,3 +1,4 @@
+"use client";
 import { useFonts } from "providers/FontProvider";
 import BurgerMenu from "./BurgerMenu";
 

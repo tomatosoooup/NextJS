@@ -43,7 +43,7 @@ const Select = ({ options, initialValues, onChoose }) => {
         <ul
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute left-0 top-11 w-full bg-[#181818] flex flex-col overflow-y-auto max-h-[115px] lg:max-h-[200px] select-dropdown font-semibold z-10`}
+          } absolute left-0 top-11 w-full bg-[#181818] flex flex-col overflow-y-auto max-h-[155px] lg:max-h-[200px] select-dropdown font-semibold z-10`}
         >
           {options.map((opt) => (
             <Option

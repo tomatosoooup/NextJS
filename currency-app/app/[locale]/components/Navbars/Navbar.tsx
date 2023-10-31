@@ -1,3 +1,4 @@
+"use client";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
@@ -22,7 +23,7 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
     spy={true}
     smooth={true}
     offset={offset - 150}
-    duration={2000}
+    duration={1500}
     className={className}
   >
     {children}
