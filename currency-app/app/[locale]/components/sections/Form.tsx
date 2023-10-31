@@ -90,7 +90,6 @@ const Form = () => {
               </div>
             </Reveal>
           </section>
-
           <div
             className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2"
             style={{ fontFamily: `${fonts.ct}` }}
@@ -136,7 +135,6 @@ const Form = () => {
               </>
             </Reveal>
           </div>
-
           <FormLogo />
         </form>
         <Link href={"/"}>
