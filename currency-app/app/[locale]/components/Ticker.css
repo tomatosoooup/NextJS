@@ -24,6 +24,19 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .dots > span::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 50%;
+    left: -45px;
+    top: 40%;
+  }
+}
+
 .dots > span::before {
   content: "";
   position: absolute;
