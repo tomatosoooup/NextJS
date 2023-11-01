@@ -7,7 +7,7 @@ import Input from "@/components/inputs/Input";
 import { Reveal } from "@/components/Reveal";
 import { TfiReload } from "react-icons/tfi";
 
-import { getOptions } from "app/api/getOptions";
+import { getOptions } from "app/utils/getOptions";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 

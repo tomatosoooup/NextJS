@@ -33,10 +33,9 @@ const Button: React.FC<ButtonProps> = ({
         leading-6
         flex 
         items-center
-        gap-5
+        gap-4
         rounded-md
-        pr-4
-        pl-5 
+        px-5 
         py-3
         relative
         justify-center
@@ -46,7 +45,7 @@ const Button: React.FC<ButtonProps> = ({
       )}
     >
       {children}
-      <TfiReload size={18} color="#828282" />
+      <TfiReload size={16} color="#828282" />
     </button>
   );
 };

@@ -57,7 +57,6 @@ const Form = () => {
             spanClass="blur"
             nums={[0, 0, 1, 0]}
           />
-          {/* Inputs */}
           <FormInputs />
           <div
             className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none"
@@ -86,7 +85,7 @@ const Form = () => {
             <Reveal options={{ x: 100 }} width="100%">
               <div className="lg:hidden justify-center h-[50px] mt-10 px-5 ">
                 <Button fullWidth>
-                  <span className="text-white  pt-1">{t("button")}</span>
+                  <span className="text-white pt-1">{t("button")}</span>
                 </Button>
               </div>
             </Reveal>
