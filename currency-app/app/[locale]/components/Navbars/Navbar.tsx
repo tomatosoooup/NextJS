@@ -43,8 +43,9 @@ const Navbar = () => {
           className="flex 
           list-none 
           items-center 
-          justify-center 
-          h-full text-[20px] 
+          justify-around 
+          h-full 
+          text-[20px] 
           uppercase 
           text-white 
           w-full 
@@ -54,7 +55,7 @@ const Navbar = () => {
           <SmoothScrollLink className="mt-7 cursor-pointer" to="main">
             {t("main")}
           </SmoothScrollLink>
-          <SmoothScrollLink className="mt-7 cursor-pointer ml-auto" to="footer">
+          <SmoothScrollLink className="mt-7 cursor-pointer " to="footer">
             {t("contacts")}
           </SmoothScrollLink>
           <div
