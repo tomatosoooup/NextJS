@@ -2,7 +2,7 @@
 import { useFonts } from "providers/FontProvider";
 import BurgerMenu from "./BurgerMenu";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ locale }: { locale?: string }) => {
   const fonts = useFonts();
   return (
     <div className="fixed inset-0 h-[70px] lg:hidden z-30">

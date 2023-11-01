@@ -10,7 +10,6 @@ const Body = () => {
   return (
     <>
       <Main />
-      <Ticker />
       <Form />
       <Ticker />
       <About />

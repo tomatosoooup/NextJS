@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { FontProvider } from "providers/FontProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import DropDown from "./components/Navbars/DropDown";
+import Navbar from "./components/Navbars/Navbar";
+import MobileNavbar from "./components/Navbars/MobileNavbar";
 
 export const metadata: Metadata = {
   title: "KLTP",
@@ -33,7 +34,9 @@ export default async function RootLayout({
       <body>
         <FontProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <DropDown locale={locale} />
+            <Navbar locale={locale} />
+            <MobileNavbar locale={locale} />
+            {/* <DropDown locale={locale} /> */}
             {children}
           </NextIntlClientProvider>
         </FontProvider>

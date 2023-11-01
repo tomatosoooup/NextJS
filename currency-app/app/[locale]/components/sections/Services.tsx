@@ -115,7 +115,7 @@ const Services = React.memo(function Services() {
   ];
 
   function AnimatedText({ children }) {
-    return <Reveal options={{ opc: 0, x: -500 }}>{children}</Reveal>;
+    return <Reveal options={{ x: -200 }}>{children}</Reveal>;
   }
 
   return (

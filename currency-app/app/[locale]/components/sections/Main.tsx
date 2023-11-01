@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Button from "../buttons/Button";
 
@@ -8,6 +6,7 @@ import { useTranslations } from "next-intl";
 import Numbers from "components/Numbers";
 import { Reveal } from "../Reveal";
 import { Link as ScrollLink } from "react-scroll";
+import Ticker from "../Ticker";
 
 interface SmoothScrollLinkProp {
   to: string;
@@ -54,10 +53,7 @@ const Main = () => {
 
   return (
     <>
-      <div
-        className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto aspect-auto"
-        id="main"
-      >
+      <div className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto" id="main">
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
@@ -86,13 +82,14 @@ const Main = () => {
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
               />
-              <Reveal options={{ opc: 0, x: -500 }}>
+              <Reveal options={{ x: -200 }} width="100%">
                 <h1
                   className="text-3xl
-            md:text-6xl 
+            md:text-5xl
+            lg:text-6xl
             uppercase 
             mb-0
-            sm:mb-5 
+            sm:mb-3 
             font-black 
             relative
             !leading-tight"
@@ -101,25 +98,25 @@ const Main = () => {
                   Cryptocurrency exchange
                 </h1>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500 }} width="100%">
+              <Reveal options={{ x: -200 }} width="100%">
                 <div className="flex justify-center lg:justify-start">
-                  <div className="my-5 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
-                  <div className="my-5 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+                  <div className="my-4 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
+                  <div className="my-4 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
                 </div>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500 }}>
+              <Reveal options={{ x: -200 }}>
                 <p
                   className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
                   style={{ fontFamily: `${fonts.tt}` }}
                 >
                   <span className="font-semibold">{t("p1")}</span>
                   <br />
-                  <br />
+                  <span className="my-3 block" />
                   <span className="font-light">{t("p2")}</span>
                 </p>
               </Reveal>
-              <Reveal options={{ opc: 0, x: -500 }}>
-                <div className="hidden lg:block mt-10">
+              <Reveal options={{ x: -100 }}>
+                <div className="hidden lg:block mt-6">
                   <SmoothScrollLink to="form">
                     <Button>
                       <span className="pt-1">{t("button")}</span>
@@ -130,7 +127,7 @@ const Main = () => {
             </div>
             <div className="my-auto lg:ml-24 xl:ml-0">
               {images.map((img, index) => (
-                <Reveal options={{ opc: 0, x: 500 }} key={index} width="100%">
+                <Reveal options={{ x: 200 }} key={index} width="100%">
                   <Image
                     alt={img.alt}
                     src={img.src}
@@ -159,6 +156,7 @@ const Main = () => {
           />
         </section>
       </div>
+      <Ticker />
     </>
   );
 };

@@ -83,7 +83,7 @@ const About = React.memo(function About() {
   ];
 
   function AnimatedText({ children }) {
-    return <Reveal options={{ opc: 0, x: 500 }}>{children}</Reveal>;
+    return <Reveal options={{ x: 500 }}>{children}</Reveal>;
   }
 
   return (

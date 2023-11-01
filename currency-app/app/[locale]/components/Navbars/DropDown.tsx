@@ -20,10 +20,7 @@ const DropDown = ({ locale }: { locale?: string }) => {
   };
 
   return (
-    <div
-      className="h-[35px] fixed right-5 lg:right-2 top-8 lg:top-5 z-40"
-      style={{ fontFamily: `${fonts.tt}` }}
-    >
+    <div className="relative mt-6 z-40 " style={{ fontFamily: `${fonts.tt}` }}>
       <button
         type="button"
         className="px-4 py-2 text-white bg-transparent font-medium rounded-lg text-sm inline-flex items-center"

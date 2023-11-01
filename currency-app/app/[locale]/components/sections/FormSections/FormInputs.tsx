@@ -28,6 +28,7 @@ const FormInputs = () => {
       setAvgPrice(avgPrice);
       setErrorMessage(false);
     } catch (error) {
+      setAvgPrice(null);
       setErrorMessage(true);
     }
   };
@@ -81,7 +82,7 @@ const FormInputs = () => {
     >
       <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
         <div className="w-1/2">
-          <Reveal options={{ opc: 0, x: -500, del: 0.85 }} width="100%">
+          <Reveal options={{ x: -100 }} width="100%">
             <>
               <div className="mb-1">{t("give")}</div>
               <Select
@@ -92,11 +93,11 @@ const FormInputs = () => {
             </>
           </Reveal>
         </div>
-        <Reveal options={{ opc: 0, x: -500, del: 0.65 }}>
+        <Reveal options={{ x: -100 }}>
           <TfiReload size={18} color="#828282" className="mt-7" />
         </Reveal>
         <div className="w-1/2">
-          <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
+          <Reveal options={{ x: -100 }} width="100%">
             <>
               <div className="mb-1">{t("get")}</div>
               <Select
@@ -110,7 +111,7 @@ const FormInputs = () => {
       </div>
       <div className="flex px-5 lg:px-16 w-full text-white items-end justify-between gap-x-14 mt-6 font-medium">
         <div className="w-full lg:w-1/2 relative">
-          <Reveal options={{ opc: 0, x: -500 }} width="100%">
+          <Reveal options={{ x: -100 }} width="100%">
             <>
               <div className="mb-1 ">{t("sum")}</div>
               <Input id="input-1" onChange={handleAmountChange} />
@@ -125,7 +126,7 @@ const FormInputs = () => {
           </Reveal>
         </div>
         <div className="w-1/2 relative hidden lg:flex h-[45px]">
-          <Reveal options={{ opc: 0, x: -500, del: 0.45 }} width="100%">
+          <Reveal options={{ x: -100 }} width="100%">
             <Button fullWidth type="button">
               <span className="text-white pt-1 text-xs" onClick={handleResult}>
                 {t("button")}

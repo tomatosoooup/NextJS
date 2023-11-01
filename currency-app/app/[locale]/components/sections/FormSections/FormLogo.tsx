@@ -9,7 +9,7 @@ const FormLogo = () => {
         className="text-center font-medium text-white mx-auto  mt-10 lg:absolute lg:bottom-20 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
         style={{ fontFamily: `${fonts.cf}` }}
       >
-        <Reveal options={{ opc: 0, x: 0, del: 0.45, bottom: 300 }}>
+        <Reveal options={{ x: 0, bottom: 200 }}>
           <>
             <div className="flex flex-col relative">
               <div className="w-12 md:w-24 lg:w-56 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-16 md:-left-32 lg:-left-64 top-11 lg:top-16"></div>
