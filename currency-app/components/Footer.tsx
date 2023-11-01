@@ -1,5 +1,3 @@
-"use client";
-
 import { useFonts } from "providers/FontProvider";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +9,7 @@ const Footer = () => {
       className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto relative z-10 "
       id="footer"
     >
-      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 mt-20 px-5 lg:px-0">
+      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 mt-10 lg:mt-2 px-5 lg:px-0">
         <div className="absolute min-w-full bg-white/10 h-[2px] top-28 sm:top-24 left-0 lg:hidden"></div>
         <div className="absolute min-w-full bg-white/10 h-[2px] bottom-44 sm:bottom-40 left-0 lg:hidden"></div>
         <div

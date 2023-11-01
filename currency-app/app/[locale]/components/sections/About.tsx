@@ -84,7 +84,7 @@ const About = React.memo(function About() {
   ];
 
   function AnimatedText({ children }) {
-    return <Reveal options={{ x: 500 }}>{children}</Reveal>;
+    return <Reveal options={{ x: 100 }}>{children}</Reveal>;
   }
 
   return (
@@ -162,7 +162,7 @@ const About = React.memo(function About() {
             text-[#EAEAEA] 
             font-thin 
             text-lg 
-            px-5 
+            px-8 
             relative
             "
                 style={{ fontFamily: `${fonts.tt}` }}
