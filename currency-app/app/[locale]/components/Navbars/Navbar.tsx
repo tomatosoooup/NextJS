@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
 import { Link as ScrollLink } from "react-scroll";
-// import DropDown from "./DropDown";
+// import Link from "next/link";
 
 interface SmoothScrollLinkProps {
   to: string;

@@ -30,7 +30,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} style={{ scrollBehavior: "smooth" }}>
       <body>
         <FontProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
