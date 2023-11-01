@@ -25,7 +25,8 @@ const FormInputs = () => {
       const apiUrl = `https://api.binance.com/api/v3/avgPrice?symbol=${req}`;
       const response = await axios.get(apiUrl);
       const avgPrice = response.data.price;
-      setAvgPrice(avgPrice);
+      const res = parseInt(avgPrice).toFixed(3);
+      setAvgPrice(res);
       setErrorMessage(false);
     } catch (error) {
       setAvgPrice(null);
