@@ -6,7 +6,7 @@ import DropDown from "./DropDown";
 const MobileNavbar = ({ locale }: { locale?: string }) => {
   const fonts = useFonts();
   return (
-    <div className="fixed inset-0 h-[70px] lg:hidden z-30">
+    <div className="relative inset-0 h-[70px] lg:hidden z-30">
       <div className="max-w-full mx-auto mt-5 px-5 mb-5 flex items-center">
         <BurgerMenu />
         <div className="text-center flex flex-col font-medium ml-6 text-white">

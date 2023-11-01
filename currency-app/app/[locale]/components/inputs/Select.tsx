@@ -30,15 +30,11 @@ const Select = ({ options, initialValues, onChoose }) => {
         <span className="pt-1">{values ? values.type : initialValues[0]}</span>
         <span className="pt-1">{values ? values.name : initialValues[1]}</span>
         <Image
-          className="absolute right-2 top-5 hidden md:block"
+          className="absolute right-2 top-5"
           width={10}
           height={10}
           src={"./images/triangle.svg"}
           alt="triangle"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
         />
         <ul
           className={`${

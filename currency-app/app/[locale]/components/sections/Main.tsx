@@ -74,7 +74,8 @@ const Main = () => {
               className="px-5 
                       text-center 
                       lg:text-justify 
-                      pt-32
+                      pt-10
+                      lg:pt-32
                       relative"
             >
               <Numbers
