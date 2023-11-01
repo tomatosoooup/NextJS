@@ -86,7 +86,7 @@ const Main = () => {
                 <h1
                   className="text-3xl
             md:text-5xl
-            lg:text-6xl
+            2xl:text-6xl
             uppercase 
             mb-0
             sm:mb-3 

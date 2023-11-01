@@ -86,7 +86,6 @@ const Navbar = ({ locale }: { locale?: string }) => {
           <SmoothScrollLink className="mt-7 cursor-pointer" to="services">
             {t("services")}
           </SmoothScrollLink>
-          <DropDown locale={locale} />
         </ul>
       </div>
     </div>
