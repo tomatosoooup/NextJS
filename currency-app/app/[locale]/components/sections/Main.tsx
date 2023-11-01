@@ -66,7 +66,7 @@ const Main = () => {
       lg:grid-cols-2 
       text-white 
       mb-10 
-      md:mb-32 
+      md:mb-16 
       lg:mb-20 
       relative"
           >

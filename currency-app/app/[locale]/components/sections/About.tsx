@@ -12,23 +12,23 @@ const images = [
   {
     alt: "BTC-small-left",
     src: "./images/BTC-left.svg",
-    width: 350,
-    height: 350,
-    class: `absolute z-10 top-10 -left-24 pointer-events-none filter ${classes.imgLeft} ${classes.img}`,
+    width: 325,
+    height: 325,
+    class: `absolute z-10 top-10 -left-8 pointer-events-none filter ${classes.imgLeft} ${classes.img}`,
   },
   {
     alt: "BTC",
     src: "./images/BTC.svg",
-    width: 450,
-    height: 450,
-    class: `absolute z-20 left-16 pointer-events-none filter ${classes.imgCenter} ${classes.img}`,
+    width: 425,
+    height: 425,
+    class: `absolute z-20 left-24 pointer-events-none filter ${classes.imgCenter} ${classes.img}`,
   },
   {
     alt: "BTC-small-right",
     src: "./images/BTC-right.svg",
-    width: 350,
-    height: 350,
-    class: `absolute z-10 top-10 left-72 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
+    width: 325,
+    height: 325,
+    class: `absolute z-10 top-10 left-80 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
   },
 ];
 
@@ -115,7 +115,7 @@ const About = () => {
             {t("p")}
           </p>
           <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
-            <div className="lg:hidden relative h-[250px] max-w-[400px] mx-auto">
+            <div className="lg:hidden relative h-[225px] max-w-[400px] mx-auto">
               {imagesMobile.map((img) => (
                 <Image
                   alt={img.alt}
