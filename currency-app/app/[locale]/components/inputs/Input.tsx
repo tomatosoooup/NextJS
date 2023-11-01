@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
             `
             w-full
             rounded-md
-            p-2
+            py-2.5
             px-5
             ring-1
             ring-inset

@@ -35,7 +35,7 @@ const Form = () => {
       <div className="relative">
         <form
           id="form"
-          className="flex flex-col lg:grid max-w-[1150px] 2xl:max-w-screen-xl mx-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-16 lg:mb-16 relative z-10"
+          className="flex flex-col lg:grid max-w-[1150px] 2xl:max-w-screen-xl mx-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-16 lg:mb-16 relative pb-5 z-10"
         >
           <Numbers
             containerClass="text-3xl bottom-10 left-28"
@@ -60,7 +60,7 @@ const Form = () => {
           {/* Inputs */}
           <FormInputs />
           <div
-            className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mt-16 lg:mr-14 order-2 lg:order-none"
+            className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             <Reveal options={{ x: 100 }} width="100%">
@@ -82,9 +82,9 @@ const Form = () => {
               </>
             </Reveal>
           </div>
-          <section className="lg:hidden">
+          <section className="lg:hidden order-4 lg:order-none ">
             <Reveal options={{ x: 100 }} width="100%">
-              <div className="lg:hidden justify-center h-[50px] mt-10 px-5 order-4 lg:order-none">
+              <div className="lg:hidden justify-center h-[50px] mt-10 px-5 ">
                 <Button fullWidth>
                   <span className="text-white  pt-1">{t("button")}</span>
                 </Button>

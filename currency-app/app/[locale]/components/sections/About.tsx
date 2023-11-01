@@ -1,13 +1,12 @@
-import { useFonts } from "providers/FontProvider";
 import Image from "next/image";
+import classes from "app/animations/Image.module.css";
 
 import { useTranslations } from "next-intl";
+import { useFonts } from "providers/FontProvider";
 
-import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
-import { Reveal } from "../Reveal";
-import React from "react";
 import Ticker from "../Ticker";
+import { Reveal } from "../Reveal";
 
 const images = [
   {
@@ -58,7 +57,7 @@ const imagesMobile = [
   },
 ];
 
-const About = React.memo(function About() {
+const About = () => {
   const fonts = useFonts();
   const t = useTranslations("About");
 
@@ -192,8 +191,6 @@ const About = React.memo(function About() {
       <Ticker />
     </>
   );
-});
-
-About.displayName = "About";
+};
 
 export default About;

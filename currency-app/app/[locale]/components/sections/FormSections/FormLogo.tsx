@@ -6,7 +6,7 @@ const FormLogo = () => {
   return (
     <>
       <div
-        className="text-center font-medium text-white mx-auto mt-10 lg:absolute lg:bottom-10 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
+        className="text-center font-medium text-white mx-auto mt-10 hidden lg:block lg:absolute lg:bottom-10 lg:left-[50%] lg:translate-x-[-50%] order-5 lg:order-none"
         style={{ fontFamily: `${fonts.cf}` }}
       >
         <Reveal options={{ x: 0, bottom: 200 }}>

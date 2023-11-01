@@ -35,7 +35,8 @@ const Button: React.FC<ButtonProps> = ({
         items-center
         gap-5
         rounded-md
-        px-8 
+        pr-4
+        pl-5 
         py-3
         relative
         justify-center
