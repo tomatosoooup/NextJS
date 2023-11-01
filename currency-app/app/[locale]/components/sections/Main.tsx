@@ -53,7 +53,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto" id="main">
+      <div className="max-w-[1150px] 2xl:max-w-screen-2xl mx-auto" id="main">
         <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"

@@ -77,7 +77,7 @@ const FormInputs = () => {
   const t = useTranslations("Form");
   return (
     <div
-      className="flex flex-col justify-center mt-5 lg:mt-12 order-1 lg:order-none"
+      className="flex flex-col justify-center mt-5 lg:mt-10 order-1 lg:order-none"
       style={{ fontFamily: `${fonts.tt}` }}
     >
       <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">

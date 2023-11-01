@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     // fixed inset-0 w-screen z-20
     <div className="min-h-fit hidden lg:block">
-      <div className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto mt-5 px-5 mb-5">
+      <div className="max-w-[1150px] 2xl:max-w-screen-2xl mx-auto mt-5 px-5 mb-5">
         <ul
           className="flex 
           list-none 

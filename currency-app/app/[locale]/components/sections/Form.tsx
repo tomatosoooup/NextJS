@@ -13,6 +13,7 @@ import FormLogo from "./FormSections/FormLogo";
 
 import { Reveal } from "../Reveal";
 import Button from "../buttons/Button";
+import Ticker from "../Ticker";
 
 const Form = () => {
   const fonts = useFonts();
@@ -34,7 +35,7 @@ const Form = () => {
       <div className="relative">
         <form
           id="form"
-          className="flex flex-col lg:grid max-w-screen-xl m-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-20 lg:mb-28 relative pt-5 pb-10 z-10"
+          className="flex flex-col lg:grid max-w-[1150px] 2xl:max-w-screen-xl mx-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-16 lg:mb-16 relative z-10"
         >
           <Numbers
             containerClass="text-3xl bottom-10 left-28"
@@ -48,7 +49,7 @@ const Form = () => {
           />
           <Numbers
             containerClass="text-8xl -top-10 left-[450px] z-0"
-            spanClass="blur opacity-20"
+            spanClass="blur opacity-10"
             nums={[0, 0, 0, 1, 0]}
           />
           <Numbers
@@ -143,7 +144,7 @@ const Form = () => {
             src={"./images/messege.svg"}
             width={150}
             height={150}
-            className="absolute top-64 right-20 hidden 2xl:block"
+            className="absolute top-64 right-0 2xl:right-20 hidden xl:block z-20"
             loading="eager"
             style={{
               maxWidth: "100%",
@@ -152,6 +153,7 @@ const Form = () => {
           />
         </Link>
       </div>
+      <Ticker />
     </>
   );
 };

@@ -37,7 +37,6 @@ export default async function RootLayout({
             <Navbar />
             {/* locale={locale} */}
             <MobileNavbar locale={locale} />
-            {/* <DropDown locale={locale} /> */}
             {children}
           </NextIntlClientProvider>
         </FontProvider>

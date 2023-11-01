@@ -6,13 +6,14 @@ import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
 import { Reveal } from "../Reveal";
 import React from "react";
+import Ticker from "../Ticker";
 
 const images = [
   {
     alt: "sepa",
     width: 475,
     height: 475,
-    class: `hidden lg:block absolute right-12 top-20 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
+    class: `hidden lg:block absolute right-4 top-20 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "/images/sepa.png",
     quality: 100,
   },
@@ -29,7 +30,7 @@ const images = [
     alt: "swift",
     width: 375,
     height: 375,
-    class: `hidden lg:block absolute -right-0 bottom-32 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
+    class: `hidden lg:block absolute -right-16 bottom-32 pointer-events-none filter ${classes.img} ${classes.imgTop}`,
     src: "./images/swift.svg",
     quality: 10,
   },
@@ -120,7 +121,7 @@ const Services = React.memo(function Services() {
 
   return (
     <>
-      <section className="max-w-[1125px] 2xl:max-w-screen-2xl mx-auto relative">
+      <section className="max-w-[1050px] 2xl:max-w-screen-2xl mx-auto relative">
         <Numbers
           containerClass="text-4xl -top-20 left-6"
           spanClass="blur"
@@ -195,6 +196,7 @@ const Services = React.memo(function Services() {
           quality={60}
         />
       </section>
+      <Ticker />
     </>
   );
 });
