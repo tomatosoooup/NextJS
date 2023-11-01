@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
 import { Link as ScrollLink } from "react-scroll";
-import DropDown from "./DropDown";
+// import DropDown from "./DropDown";
 
 interface SmoothScrollLinkProps {
   to: string;
@@ -30,7 +30,8 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
   </ScrollLink>
 );
 
-const Navbar = ({ locale }: { locale?: string }) => {
+const Navbar = () => {
+  // { locale }: { locale?: string }
   const t = useTranslations("Navbar");
   const fonts = useFonts();
 
