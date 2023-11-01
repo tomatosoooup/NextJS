@@ -114,7 +114,7 @@ const About = () => {
           >
             {t("p")}
           </p>
-          <div className="lg:grid lg:grid-cols-2 text-white mb-10 md:mb-32 lg:mb-20">
+          <div className="lg:grid lg:grid-cols-2 text-white mb-10 lg:mb-12">
             <div className="lg:hidden relative h-[225px] max-w-[400px] mx-auto">
               {imagesMobile.map((img) => (
                 <Image
