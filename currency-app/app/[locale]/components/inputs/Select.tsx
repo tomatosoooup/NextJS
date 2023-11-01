@@ -24,7 +24,7 @@ const Select = ({ options, initialValues, onChoose }) => {
   return (
     <div className="relative text-white font-bold ">
       <div
-        className={`rounded-lg p-2 flex justify-around cursor-pointer ${classes.btn}`}
+        className={`rounded-lg p-2 flex justify-between pl-5 pr-8 cursor-pointer ${classes.btn}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="pt-1">{values ? values.type : initialValues[0]}</span>
