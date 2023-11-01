@@ -22,7 +22,7 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
     activeClass="active"
     to={to}
     smooth={true}
-    offset={offset - 150}
+    offset={offset}
     duration={1500}
     className={className}
   >

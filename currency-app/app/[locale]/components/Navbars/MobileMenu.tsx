@@ -23,7 +23,6 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
   <ScrollLink
     activeClass="active"
     to={to}
-    spy={true}
     smooth={true}
     offset={offset}
     duration={1000}
