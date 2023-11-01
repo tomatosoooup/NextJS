@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Button from "../buttons/Button";
+import Button from "../components/buttons/Button";
 
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "components/Numbers";
-import { Reveal } from "../Reveal";
+import { Reveal } from "../components/Reveal";
 import { Link as ScrollLink } from "react-scroll";
-import Ticker from "../Ticker";
+import Ticker from "../components/Ticker";
 
 interface SmoothScrollLinkProp {
   to: string;

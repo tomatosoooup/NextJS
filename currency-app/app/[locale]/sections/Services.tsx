@@ -4,9 +4,9 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
 import Numbers from "components/Numbers";
-import { Reveal } from "../Reveal";
+import { Reveal } from "../components/Reveal";
 import React from "react";
-import Ticker from "../Ticker";
+import Ticker from "../components/Ticker";
 
 const images = [
   {

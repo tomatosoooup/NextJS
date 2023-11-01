@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
 import Numbers from "components/Numbers";
-import Ticker from "../Ticker";
-import { Reveal } from "../Reveal";
+import Ticker from "../components/Ticker";
+import { Reveal } from "../components/Reveal";
 
 const images = [
   {

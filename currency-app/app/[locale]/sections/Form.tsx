@@ -1,4 +1,4 @@
-import Input from "../inputs/Input";
+import Input from "../components/inputs/Input";
 import Link from "next/link";
 import Image from "next/image";
 import { useFonts } from "providers/FontProvider";
@@ -11,9 +11,9 @@ import Numbers from "components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
 import FormLogo from "./FormSections/FormLogo";
 
-import { Reveal } from "../Reveal";
-import Button from "../buttons/Button";
-import Ticker from "../Ticker";
+import { Reveal } from "../components/Reveal";
+import Button from "../components/buttons/Button";
+import Ticker from "../components/Ticker";
 
 const Form = () => {
   const fonts = useFonts();
