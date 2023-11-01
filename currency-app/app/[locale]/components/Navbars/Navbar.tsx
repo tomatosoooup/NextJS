@@ -43,7 +43,7 @@ const Navbar = () => {
           className="flex 
           list-none 
           items-center 
-          justify-around 
+          justify-center 
           h-full 
           text-[20px] 
           uppercase 
@@ -52,10 +52,10 @@ const Navbar = () => {
           font-extralight"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          <SmoothScrollLink className="mt-7 cursor-pointer" to="main">
+          <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="main">
             {t("main")}
           </SmoothScrollLink>
-          <SmoothScrollLink className="mt-7 cursor-pointer " to="footer">
+          <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="footer">
             {t("contacts")}
           </SmoothScrollLink>
           <div
@@ -64,7 +64,6 @@ const Navbar = () => {
           flex 
           flex-col 
           font-bold
-          mx-auto
           relative"
           >
             <div className="w-16 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-28 top-14"></div>
@@ -82,10 +81,13 @@ const Navbar = () => {
             </span>
             <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-14"></div>
           </div>
-          <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="about">
+          <SmoothScrollLink className="mt-7 cursor-pointer ml-auto" to="about">
             {t("about")}
           </SmoothScrollLink>
-          <SmoothScrollLink className="mt-7 cursor-pointer" to="services">
+          <SmoothScrollLink
+            className="mt-7 cursor-pointer ml-auto"
+            to="services"
+          >
             {t("services")}
           </SmoothScrollLink>
         </ul>
