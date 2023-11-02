@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("fonts/TT Interfaces/stylesheet.css");
-@import url("fonts/Campton/stylesheet.css");
-@import url("fonts/Integral CF/stylesheet.css");
+@import url("./fonts/TT Interfaces/stylesheet.css");
+@import url("./fonts/Campton/stylesheet.css");
+@import url("./fonts/Integral CF/stylesheet.css");
 
 html,
 body {

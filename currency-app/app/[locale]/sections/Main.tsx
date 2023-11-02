@@ -125,7 +125,7 @@ const Main = () => {
                 </div>
               </Reveal>
             </div>
-            <div className="my-auto lg:ml-24 xl:ml-0">
+            <div className="my-auto lg:ml-24 ">
               {images.map((img, index) => (
                 <Reveal options={{ x: 200 }} key={index} width="100%">
                   <Image
