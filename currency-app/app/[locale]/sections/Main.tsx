@@ -3,7 +3,7 @@ import Button from "../components/buttons/Button";
 
 import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
-import Numbers from "components/Numbers";
+import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
 import { Link as ScrollLink } from "react-scroll";
 import Ticker from "../components/Ticker";
@@ -90,8 +90,7 @@ const Main = () => {
             2xl:text-6xl
             uppercase 
             mb-0
-            sm:mb-3 
-            font-black 
+            font-extrabold 
             relative
             !leading-tight"
                   style={{ fontFamily: `${fonts.ct}` }}
@@ -101,8 +100,8 @@ const Main = () => {
               </Reveal>
               <Reveal options={{ x: -200 }} width="100%">
                 <div className="flex justify-center lg:justify-start">
-                  <div className="my-4 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
-                  <div className="my-4 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
+                  <div className="my-3 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 lg:hidden"></div>
+                  <div className="my-3 w-72 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
                 </div>
               </Reveal>
               <Reveal options={{ x: -200 }}>
@@ -110,17 +109,17 @@ const Main = () => {
                   className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
                   style={{ fontFamily: `${fonts.tt}` }}
                 >
-                  <span className="font-semibold">{t("p1")}</span>
+                  <span className="font-bold">{t("p1")}</span>
                   <br />
                   <span className="my-3 block" />
-                  <span className="font-light">{t("p2")}</span>
+                  <span className="font-normal">{t("p2")}</span>
                 </p>
               </Reveal>
               <Reveal options={{ x: -100 }}>
                 <div className="hidden lg:block mt-6">
                   <SmoothScrollLink to="form">
                     <Button>
-                      <span className="pt-1">{t("button")}</span>
+                      <span className="pt-1 font-bold">{t("button")}</span>
                     </Button>
                   </SmoothScrollLink>
                 </div>

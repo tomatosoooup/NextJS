@@ -7,7 +7,7 @@ import { BsCheck2 } from "react-icons/bs";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-import Numbers from "components/Numbers";
+import Numbers from "@/components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
 import FormLogo from "./FormSections/FormLogo";
 
@@ -85,7 +85,9 @@ const Form = () => {
             <Reveal options={{ x: 100 }} width="100%">
               <div className="lg:hidden justify-center h-[50px] mt-10 px-5 ">
                 <Button fullWidth>
-                  <span className="text-white pt-1">{t("button")}</span>
+                  <span className="text-white pt-1 font-medium">
+                    {t("button")}
+                  </span>
                 </Button>
               </div>
             </Reveal>

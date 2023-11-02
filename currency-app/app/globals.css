@@ -2,22 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.cdnfonts.com/css/campton");
-
-@font-face {
-  font-family: "TT Interfaces";
-  src: url("../fonts/Interfaces/TTInterfaces-Regular.woff2") format("woff2"),
-    url("../fonts//Interfaces/TTInterfaces-Regular.ttf") format("truetype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "IntegralCF";
-  src: url("../fonts/Integral/IntegralCF-Bold.woff2") format("woff2"),
-    url("../fonts/Integral/IntegralCF-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
+@import url("fonts/TT Interfaces/stylesheet");
+@import url("fonts/Campton/stylesheet.css");
+@import url("fonts/Integral CF/stylesheet");
 
 html,
 body {

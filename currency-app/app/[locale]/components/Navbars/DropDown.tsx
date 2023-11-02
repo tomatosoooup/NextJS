@@ -22,7 +22,7 @@ const DropDown = ({ locale }: { locale?: string }) => {
   return (
     <div
       className="relative mt-6 z-40 ml-auto lg:ml-10"
-      style={{ fontFamily: `${fonts.tt}` }}
+      style={{ fontFamily: `${fonts.ct}` }}
     >
       <button
         type="button"

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
-import Numbers from "components/Numbers";
+import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
 import React from "react";
 import Ticker from "../components/Ticker";
@@ -53,7 +53,7 @@ const Services = () => {
       content: t("l1"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F] font-semibold">{t("l1-")}</span>
+          <span className="text-[#9F9F9F]">{t("l1-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -68,7 +68,7 @@ const Services = () => {
       content: t("l3"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F] font-semibold"> (UAH)</span>, PSP
+          <span className="text-[#9F9F9F]"> (UAH)</span>, PSP
           <span>{t("l3-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
@@ -78,7 +78,7 @@ const Services = () => {
       content: t("l4"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F] font-semibold">{t("l4-")}</span>
+          <span className="text-[#9F9F9F]">{t("l4-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -102,7 +102,7 @@ const Services = () => {
       content: t("l7"),
       subcontent: (
         <>
-          <span className="text-[#9F9F9F] font-semibold">{t("l7-")}</span>
+          <span className="text-[#9F9F9F]">{t("l7-")}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -139,9 +139,9 @@ const Services = () => {
               style={{ fontFamily: `${fonts.tt}` }}
             >
               <h2
-                className="text-4xl font-semibold text-center md:text-left uppercase"
+                className="text-4xl font-bold text-center md:text-left uppercase"
                 id="services"
-                style={{ fontFamily: `${fonts.ct}` }}
+                style={{ fontFamily: `${fonts.tt}` }}
               >
                 {t("h1")}
               </h2>
@@ -159,7 +159,6 @@ const Services = () => {
                   </AnimatedText>
                 ))}
               </ul>
-              {/* Second ul */}
               <ul className="flex flex-col max-w-xl gap-6 text-[#EAEAEA] text-lg font-normal mt-5 md:mt-14 md:ml-[22%] relative">
                 {liListSecond.map((li) => (
                   <AnimatedText key={li.content}>

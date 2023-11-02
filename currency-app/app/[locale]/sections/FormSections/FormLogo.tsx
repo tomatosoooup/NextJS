@@ -17,7 +17,7 @@ const FormLogo = () => {
                 KLTP
               </span>
               <span
-                className="text-sm md:text- lg:text-3xl tracking-[0.9rem] lowercase font-extralight leading-4"
+                className="text-sm md:text- lg:text-3xl tracking-[0.8rem] lowercase font-extralight leading-4"
                 style={{ fontFamily: `${fonts.ct}` }}
               >
                 exchange

@@ -15,9 +15,8 @@ const FontContext = createContext<FontContextType | undefined>(undefined);
 export const FontProvider = ({ children }) => {
   const [fontFamilies, setFontFamilies] = useState<FontFamilies>({
     ct: "Campton, sans-serif",
-    cf: "IntegralCF, sans-serif",
+    cf: "Integral CF, sans-serif",
     tt: "TT Interfaces, sans-serif",
-    gt: "Gotham, sans-serif",
   });
 
   return (

@@ -56,7 +56,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
     >
       <div className="z-10 w-full h-screen absolute bg-[#121212]/80 blur-sm inset-0 rounded-tr-3xl"></div>
       <ul
-        className="flex flex-col text-[#ffffff] px-5 gap-10 font-bold text-2xl mt-5 relative uppercase z-20"
+        className="flex flex-col text-[#ffffff] px-5 gap-10 font-medium text-2xl mt-5 relative uppercase z-20"
         style={{ fontFamily: `${fonts.tt}` }}
       >
         <SmoothScrollLink to="main" onClick={onClick} className="ml-5 pt-2">
@@ -77,13 +77,16 @@ const MobileMenu = ({ isVisible, onClick }) => {
         <div className="absolute h-[1px] left-0 -bottom-4 w-full bg-white/10"></div>
       </ul>
 
-      <div className="flex flex-col px-5 mt-8 text-[#D9D9D9] font-extrabold z-20">
+      <div
+        className="flex flex-col px-5 mt-8 text-[#D9D9D9] font-bold z-20"
+        style={{ fontFamily: `${fonts.ct}` }}
+      >
         <span>Wrocław</span>
-        <span className="font-medium">Ofiar Oswiecimskich 17</span>
-        <span className="text-right my-6">10:00-20:00</span>
+        <span className="font-normal">Ofiar Oswiecimskich 17</span>
+        <span className="text-right my-6 font-semibold">10:00-20:00</span>
         <span>Poznań</span>
-        <span className="font-medium">Poznańska 1/36 60-848</span>
-        <Link href={"/"} className="my-4 font-medium">
+        <span className="font-normal">Poznańska 1/36 60-848</span>
+        <Link href={"/"} className="my-4 font-normal">
           kltp.finance@gmail.com
         </Link>
 

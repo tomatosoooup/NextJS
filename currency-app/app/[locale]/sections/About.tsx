@@ -4,7 +4,7 @@ import classes from "app/animations/Image.module.css";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
 
-import Numbers from "components/Numbers";
+import Numbers from "@/components/Numbers";
 import Ticker from "../components/Ticker";
 import { Reveal } from "../components/Reveal";
 
@@ -99,7 +99,7 @@ const About = () => {
           id="about"
         >
           <h2
-            className="text-center text-white text-4xl mt-12 lg:mt-24 font-black uppercase"
+            className="text-center text-white text-4xl mt-12 lg:mt-24 font-bold uppercase"
             style={{ fontFamily: `${fonts.tt}` }}
           >
             {t("h1")}
@@ -133,7 +133,6 @@ const About = () => {
               ))}
             </div>
             <div className="relative hidden lg:block">
-              {/* images */}
               {images.map((img) => (
                 <Image
                   alt={img.alt}
@@ -151,7 +150,6 @@ const About = () => {
               ))}
             </div>
             <div>
-              {/* text */}
               <ul
                 className="flex 
             flex-col 
@@ -159,7 +157,7 @@ const About = () => {
             my-5 
             lg:my-20 
             text-[#EAEAEA] 
-            font-thin 
+            font-normal 
             text-lg 
             px-8 
             relative

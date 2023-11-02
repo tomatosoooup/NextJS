@@ -29,7 +29,6 @@ const Button: React.FC<ButtonProps> = ({
         `
         uppercase
         text-base 
-        font-black
         leading-6
         flex 
         items-center

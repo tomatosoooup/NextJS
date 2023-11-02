@@ -19,10 +19,9 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
   className,
 }) => (
   <ScrollLink
-    activeClass="active"
     to={to}
     smooth={true}
-    offset={offset}
+    offset={offset - 100}
     duration={1500}
     className={className}
   >
@@ -48,7 +47,7 @@ const Navbar = () => {
           uppercase 
           text-white 
           w-full 
-          font-extralight"
+          font-light"
           style={{ fontFamily: `${fonts.tt}` }}
         >
           <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="main">

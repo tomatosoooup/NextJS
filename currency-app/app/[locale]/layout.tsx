@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 import { FontProvider } from "providers/FontProvider";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
 import Navbar from "./components/Navbars/Navbar";
 import MobileNavbar from "./components/Navbars/MobileNavbar";
 
@@ -26,20 +25,20 @@ export default async function RootLayout({
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    notFound();
+    return;
   }
 
   return (
-    <html lang={locale} style={{ scrollBehavior: "smooth" }}>
+    <html lang={locale}>
       <body>
-        <FontProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <FontProvider>
             <Navbar />
             {/* locale={locale} */}
             <MobileNavbar locale={locale} />
             {children}
-          </NextIntlClientProvider>
-        </FontProvider>
+          </FontProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

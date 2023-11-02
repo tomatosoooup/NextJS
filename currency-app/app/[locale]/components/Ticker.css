@@ -24,28 +24,15 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  .dots > span::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255, 255, 255, 0.17);
-    border-radius: 50%;
-    left: -45px;
-    top: 40%;
-  }
-}
-
-.dots > span::before {
+.dots > p::before {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-color: rgba(255, 255, 255, 0.17);
   border-radius: 50%;
-  left: -50px;
-  top: 50%;
+  display: block;
+  transform: translateX(-12.5px);
 }
 
 .marquee {
@@ -57,7 +44,7 @@
 }
 
 .dots {
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.05);
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 1);
   text-stroke: 1px rgba(255, 255, 255, 1);
 }

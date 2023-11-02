@@ -126,10 +126,13 @@ const FormInputs = () => {
             </>
           </Reveal>
         </div>
-        <div className="w-1/2 relative hidden lg:flex h-[45px] mt-7">
+        <div className="w-1/2 relative hidden lg:flex h-[45px] mt-1">
           <Reveal options={{ x: -100 }} width="100%">
             <Button fullWidth type="button">
-              <span className="text-white pt-1 text-xs" onClick={handleResult}>
+              <span
+                className="text-white pt-1 text-sm font-medium"
+                onClick={handleResult}
+              >
                 {t("button")}
               </span>
             </Button>
