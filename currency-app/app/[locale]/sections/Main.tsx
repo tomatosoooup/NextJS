@@ -34,9 +34,9 @@ const images = [
   {
     alt: "Bank",
     src: "/images/Bank.png",
-    width: 650,
-    height: 625,
-    class: "hidden lg:block pointer-events-none filter",
+    width: 700,
+    height: 650,
+    class: "hidden lg:block pointer-events-none filter ml-auto",
   },
   {
     alt: "Bank-2",
