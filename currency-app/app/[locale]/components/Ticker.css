@@ -46,7 +46,6 @@
 .dots {
   color: rgba(255, 255, 255, 0.05);
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 1);
-  text-stroke: 1px rgba(255, 255, 255, 1);
 }
 
 .items-wrap .text-xs {

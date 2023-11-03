@@ -2,39 +2,49 @@ import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-
-import { Link as ScrollLink } from "react-scroll";
-
-interface SmoothScrollLinkProps {
-  to: string;
-  offset?: number;
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-}
-
-const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
-  to,
-  offset = 0,
-  children,
-  className,
-  onClick,
-}) => (
-  <ScrollLink
-    activeClass="active"
-    to={to}
-    smooth={true}
-    offset={offset}
-    duration={1000}
-    className={className}
-    onClick={onClick}
-  >
-    {children}
-  </ScrollLink>
-);
+import { useEffect } from "react";
 
 const MobileMenu = ({ isVisible, onClick }) => {
   const fonts = useFonts();
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+      scrollLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const targetId = link.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const targetY =
+              targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const initialY = window.pageYOffset + 100;
+            const duration = 2500; // Set your desired animation duration in milliseconds
+            let start = null;
+
+            function step(timestamp) {
+              if (!start) start = timestamp;
+              const progress = (timestamp - start) / duration;
+
+              window.scrollTo(
+                0,
+                initialY + (targetY - initialY) * Math.min(progress, 1)
+              );
+
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              }
+            }
+
+            requestAnimationFrame(step);
+          }
+        });
+      });
+    }
+  }, []);
 
   return (
     <div
@@ -59,21 +69,21 @@ const MobileMenu = ({ isVisible, onClick }) => {
         className="flex flex-col text-[#ffffff] px-5 gap-10 font-medium text-2xl mt-5 relative uppercase z-20"
         style={{ fontFamily: `${fonts.tt}` }}
       >
-        <SmoothScrollLink to="main" onClick={onClick} className="ml-5 pt-2">
+        <Link href="#main" onClick={onClick} className="ml-5 pt-2">
           Головна
-        </SmoothScrollLink>
+        </Link>
         <div className="absolute h-[1px] left-0 top-14 w-full bg-white/10"></div>
-        <SmoothScrollLink to="about" onClick={onClick} className="ml-5">
+        <Link href="#about" onClick={onClick} className="ml-5">
           О нас
-        </SmoothScrollLink>
+        </Link>
         <div className="absolute h-[1px] left-0 top-32 w-full bg-white/10"></div>
-        <SmoothScrollLink to="services" onClick={onClick} className="ml-5">
+        <Link href="#services" onClick={onClick} className="ml-5">
           Послуги
-        </SmoothScrollLink>
+        </Link>
         <div className="absolute h-[1px] left-0 top-[200px] w-full bg-white/10"></div>
-        <SmoothScrollLink to="footer" onClick={onClick} className="ml-5">
+        <Link href="#footer" onClick={onClick} className="ml-5">
           Контакти
-        </SmoothScrollLink>
+        </Link>
         <div className="absolute h-[1px] left-0 -bottom-4 w-full bg-white/10"></div>
       </ul>
 

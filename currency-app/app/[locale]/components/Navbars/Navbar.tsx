@@ -1,38 +1,55 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
-
-import { Link as ScrollLink } from "react-scroll";
-// import Link from "next/link";
-
-interface SmoothScrollLinkProps {
-  to: string;
-  offset?: number;
-  children: React.ReactNode;
-  className?: string;
-}
-
-const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
-  to,
-  offset = 0,
-  children,
-  className,
-}) => (
-  <ScrollLink
-    to={to}
-    smooth={true}
-    offset={offset - 100}
-    duration={1500}
-    className={className}
-  >
-    {children}
-  </ScrollLink>
-);
+import { useEffect } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   // { locale }: { locale?: string }
   const t = useTranslations("Navbar");
   const fonts = useFonts();
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+      scrollLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const targetId = link.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const yOffset = -150; // Adjust this value as needed
+            const targetY =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+            const initialY = window.pageYOffset;
+            const duration = 2500; // Set your desired animation duration in milliseconds
+            let start = null;
+
+            function step(timestamp) {
+              if (!start) start = timestamp;
+              const progress = (timestamp - start) / duration;
+
+              window.scrollTo(
+                0,
+                initialY + (targetY - initialY) * Math.min(progress, 1)
+              );
+
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              }
+            }
+
+            requestAnimationFrame(step);
+          }
+        });
+      });
+    }
+  }, []);
 
   return (
     <div className="min-h-fit hidden lg:block">
@@ -50,12 +67,12 @@ const Navbar = () => {
           font-light"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="main">
+          <Link className="mt-7 cursor-pointer mr-auto" href="#main">
             {t("main")}
-          </SmoothScrollLink>
-          <SmoothScrollLink className="mt-7 cursor-pointer mr-auto" to="footer">
+          </Link>
+          <Link className="mt-7 cursor-pointer mr-auto" href="#footer">
             {t("contacts")}
-          </SmoothScrollLink>
+          </Link>
           <div
             className="
           text-center 
@@ -79,15 +96,12 @@ const Navbar = () => {
             </span>
             <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-14"></div>
           </div>
-          <SmoothScrollLink className="mt-7 cursor-pointer ml-auto" to="about">
+          <Link className="mt-7 cursor-pointer ml-auto" href="#about">
             {t("about")}
-          </SmoothScrollLink>
-          <SmoothScrollLink
-            className="mt-7 cursor-pointer ml-auto"
-            to="services"
-          >
+          </Link>
+          <Link className="mt-7 cursor-pointer ml-auto" href="#services">
             {t("services")}
-          </SmoothScrollLink>
+          </Link>
         </ul>
       </div>
     </div>
