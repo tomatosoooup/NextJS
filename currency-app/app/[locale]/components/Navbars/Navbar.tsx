@@ -1,55 +1,12 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { useFonts } from "providers/FontProvider";
-import { useEffect } from "react";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   // { locale }: { locale?: string }
   const t = useTranslations("Navbar");
   const fonts = useFonts();
-
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      const scrollLinks = document.querySelectorAll('a[href^="#"]');
-
-      scrollLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const targetId = link.getAttribute("href").substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            const yOffset = -150; // Adjust this value as needed
-            const targetY =
-              targetElement.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-            const initialY = window.pageYOffset;
-            const duration = 2500; // Set your desired animation duration in milliseconds
-            let start = null;
-
-            function step(timestamp) {
-              if (!start) start = timestamp;
-              const progress = (timestamp - start) / duration;
-
-              window.scrollTo(
-                0,
-                initialY + (targetY - initialY) * Math.min(progress, 1)
-              );
-
-              if (progress < 1) {
-                requestAnimationFrame(step);
-              }
-            }
-
-            requestAnimationFrame(step);
-          }
-        });
-      });
-    }
-  }, []);
 
   return (
     <div className="min-h-fit hidden lg:block">
@@ -67,12 +24,28 @@ const Navbar = () => {
           font-light"
           style={{ fontFamily: `${fonts.tt}` }}
         >
-          <Link className="mt-7 cursor-pointer mr-auto" href="#main">
+          <ScrollLink
+            className="mt-7 cursor-pointer mr-auto"
+            activeClass="active"
+            to="main"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             {t("main")}
-          </Link>
-          <Link className="mt-7 cursor-pointer mr-auto" href="#footer">
+          </ScrollLink>
+          <ScrollLink
+            className="mt-7 cursor-pointer mr-auto"
+            activeClass="active"
+            to="footer"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={3500}
+          >
             {t("contacts")}
-          </Link>
+          </ScrollLink>
           <div
             className="
           text-center 
@@ -96,12 +69,28 @@ const Navbar = () => {
             </span>
             <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-14"></div>
           </div>
-          <Link className="mt-7 cursor-pointer ml-auto" href="#about">
+          <ScrollLink
+            className="mt-7 cursor-pointer ml-auto"
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={2000}
+          >
             {t("about")}
-          </Link>
-          <Link className="mt-7 cursor-pointer ml-auto" href="#services">
+          </ScrollLink>
+          <ScrollLink
+            className="mt-7 cursor-pointer ml-auto"
+            activeClass="active"
+            to="services"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={2000}
+          >
             {t("services")}
-          </Link>
+          </ScrollLink>
         </ul>
       </div>
     </div>

@@ -6,7 +6,6 @@ interface IProps {
   options?: {
     x?: number;
     bottom?: number;
-    pos?: string;
   };
 }
 
@@ -25,7 +24,7 @@ export const Reveal = ({
         }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.05 }}
+        transition={{ duration: 1 }}
       >
         {children}
       </motion.div>

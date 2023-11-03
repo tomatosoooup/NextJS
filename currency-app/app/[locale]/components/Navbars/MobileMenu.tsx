@@ -1,50 +1,11 @@
 import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
 import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const MobileMenu = ({ isVisible, onClick }) => {
   const fonts = useFonts();
-
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      const scrollLinks = document.querySelectorAll('a[href^="#"]');
-
-      scrollLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const targetId = link.getAttribute("href").substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            const targetY =
-              targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const initialY = window.pageYOffset + 100;
-            const duration = 2500; // Set your desired animation duration in milliseconds
-            let start = null;
-
-            function step(timestamp) {
-              if (!start) start = timestamp;
-              const progress = (timestamp - start) / duration;
-
-              window.scrollTo(
-                0,
-                initialY + (targetY - initialY) * Math.min(progress, 1)
-              );
-
-              if (progress < 1) {
-                requestAnimationFrame(step);
-              }
-            }
-
-            requestAnimationFrame(step);
-          }
-        });
-      });
-    }
-  }, []);
 
   return (
     <div
@@ -69,21 +30,53 @@ const MobileMenu = ({ isVisible, onClick }) => {
         className="flex flex-col text-[#ffffff] px-5 gap-10 font-medium text-2xl mt-5 relative uppercase z-20"
         style={{ fontFamily: `${fonts.tt}` }}
       >
-        <Link href="#main" onClick={onClick} className="ml-5 pt-2">
+        <ScrollLink
+          to="main"
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={1500}
+          onClick={onClick}
+          className="ml-5 pt-2"
+        >
           Головна
-        </Link>
+        </ScrollLink>
         <div className="absolute h-[1px] left-0 top-14 w-full bg-white/10"></div>
-        <Link href="#about" onClick={onClick} className="ml-5">
+        <ScrollLink
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={1500}
+          onClick={onClick}
+          className="ml-5"
+        >
           О нас
-        </Link>
+        </ScrollLink>
         <div className="absolute h-[1px] left-0 top-32 w-full bg-white/10"></div>
-        <Link href="#services" onClick={onClick} className="ml-5">
+        <ScrollLink
+          to="services"
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={2500}
+          onClick={onClick}
+          className="ml-5"
+        >
           Послуги
-        </Link>
+        </ScrollLink>
         <div className="absolute h-[1px] left-0 top-[200px] w-full bg-white/10"></div>
-        <Link href="#footer" onClick={onClick} className="ml-5">
+        <ScrollLink
+          to="footer"
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={3500}
+          onClick={onClick}
+          className="ml-5"
+        >
           Контакти
-        </Link>
+        </ScrollLink>
         <div className="absolute h-[1px] left-0 -bottom-4 w-full bg-white/10"></div>
       </ul>
 

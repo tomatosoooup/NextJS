@@ -5,30 +5,9 @@ import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
-import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 import Ticker from "../components/Ticker";
-
-interface SmoothScrollLinkProp {
-  to: string;
-  offset?: number;
-  children: React.ReactNode;
-}
-
-const SmoothScrollLink: React.FC<SmoothScrollLinkProp> = ({
-  to,
-  offset = 0,
-  children,
-}) => (
-  <ScrollLink
-    activeClass="active"
-    to={to}
-    smooth={true}
-    offset={offset - 150}
-    duration={1500}
-  >
-    {children}
-  </ScrollLink>
-);
+import { Link as ScrollLink } from "react-scroll";
 
 const images = [
   {
@@ -117,11 +96,17 @@ const Main = () => {
               </Reveal>
               <Reveal options={{ x: -100 }}>
                 <div className="hidden lg:block mt-6">
-                  <SmoothScrollLink to="form">
+                  <ScrollLink
+                    to="form"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={1500}
+                  >
                     <Button>
                       <span className="pt-1 font-bold">{t("button")}</span>
                     </Button>
-                  </SmoothScrollLink>
+                  </ScrollLink>
                 </div>
               </Reveal>
             </div>
