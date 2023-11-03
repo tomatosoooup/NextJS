@@ -5,7 +5,6 @@ import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
-import Link from "next/link";
 import Ticker from "../components/Ticker";
 import { Link as ScrollLink } from "react-scroll";
 
