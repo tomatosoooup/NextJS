@@ -1,7 +1,6 @@
 import "../globals.css";
 import type { Metadata } from "next";
 
-import { FontProvider } from "providers/FontProvider";
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "./components/Navbars/Navbar";
 import MobileNavbar from "./components/Navbars/MobileNavbar";
@@ -32,12 +31,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <FontProvider>
-            <Navbar />
-            {/* locale={locale} */}
-            <MobileNavbar locale={locale} />
-            {children}
-          </FontProvider>
+          <Navbar />
+          {/* locale={locale} */}
+          <MobileNavbar locale={locale} />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

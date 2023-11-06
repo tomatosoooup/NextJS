@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Button from "../components/buttons/Button";
-
-import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
@@ -27,7 +25,6 @@ const images = [
 
 const Main = () => {
   const t = useTranslations("Main");
-  const fonts = useFonts();
 
   return (
     <>
@@ -70,8 +67,8 @@ const Main = () => {
             mb-0
             font-extrabold 
             relative
-            !leading-tight"
-                  style={{ fontFamily: `${fonts.ct}` }}
+            !leading-tight
+            font-ct"
                 >
                   Cryptocurrency exchange
                 </h1>
@@ -83,10 +80,7 @@ const Main = () => {
                 </div>
               </Reveal>
               <Reveal options={{ x: -200 }}>
-                <p
-                  className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl"
-                  style={{ fontFamily: `${fonts.tt}` }}
-                >
+                <p className="text-sm md:text-xl text-[#CECECE] font-light lg:max-w-xl font-tt">
                   <span className="font-bold">{t("p1")}</span>
                   <br />
                   <span className="my-3 block" />

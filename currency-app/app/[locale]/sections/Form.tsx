@@ -1,7 +1,6 @@
 import Input from "../components/inputs/Input";
 import Link from "next/link";
 import Image from "next/image";
-import { useFonts } from "providers/FontProvider";
 import { BsCheck2 } from "react-icons/bs";
 
 import { useState } from "react";
@@ -16,7 +15,6 @@ import Button from "../components/buttons/Button";
 import Ticker from "../components/Ticker";
 
 const Form = () => {
-  const fonts = useFonts();
   const t = useTranslations("Form");
 
   const [isClicked, setIsClicked] = useState(false);
@@ -58,10 +56,7 @@ const Form = () => {
             nums={[0, 0, 1, 0]}
           />
           <FormInputs />
-          <div
-            className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none"
-            style={{ fontFamily: `${fonts.tt}` }}
-          >
+          <div className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none font-tt">
             <Reveal options={{ x: 100 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
@@ -92,10 +87,7 @@ const Form = () => {
               </div>
             </Reveal>
           </section>
-          <div
-            className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2"
-            style={{ fontFamily: `${fonts.ct}` }}
-          >
+          <div className="mt-10 px-5 text-[#555] relative text-xs font-semibold auto-cols-[0.5rem] order-3 lg:order-none lg:col-span-2 font-ct">
             <Reveal options={{ x: 100 }} width="100%">
               <>
                 <div className="flex items-center gap-x-3 lg:ml-[52%]">

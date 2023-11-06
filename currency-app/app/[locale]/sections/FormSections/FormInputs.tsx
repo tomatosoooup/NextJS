@@ -9,7 +9,6 @@ import { TfiReload } from "react-icons/tfi";
 
 import { getOptions } from "app/utils/getOptions";
 import { useTranslations } from "next-intl";
-import { useFonts } from "providers/FontProvider";
 
 import { useState } from "react";
 import Select from "@/components/inputs/Select";
@@ -74,13 +73,9 @@ const FormInputs = () => {
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
 
-  const fonts = useFonts();
   const t = useTranslations("Form");
   return (
-    <div
-      className="flex flex-col justify-center mt-5 lg:mt-10 order-1 lg:order-none"
-      style={{ fontFamily: `${fonts.tt}` }}
-    >
+    <div className="flex flex-col justify-center mt-5 lg:mt-10 order-1 lg:order-none font-tt">
       <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
         <div className="w-1/2">
           <Reveal options={{ x: -100 }} width="100%">

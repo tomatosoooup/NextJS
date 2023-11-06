@@ -1,4 +1,3 @@
-import { useFonts } from "providers/FontProvider";
 import { useTranslations } from "next-intl";
 
 import Image from "next/image";
@@ -45,7 +44,6 @@ const images = [
 ];
 
 const Services = () => {
-  const fonts = useFonts();
   const t = useTranslations("Services");
 
   const liList = [
@@ -134,14 +132,10 @@ const Services = () => {
             nums={[0, 1, 0, 0, 0]}
           />
           <div className="text-white relative ">
-            <div
-              className="pt-10 lg:pt-32 pb-16 md:pb-28 px-5 relative"
-              style={{ fontFamily: `${fonts.tt}` }}
-            >
+            <div className="pt-10 lg:pt-32 pb-16 md:pb-28 px-5 relative font-tt">
               <h2
-                className="text-4xl font-bold text-center md:text-left uppercase"
+                className="text-4xl font-bold text-center md:text-left uppercase font-tt"
                 id="services"
-                style={{ fontFamily: `${fonts.tt}` }}
               >
                 {t("h1")}
               </h2>

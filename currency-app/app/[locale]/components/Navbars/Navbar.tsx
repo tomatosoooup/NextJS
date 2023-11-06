@@ -1,12 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { useFonts } from "providers/FontProvider";
 import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   // { locale }: { locale?: string }
   const t = useTranslations("Navbar");
-  const fonts = useFonts();
 
   return (
     <div className="min-h-fit hidden lg:block">
@@ -21,8 +19,8 @@ const Navbar = () => {
           uppercase 
           text-white 
           w-full 
-          font-light"
-          style={{ fontFamily: `${fonts.tt}` }}
+          font-light
+          font-tt"
         >
           <ScrollLink
             className="mt-7 cursor-pointer mr-auto"
@@ -55,16 +53,8 @@ const Navbar = () => {
           relative"
           >
             <div className="w-16 h-[1px] bg-gradient-to-l from-white to-white/10 absolute -left-28 top-14"></div>
-            <span
-              className="text-6xl tracking-[0.5rem]"
-              style={{ fontFamily: `${fonts.cf}` }}
-            >
-              KLTP
-            </span>
-            <span
-              className="text-xl tracking-[0.7rem] lowercase font-light"
-              style={{ fontFamily: `${fonts.ct}` }}
-            >
+            <span className="text-6xl tracking-[0.5rem] font-cf">KLTP</span>
+            <span className="text-xl tracking-[0.7rem] lowercase font-light font-ct">
               exchange
             </span>
             <div className="w-16 h-[1px] bg-gradient-to-r from-white to-white/10 absolute -right-28 top-14"></div>

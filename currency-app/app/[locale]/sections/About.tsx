@@ -2,7 +2,6 @@ import Image from "next/image";
 import classes from "app/animations/Image.module.css";
 
 import { useTranslations } from "next-intl";
-import { useFonts } from "providers/FontProvider";
 
 import Numbers from "@/components/Numbers";
 import Ticker from "../components/Ticker";
@@ -58,7 +57,6 @@ const imagesMobile = [
 ];
 
 const About = () => {
-  const fonts = useFonts();
   const t = useTranslations("About");
 
   const liList = [
@@ -72,12 +70,7 @@ const About = () => {
     {
       content: t("l5"),
       subcontent: (
-        <span
-          className="uppercase font-bold mr-1"
-          style={{ fontFamily: `${fonts.cf}` }}
-        >
-          KLTP EXCHANGE
-        </span>
+        <span className="uppercase font-bold mr-1 font-cf">KLTP EXCHANGE</span>
       ),
     },
   ];
@@ -98,20 +91,14 @@ const About = () => {
           className="relative max-w-[1150px] 2xl:max-w-screen-2xl mx-auto"
           id="about"
         >
-          <h2
-            className="text-center text-white text-4xl mt-12 lg:mt-24 font-bold uppercase"
-            style={{ fontFamily: `${fonts.tt}` }}
-          >
+          <h2 className="text-center text-white text-4xl mt-12 lg:mt-24 font-bold uppercase font-tt">
             {t("h1")}
           </h2>
           <div className="flex justify-center">
             <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
             <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
           </div>
-          <p
-            className="text-center text-white text-lg font-semibold px-5"
-            style={{ fontFamily: `${fonts.tt}` }}
-          >
+          <p className="text-center text-white text-lg font-semibold px-5 font-tt">
             {t("p")}
           </p>
           <div className="lg:grid lg:grid-cols-2 text-white mb-10 lg:mb-12">
@@ -161,8 +148,8 @@ const About = () => {
             text-lg 
             px-8 
             relative
+            font-tt
             "
-                style={{ fontFamily: `${fonts.tt}` }}
               >
                 {liList.map((li, index) => (
                   <AnimatedText key={index}>

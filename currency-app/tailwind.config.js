@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      ct: ["Campton", "sans-serif"],
+      tt: ["TT Interfaces", "sans-serif"],
+      cf: ["Integral CF", "sans-serif"],
+    },
   },
   plugins: [],
 };

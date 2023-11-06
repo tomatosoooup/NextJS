@@ -1,14 +1,11 @@
 "use client";
 
-import { useFonts } from "providers/FontProvider";
 import { useState } from "react";
 import Link from "next/link";
 
 const DropDown = ({ locale }: { locale?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectedLanguage = locale ? locale.toUpperCase() : "EN";
-
-  const fonts = useFonts();
 
   const linksList = ["en", "pl", "ua", "ru"];
   const filteredList = linksList.filter(
@@ -20,10 +17,7 @@ const DropDown = ({ locale }: { locale?: string }) => {
   };
 
   return (
-    <div
-      className="relative mt-6 z-40 ml-auto lg:ml-10"
-      style={{ fontFamily: `${fonts.ct}` }}
-    >
+    <div className="relative mt-6 z-40 ml-auto lg:ml-10 font-ct">
       <button
         type="button"
         className="px-4 py-2 text-white bg-transparent font-medium rounded-lg text-sm inline-flex items-center"

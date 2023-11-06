@@ -1,12 +1,9 @@
-import { useFonts } from "providers/FontProvider";
 import clsx from "clsx";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
 const MobileMenu = ({ isVisible, onClick }) => {
-  const fonts = useFonts();
-
   return (
     <div
       className={clsx(
@@ -26,10 +23,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
       onClick={onClick}
     >
       <div className="z-10 w-full h-screen absolute bg-[#121212]/80 blur-sm inset-0 rounded-tr-3xl"></div>
-      <ul
-        className="flex flex-col text-[#ffffff] px-5 gap-10 font-medium text-2xl mt-5 relative uppercase z-20"
-        style={{ fontFamily: `${fonts.tt}` }}
-      >
+      <ul className="flex flex-col text-[#ffffff] px-5 gap-10 font-medium text-2xl mt-5 relative uppercase z-20 font-tt">
         <ScrollLink
           to="main"
           spy={true}
@@ -80,10 +74,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
         <div className="absolute h-[1px] left-0 -bottom-4 w-full bg-white/10"></div>
       </ul>
 
-      <div
-        className="flex flex-col px-5 mt-8 text-[#D9D9D9] font-bold z-20"
-        style={{ fontFamily: `${fonts.ct}` }}
-      >
+      <div className="flex flex-col px-5 mt-8 text-[#D9D9D9] font-bold z-20 font-ct">
         <span>Wrocław</span>
         <span className="font-normal">Ofiar Oswiecimskich 17</span>
         <span className="text-right my-6 font-semibold">10:00-20:00</span>
@@ -93,7 +84,7 @@ const MobileMenu = ({ isVisible, onClick }) => {
           kltp.finance@gmail.com
         </Link>
 
-        <div className="flex gap-5 mt-4" style={{ fontFamily: `${fonts.ct}` }}>
+        <div className="flex gap-5 mt-4 font-ct">
           <Link href={"/"}>
             <Image
               alt="telegram"
