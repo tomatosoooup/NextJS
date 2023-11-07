@@ -1,4 +1,3 @@
-import Input from "../../components/inputs/Input";
 import Link from "next/link";
 import Image from "next/image";
 import { BsCheck2 } from "react-icons/bs";
@@ -23,14 +22,6 @@ const Form = ({ text }: { text: string[] }) => {
 
   const handleCheckTwo = () => {
     setIsClickedTwo(!isClickedTwo);
-  };
-
-  const type = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("type") === "Cash"
-        ? `${text[4]}`
-        : "Iban" || "";
-    }
   };
 
   return (

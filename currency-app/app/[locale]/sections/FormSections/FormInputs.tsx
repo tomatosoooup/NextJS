@@ -9,7 +9,7 @@ import { TfiReload } from "react-icons/tfi";
 
 import { getOptions } from "app/utils/getOptions";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import Select from "app/components/inputs/Select";
 
 interface FormInputsProps {
