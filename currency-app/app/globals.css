@@ -27,3 +27,16 @@ body {
   background: #d9d9d9;
   border-radius: 1px;
 }
+
+.lang {
+  animation: langMove 1.5s infinite alternate;
+}
+
+@keyframes langMove {
+  0% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  100% {
+    transform: translate3d(8px, 0, 0);
+  }
+}

@@ -17,6 +17,8 @@ const MobileMenu = ({ isVisible, onClick }) => {
         -translate-x-full 
         py-20
         rounded-tr-3xl
+        transition-all 
+        duration-700
     `,
         isVisible && "translate-x-0 flex flex-col transition-all duration-700 "
       )}

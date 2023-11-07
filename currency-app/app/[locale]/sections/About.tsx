@@ -3,9 +3,9 @@ import classes from "app/animations/Image.module.css";
 
 import { useTranslations } from "next-intl";
 
-// import Numbers from "@/components/Numbers";
-import Ticker from "../components/Ticker";
-import { Reveal } from "../components/Reveal";
+import Numbers from "../../components/Numbers";
+import Ticker from "../../components/Ticker";
+import { Reveal } from "../../components/Reveal";
 
 const images = [
   {
@@ -82,11 +82,11 @@ const About = () => {
   return (
     <>
       <div className="relative">
-        {/* <Numbers
+        <Numbers
           containerClass="text-7xl -top-32 left-24"
           spanClass="blur opacity-40"
           nums={[0, 0, 1, 0]}
-        /> */}
+        />
         <section
           className="relative max-w-[1150px] 2xl:max-w-screen-2xl mx-auto"
           id="about"

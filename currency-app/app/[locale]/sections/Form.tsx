@@ -1,4 +1,4 @@
-import Input from "../components/inputs/Input";
+import Input from "../../components/inputs/Input";
 import Link from "next/link";
 import Image from "next/image";
 import { BsCheck2 } from "react-icons/bs";
@@ -6,13 +6,13 @@ import { BsCheck2 } from "react-icons/bs";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-// import Numbers from "@/components/Numbers";
+import Numbers from "../../components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
 import FormLogo from "./FormSections/FormLogo";
 
-import { Reveal } from "../components/Reveal";
-import Button from "../components/buttons/Button";
-import Ticker from "../components/Ticker";
+import { Reveal } from "../../components/Reveal";
+import Button from "../../components/buttons/Button";
+import Ticker from "../../components/Ticker";
 
 const Form = () => {
   const t = useTranslations("Form");
@@ -39,7 +39,7 @@ const Form = () => {
           id="form"
           className="flex flex-col lg:grid max-w-[1150px] 2xl:max-w-screen-xl mx-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-16 lg:mb-16 relative pb-5 z-10"
         >
-          {/* <Numbers
+          <Numbers
             containerClass="text-3xl bottom-10 left-28"
             spanClass="blur"
             nums={[0, 1, 1, 0, 1]}
@@ -58,7 +58,7 @@ const Form = () => {
             containerClass="text-6xl -top-16 -right-20"
             spanClass="blur"
             nums={[0, 0, 1, 0]}
-          /> */}
+          />
           <FormInputs
             iban={iban_town}
             reciever={reciever}

@@ -2,10 +2,10 @@ import { useTranslations } from "next-intl";
 
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
-// import Numbers from "@/components/Numbers";
-import { Reveal } from "../components/Reveal";
+import Numbers from "../../components/Numbers";
+import { Reveal } from "../../components/Reveal";
 import React from "react";
-import Ticker from "../components/Ticker";
+import Ticker from "../../components/Ticker";
 
 const images = [
   {
@@ -121,7 +121,7 @@ const Services = () => {
     <>
       <div className="relative">
         <section className="max-w-[1050px] 2xl:max-w-screen-2xl mx-auto relative">
-          {/* <Numbers
+          <Numbers
             containerClass="text-4xl -top-20 left-6"
             spanClass="blur"
             nums={[0, 0, 0, 1, 0]}
@@ -130,7 +130,7 @@ const Services = () => {
             containerClass="text-7xl top-0 left-36"
             spanClass="blur opacity-40"
             nums={[0, 1, 0, 0, 0]}
-          /> */}
+          />
           <div className="text-white relative ">
             <div className="pt-10 lg:pt-32 pb-16 md:pb-28 px-5 relative font-tt">
               <h2

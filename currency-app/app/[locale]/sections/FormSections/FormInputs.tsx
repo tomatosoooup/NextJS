@@ -2,16 +2,16 @@
 
 import axios from "axios";
 
-import Button from "@/components/buttons/Button";
-import Input from "@/components/inputs/Input";
-import { Reveal } from "@/components/Reveal";
+import Button from "app/components/buttons/Button";
+import Input from "app/components/inputs/Input";
+import { Reveal } from "app/components/Reveal";
 import { TfiReload } from "react-icons/tfi";
 
 import { getOptions } from "app/utils/getOptions";
 import { useTranslations } from "next-intl";
 
 import { useState } from "react";
-import Select from "@/components/inputs/Select";
+import Select from "app/components/inputs/Select";
 
 interface FormInputsProps {
   iban?: string;

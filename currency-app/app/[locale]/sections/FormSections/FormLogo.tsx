@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "app/components/Reveal";
 
 const FormLogo = () => {
   return (

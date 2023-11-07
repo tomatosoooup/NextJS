@@ -2,8 +2,9 @@ import "../globals.css";
 import type { Metadata } from "next";
 
 import { NextIntlClientProvider } from "next-intl";
-import Navbar from "./components/Navbars/Navbar";
-import MobileNavbar from "./components/Navbars/MobileNavbar";
+import Navbar from "../components/Navbars/Navbar";
+import MobileNavbar from "../components/Navbars/MobileNavbar";
+import LangSelect from "app/components/LangSelect";
 
 export const metadata: Metadata = {
   title: "KLTP",
@@ -31,6 +32,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <LangSelect locale={locale} />
           <Navbar />
           <MobileNavbar locale={locale} />
           {children}
