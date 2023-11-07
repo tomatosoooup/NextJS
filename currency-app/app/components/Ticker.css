@@ -35,6 +35,19 @@
   transform: translateX(-12.5px);
 }
 
+/* @media screen and (max-width: 768px) {
+  .dots > p::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 50%;
+    display: block;
+    transform: translateX(-12.5px) translateY(7.5px);
+  }
+} */
+
 .marquee {
   animation: scroll 100s linear infinite;
 }

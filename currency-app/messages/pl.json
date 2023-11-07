@@ -14,11 +14,9 @@
     "give": "Dajesz",
     "get": "Otrzymujesz",
     "sum": "Kwota",
-    "iban": "IBAN/ MIASTO",
+    "town": "MIASTO",
     "reciever": "Nazwa odbiorcy",
-    "button": "Zostawić zlecenie",
-    "chBox1": "",
-    "chBox2": ""
+    "button": "Zostawić zlecenie"
   },
   "About": {
     "h1": "O nas",

@@ -15,7 +15,7 @@ const Option: React.FC<OprionProps> = ({ val1, val2, val3, onChoose }) => {
   return (
     <li
       key={uuidv4()}
-      className={`cursor-pointer flex justify-between pl-4 pr-7 border border-white/10 font-extralight py-1 `}
+      className={`cursor-pointer flex justify-between pl-4 pr-7 border border-white/10 font-extralight py-1 items-center`}
       onClick={handleClick}
     >
       <span className="pt-1">{val1}</span>

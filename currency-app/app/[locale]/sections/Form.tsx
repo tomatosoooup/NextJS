@@ -14,10 +14,6 @@ import Button from "../../components/buttons/Button";
 import Ticker from "../../components/Ticker";
 
 const Form = ({ text }: { text: string[] }) => {
-  const [iban_town, setIbanTown] = useState("");
-  const [reciever, setReciever] = useState("");
-  const [telegram, setTelegram] = useState("");
-
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedTwo, setIsClickedTwo] = useState(false);
 
@@ -27,6 +23,14 @@ const Form = ({ text }: { text: string[] }) => {
 
   const handleCheckTwo = () => {
     setIsClickedTwo(!isClickedTwo);
+  };
+
+  const type = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("type") === "Cash"
+        ? `${text[4]}`
+        : "Iban" || "";
+    }
   };
 
   return (
@@ -56,42 +60,8 @@ const Form = ({ text }: { text: string[] }) => {
             spanClass="blur"
             nums={[0, 0, 1, 0]}
           />
-          <FormInputs
-            iban={iban_town}
-            reciever={reciever}
-            telegram={telegram}
-            text={text}
-          />
-          <div className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none font-tt">
-            <Reveal options={{ x: 100 }} width="100%">
-              <>
-                <div className="font-medium mb-1 lg:mb-0">{text[4]}</div>
-                <Input
-                  id="input-3"
-                  onChange={(e) => setIbanTown(e.target.value)}
-                />
-              </>
-            </Reveal>
-            <Reveal options={{ x: 100 }} width="100%">
-              <>
-                <div className="font-medium mb-1 lg:mb-0">{text[5]}</div>
-                <Input
-                  id="input-4"
-                  onChange={(e) => setReciever(e.target.value)}
-                />
-              </>
-            </Reveal>
-            <Reveal options={{ x: 100 }} width="100%">
-              <>
-                <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
-                <Input
-                  id="input-5"
-                  onChange={(e) => setTelegram(e.target.value)}
-                  placeholder="@username"
-                />
-              </>
-            </Reveal>
-          </div>
+          <FormInputs text={text} />
+
           <section className="lg:hidden order-4 lg:order-none ">
             <Reveal options={{ x: 100 }} width="100%">
               <div className="lg:hidden justify-center h-[50px] mt-10 px-5 ">

@@ -1,4 +1,3 @@
-"use client";
 import Option from "./Option";
 import classes from "../buttons/Button.module.css";
 import Image from "next/image";
@@ -18,7 +17,7 @@ const Select = ({ options, initialValues, onChoose }) => {
   const handleOptionChoose = (type: string, name: string, cur: string) => {
     setValues({ type, name, cur });
     setIsOpen(false);
-    onChoose(cur);
+    onChoose(cur, type);
   };
 
   return (

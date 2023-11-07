@@ -16,7 +16,7 @@ export default function Home() {
     form("get"),
     form("sum"),
     form("button"),
-    form("iban"),
+    form("town"),
     form("reciever"),
   ];
 

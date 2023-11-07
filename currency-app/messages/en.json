@@ -14,11 +14,9 @@
     "give": "You Give",
     "get": "You Receive",
     "sum": "Amount",
-    "iban": "IBAN/TOWN",
+    "town": "TOWN",
     "reciever": "Name of Receiver",
-    "button": "Place order",
-    "chBox1": "",
-    "chBox2": ""
+    "button": "Place order"
   },
   "About": {
     "h1": "ABOUT US",
