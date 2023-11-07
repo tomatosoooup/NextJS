@@ -36,11 +36,14 @@ const FormInputs: React.FC<FormInputsProps> = ({
     if (typeof localStorage !== "undefined") {
       const cur1 = localStorage.getItem("cur1");
       const cur2 = localStorage.getItem("cur2");
-      const text = `Валюта 1 - ${cur1} \n Валюта 2 - ${cur2} \n Пользователь - ${reciever}. \n Iban - ${iban}, Telegram - ${telegram}`;
+      const text = `Валюта 1 - ${cur1} \n Валюта 2 - ${cur2} \n Пользователь - ${reciever}. \n Iban - ${iban}, Telegram - ${telegram} ${amount}`;
 
       const req = axios.post(
         `${telegramUrl}${token}/sendMessage?chat_id=${chat_id}&text=${text}`
       );
+      if (req) {
+        return null;
+      }
     }
   };
 

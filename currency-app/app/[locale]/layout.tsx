@@ -32,7 +32,6 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
-          {/* locale={locale} */}
           <MobileNavbar locale={locale} />
           {children}
         </NextIntlClientProvider>

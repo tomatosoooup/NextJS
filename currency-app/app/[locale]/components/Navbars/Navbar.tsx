@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
-  // { locale }: { locale?: string }
   const t = useTranslations("Navbar");
 
   return (
