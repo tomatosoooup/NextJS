@@ -24,18 +24,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={clsx(
         `
-        uppercase
-        text-base 
-        leading-6
-        flex 
-        items-center
-        gap-4
-        rounded-md
-        px-5 
-        py-3
-        relative
-        justify-center
-        font-tt
+        uppercase text-base leading-6 flex items-center gap-4 rounded-md px-5 py-3 relative justify-center font-tt
         ${classes.btn}
   `,
         fullWidth && "w-full"

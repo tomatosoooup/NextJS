@@ -1,5 +1,3 @@
-import { useTranslations } from "next-intl";
-
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
 import Numbers from "../../components/Numbers";
@@ -43,40 +41,38 @@ const images = [
   },
 ];
 
-const Services = () => {
-  const t = useTranslations("Services");
-
+const Services = ({ text }: { text: string[] }) => {
   const liList = [
     {
-      content: t("l1"),
+      content: text[1],
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l1-")}</span>
+          <span className="text-[#9F9F9F]">{text[2]}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
     },
     {
-      content: t("l2"),
+      content: text[3],
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
     },
     {
-      content: t("l3"),
+      content: text[4],
       subcontent: (
         <>
           <span className="text-[#9F9F9F]"> (UAH)</span>, PSP
-          <span>{t("l3-")}</span>
+          <span>{text[5]}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
     },
     {
-      content: t("l4"),
+      content: text[6],
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l4-")}</span>
+          <span className="text-[#9F9F9F]">{text[7]}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
@@ -85,28 +81,28 @@ const Services = () => {
 
   const liListSecond = [
     {
-      content: t("l5"),
+      content: text[8],
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
     },
     {
-      content: t("l6"),
+      content: text[9],
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
     },
     {
-      content: t("l7"),
+      content: text[10],
       subcontent: (
         <>
-          <span className="text-[#9F9F9F]">{t("l7-")}</span>
+          <span className="text-[#9F9F9F]">{text[11]}</span>
           <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
         </>
       ),
     },
     {
-      content: t("l8"),
+      content: text[12],
       subcontent: (
         <div className="w-1 h-1 rounded-full bg-white absolute -left-0 top-3"></div>
       ),
@@ -137,7 +133,7 @@ const Services = () => {
                 className="text-4xl font-bold text-center md:text-left uppercase font-tt"
                 id="services"
               >
-                {t("h1")}
+                {text[0]}
               </h2>
               <div className="flex">
                 <div className="my-4 lg:my-10 w-72 h-[1px] bg-gradient-to-l from-white to-white/10 md:hidden"></div>

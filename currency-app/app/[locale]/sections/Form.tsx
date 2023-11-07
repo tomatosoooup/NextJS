@@ -4,7 +4,6 @@ import Image from "next/image";
 import { BsCheck2 } from "react-icons/bs";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 
 import Numbers from "../../components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
@@ -14,9 +13,7 @@ import { Reveal } from "../../components/Reveal";
 import Button from "../../components/buttons/Button";
 import Ticker from "../../components/Ticker";
 
-const Form = () => {
-  const t = useTranslations("Form");
-
+const Form = ({ text }: { text: string[] }) => {
   const [iban_town, setIbanTown] = useState("");
   const [reciever, setReciever] = useState("");
   const [telegram, setTelegram] = useState("");
@@ -63,11 +60,12 @@ const Form = () => {
             iban={iban_town}
             reciever={reciever}
             telegram={telegram}
+            text={text}
           />
           <div className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none font-tt">
             <Reveal options={{ x: 100 }} width="100%">
               <>
-                <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
+                <div className="font-medium mb-1 lg:mb-0">{text[4]}</div>
                 <Input
                   id="input-3"
                   onChange={(e) => setIbanTown(e.target.value)}
@@ -76,7 +74,7 @@ const Form = () => {
             </Reveal>
             <Reveal options={{ x: 100 }} width="100%">
               <>
-                <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
+                <div className="font-medium mb-1 lg:mb-0">{text[5]}</div>
                 <Input
                   id="input-4"
                   onChange={(e) => setReciever(e.target.value)}
@@ -98,9 +96,7 @@ const Form = () => {
             <Reveal options={{ x: 100 }} width="100%">
               <div className="lg:hidden justify-center h-[50px] mt-10 px-5 ">
                 <Button fullWidth>
-                  <span className="text-white pt-1 font-medium">
-                    {t("button")}
-                  </span>
+                  <span className="text-white pt-1 font-medium">{text[3]}</span>
                 </Button>
               </div>
             </Reveal>
@@ -138,11 +134,7 @@ const Form = () => {
                   width={100}
                   height={100}
                   className="absolute hidden lg:block right-20 top-0 pointer-events-none"
-                  loading="eager"
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
+                  loading="lazy"
                 />
               </>
             </Reveal>
@@ -156,11 +148,7 @@ const Form = () => {
             width={150}
             height={150}
             className="absolute top-64 right-0 2xl:right-20 hidden xl:block z-20"
-            loading="eager"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
+            loading="lazy"
           />
         </Link>
       </div>

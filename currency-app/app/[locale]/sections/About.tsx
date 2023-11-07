@@ -1,8 +1,6 @@
 import Image from "next/image";
 import classes from "app/animations/Image.module.css";
 
-import { useTranslations } from "next-intl";
-
 import Numbers from "../../components/Numbers";
 import Ticker from "../../components/Ticker";
 import { Reveal } from "../../components/Reveal";
@@ -56,19 +54,17 @@ const imagesMobile = [
   },
 ];
 
-const About = () => {
-  const t = useTranslations("About");
-
+const About = ({ text }: { text: string[] }) => {
   const liList = [
-    { content: t("l1") },
+    { content: text[2] },
     {
-      content: t("l2"),
-      subcontent: <span className="font-bold">{t("l2-")}</span>,
+      content: text[4],
+      subcontent: <span className="font-bold">{text[3]}</span>,
     },
-    { content: t("l3") },
-    { content: t("l4") },
+    { content: text[5] },
+    { content: text[6] },
     {
-      content: t("l5"),
+      content: text[7],
       subcontent: (
         <span className="uppercase font-bold mr-1 font-cf">KLTP EXCHANGE</span>
       ),
@@ -92,14 +88,14 @@ const About = () => {
           id="about"
         >
           <h2 className="text-center text-white text-4xl mt-12 lg:mt-24 font-bold uppercase font-tt">
-            {t("h1")}
+            {text[0]}
           </h2>
           <div className="flex justify-center">
             <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-l from-white to-white/10 "></div>
             <div className="my-5 w-40 lg:w-64 h-[1px] bg-gradient-to-r from-white to-white/10"></div>
           </div>
           <p className="text-center text-white text-lg font-semibold px-5 font-tt">
-            {t("p")}
+            {text[1]}
           </p>
           <div className="lg:grid lg:grid-cols-2 text-white mb-10 lg:mb-12">
             <div className="lg:hidden relative h-[225px] max-w-[400px] mx-auto">
@@ -137,20 +133,7 @@ const About = () => {
               ))}
             </div>
             <div>
-              <ul
-                className="flex 
-            flex-col 
-            gap-5 
-            my-5 
-            lg:my-20 
-            text-[#EAEAEA] 
-            font-normal 
-            text-lg 
-            px-8 
-            relative
-            font-tt
-            "
-              >
+              <ul className="flex flex-col gap-5 my-5 lg:my-20 text-[#EAEAEA] font-normal text-lg px-8 relative font-tt">
                 {liList.map((li, index) => (
                   <AnimatedText key={index}>
                     {li?.subcontent} {li.content}
@@ -166,11 +149,7 @@ const About = () => {
           width={500}
           height={500}
           className={`absolute right-0 -top-20 pointer-events-none hidden lg:block ${classes.img} ${classes.imgTop}`}
-          loading="eager"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
+          loading="lazy"
         />
       </div>
       <Ticker />

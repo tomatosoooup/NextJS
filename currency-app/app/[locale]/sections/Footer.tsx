@@ -75,7 +75,7 @@ const Footer = () => {
           <h4 className="uppercase text-white text-lg font-black pb-6 lg:pb-8 lg:mt-5 text-center lg:text-left font-tt">
             Документы
           </h4>
-          <div className="flex lg:flex-col text-white/70 text-sm gap-10 font-light lg:gap-2 font-ct">
+          <div className="flex lg:flex-col text-white/70 text-sm gap-10 font-light lg:gap-2 font-ct text-center md:text-left">
             <Link href={"/"}>AML / CTF terms</Link>
             <Link href={"/"}>Terms and conditions of service</Link>
           </div>

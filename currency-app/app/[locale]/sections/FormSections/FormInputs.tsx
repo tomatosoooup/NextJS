@@ -8,7 +8,6 @@ import { Reveal } from "app/components/Reveal";
 import { TfiReload } from "react-icons/tfi";
 
 import { getOptions } from "app/utils/getOptions";
-import { useTranslations } from "next-intl";
 
 import { useState } from "react";
 import Select from "app/components/inputs/Select";
@@ -17,12 +16,14 @@ interface FormInputsProps {
   iban?: string;
   reciever?: string;
   telegram?: string;
+  text: string[];
 }
 
 const FormInputs: React.FC<FormInputsProps> = ({
   iban,
   reciever,
   telegram,
+  text,
 }) => {
   const [amount, setAmount] = useState<number>(1);
   const [avgPrice, setAvgPrice] = useState<string | null>(null);
@@ -88,26 +89,16 @@ const FormInputs: React.FC<FormInputsProps> = ({
     }
   };
 
-  // const handleResult = () => {
-  //   const result = Number(amount);
-  //   alert(
-  //     `${result.toFixed(4)} of ${localStorage.getItem(
-  //       "cur1"
-  //     )} to ${localStorage.getItem("cur2")} with - ${amount} and ${avgPrice}`
-  //   );
-  // };
-
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
 
-  const t = useTranslations("Form");
   return (
     <div className="flex flex-col justify-center mt-5 lg:mt-10 order-1 lg:order-none font-tt">
       <div className="flex px-5 lg:px-16 w-full text-white items-center gap-x-5 justify-between font-medium">
         <div className="w-1/2">
           <Reveal options={{ x: -100 }} width="100%">
             <>
-              <div className="mb-1">{t("give")}</div>
+              <div className="mb-1">{text[0]}</div>
               <Select
                 options={options}
                 initialValues={["TRC20", "USDT"]}
@@ -122,7 +113,7 @@ const FormInputs: React.FC<FormInputsProps> = ({
         <div className="w-1/2">
           <Reveal options={{ x: -100 }} width="100%">
             <>
-              <div className="mb-1">{t("get")}</div>
+              <div className="mb-1">{text[1]}</div>
               <Select
                 options={options2}
                 initialValues={["Cash", "EUR"]}
@@ -136,7 +127,7 @@ const FormInputs: React.FC<FormInputsProps> = ({
         <div className="w-full lg:w-1/2 relative">
           <Reveal options={{ x: -100 }} width="100%">
             <>
-              <div className="mb-1">{t("sum")}</div>
+              <div className="mb-1">{text[2]}</div>
               <Input id="input-1" onChange={handleAmountChange} />
               <span className="absolute left-3 -bottom-5 md:-bottom-6 text-xs md:text-sm text-[#555555] font-semibold block overflow-x-hidden">
                 {avgPrice
@@ -155,7 +146,7 @@ const FormInputs: React.FC<FormInputsProps> = ({
                 className="text-white pt-1 text-sm font-medium"
                 onClick={onSendMessage}
               >
-                {t("button")}
+                {text[3]}
               </span>
             </Button>
           </Reveal>
