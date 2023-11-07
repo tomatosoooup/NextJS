@@ -8,6 +8,7 @@ interface InputProps {
   disabled?: boolean;
   value?: string;
   onChange?: (str: any) => void;
+  placeholder?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -16,6 +17,7 @@ const Input: React.FC<InputProps> = ({
   disabled,
   value,
   onChange,
+  placeholder,
 }) => {
   return (
     <>
@@ -25,6 +27,7 @@ const Input: React.FC<InputProps> = ({
           type={type}
           autoComplete={id}
           disabled={disabled}
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
           className={clsx(

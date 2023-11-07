@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "../components/buttons/Button";
 import { useTranslations } from "next-intl";
-import Numbers from "@/components/Numbers";
+// import Numbers from "@/components/Numbers";
 import { Reveal } from "../components/Reveal";
 import Ticker from "../components/Ticker";
 import { Link as ScrollLink } from "react-scroll";
@@ -29,11 +29,11 @@ const Main = () => {
   return (
     <>
       <div className="max-w-[1150px] 2xl:max-w-screen-2xl mx-auto" id="main">
-        <Numbers
+        {/* <Numbers
           containerClass="text-8xl top-0 left-20 main"
           spanClass="blur-xl"
           nums={[1, 0, 1, 0, 0, 1]}
-        />
+        /> */}
         <section>
           <div
             className="
@@ -53,11 +53,11 @@ const Main = () => {
                       lg:pt-32
                       relative"
             >
-              <Numbers
+              {/* <Numbers
                 containerClass="text-5xl top-0 right-64 pt-32 main"
                 spanClass="blur"
                 nums={[0, 1, 1, 0, 1]}
-              />
+              /> */}
               <Reveal options={{ x: -200 }} width="100%">
                 <h1
                   className="text-3xl

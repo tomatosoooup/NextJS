@@ -6,7 +6,7 @@ import { BsCheck2 } from "react-icons/bs";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-import Numbers from "@/components/Numbers";
+// import Numbers from "@/components/Numbers";
 import FormInputs from "./FormSections/FormInputs";
 import FormLogo from "./FormSections/FormLogo";
 
@@ -16,6 +16,10 @@ import Ticker from "../components/Ticker";
 
 const Form = () => {
   const t = useTranslations("Form");
+
+  const [iban_town, setIbanTown] = useState("");
+  const [reciever, setReciever] = useState("");
+  const [telegram, setTelegram] = useState("");
 
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedTwo, setIsClickedTwo] = useState(false);
@@ -35,7 +39,7 @@ const Form = () => {
           id="form"
           className="flex flex-col lg:grid max-w-[1150px] 2xl:max-w-screen-xl mx-auto grid-cols-2 grid-rows-2 bg-[#171717] rounded-2xl mt-10 mb-10 lg:mt-16 lg:mb-16 relative pb-5 z-10"
         >
-          <Numbers
+          {/* <Numbers
             containerClass="text-3xl bottom-10 left-28"
             spanClass="blur"
             nums={[0, 1, 1, 0, 1]}
@@ -54,25 +58,39 @@ const Form = () => {
             containerClass="text-6xl -top-16 -right-20"
             spanClass="blur"
             nums={[0, 0, 1, 0]}
+          /> */}
+          <FormInputs
+            iban={iban_town}
+            reciever={reciever}
+            telegram={telegram}
           />
-          <FormInputs />
           <div className="flex flex-col gap-y-8 lg:gap-y-10 justify-center text-white px-5 mt-10 lg:mr-14 order-2 lg:order-none font-tt">
             <Reveal options={{ x: 100 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">{t("iban")}</div>
-                <Input id="input-3" />
+                <Input
+                  id="input-3"
+                  onChange={(e) => setIbanTown(e.target.value)}
+                />
               </>
             </Reveal>
             <Reveal options={{ x: 100 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">{t("reciever")}</div>
-                <Input id="input-4" />
+                <Input
+                  id="input-4"
+                  onChange={(e) => setReciever(e.target.value)}
+                />
               </>
             </Reveal>
             <Reveal options={{ x: 100 }} width="100%">
               <>
                 <div className="font-medium mb-1 lg:mb-0">Telegram ID</div>
-                <Input id="input-5" />
+                <Input
+                  id="input-5"
+                  onChange={(e) => setTelegram(e.target.value)}
+                  placeholder="@username"
+                />
               </>
             </Reveal>
           </div>

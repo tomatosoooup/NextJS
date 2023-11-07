@@ -13,10 +13,36 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import Select from "@/components/inputs/Select";
 
-const FormInputs = () => {
+interface FormInputsProps {
+  iban?: string;
+  reciever?: string;
+  telegram?: string;
+}
+
+const FormInputs: React.FC<FormInputsProps> = ({
+  iban,
+  reciever,
+  telegram,
+}) => {
   const [amount, setAmount] = useState<number>(1);
   const [avgPrice, setAvgPrice] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<boolean>();
+
+  const telegramUrl = "https://api.telegram.org/bot";
+  const token = "6710200037:AAFmMRbXMTD7epqpg-Uqmi60PtVPwHnfDD0";
+  const chat_id = "-4030341613";
+
+  const onSendMessage = () => {
+    if (typeof localStorage !== "undefined") {
+      const cur1 = localStorage.getItem("cur1");
+      const cur2 = localStorage.getItem("cur2");
+      const text = `Валюта 1 - ${cur1} \n Валюта 2 - ${cur2} \n Пользователь - ${reciever}. \n Iban - ${iban}, Telegram - ${telegram}`;
+
+      const req = axios.post(
+        `${telegramUrl}${token}/sendMessage?chat_id=${chat_id}&text=${text}`
+      );
+    }
+  };
 
   const fetchData = async (currency: string) => {
     const req = currency;
@@ -39,7 +65,6 @@ const FormInputs = () => {
       const currency =
         localStorage.getItem("cur1") + localStorage.getItem("cur2");
       fetchData(currency);
-      console.log(currency);
     }
   };
 
@@ -50,7 +75,6 @@ const FormInputs = () => {
       const currency =
         localStorage.getItem("cur1") + localStorage.getItem("cur2");
       fetchData(currency);
-      console.log(currency);
     }
   };
 
@@ -61,14 +85,14 @@ const FormInputs = () => {
     }
   };
 
-  const handleResult = () => {
-    const result = Number(amount);
-    alert(
-      `${result.toFixed(4)} of ${localStorage.getItem(
-        "cur1"
-      )} to ${localStorage.getItem("cur2")} with - ${amount} and ${avgPrice}`
-    );
-  };
+  // const handleResult = () => {
+  //   const result = Number(amount);
+  //   alert(
+  //     `${result.toFixed(4)} of ${localStorage.getItem(
+  //       "cur1"
+  //     )} to ${localStorage.getItem("cur2")} with - ${amount} and ${avgPrice}`
+  //   );
+  // };
 
   const options = getOptions({ option: "first" });
   const options2 = getOptions({ option: "second" });
@@ -126,7 +150,7 @@ const FormInputs = () => {
             <Button fullWidth type="button">
               <span
                 className="text-white pt-1 text-sm font-medium"
-                onClick={handleResult}
+                onClick={onSendMessage}
               >
                 {t("button")}
               </span>
