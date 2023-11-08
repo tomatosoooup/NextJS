@@ -7,6 +7,23 @@ import { Link as ScrollLink } from "react-scroll";
 import Ticker from "../../components/Ticker";
 import Numbers from "../../components/Numbers";
 
+// const images = [
+//   {
+//     alt: "Bank",
+//     src: "/images/Bank.png",
+//     width: 700,
+//     height: 650,
+//     class: "hidden lg:block pointer-events-none filter ml-auto",
+//   },
+//   {
+//     alt: "Bank-2",
+//     src: "./images/Bank.svg",
+//     width: 500,
+//     height: 500,
+//     class: "lg:hidden mx-auto relative pointer-events-none filter",
+//   },
+// ];
+
 const Main = ({ text }: { text: string[] }) => {
   return (
     <>

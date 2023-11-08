@@ -29,7 +29,7 @@ const Select = ({ options, initialValues, onChoose }) => {
         <span className="pt-1">{values ? values.type : initialValues[0]}</span>
         <span className="pt-1">{values ? values.name : initialValues[1]}</span>
         <Image
-          className="absolute right-2 top-5"
+          className="absolute right-3 top-5"
           width={10}
           height={10}
           src={"./images/triangle.svg"}
@@ -40,7 +40,7 @@ const Select = ({ options, initialValues, onChoose }) => {
             isOpen ? "block" : "hidden"
           } absolute left-0 top-11 w-full bg-[#181818] flex flex-col overflow-y-auto max-h-[155px] lg:max-h-[200px] select-dropdown font-bold z-10`}
         >
-          {options.map((opt) => (
+          {options.map((opt: any) => (
             <Option
               val1={opt.type}
               val2={opt.name}
