@@ -23,9 +23,9 @@ const images = [
   {
     alt: "BTC-small-right",
     src: "./images/BTC-right.svg",
-    width: 325,
-    height: 325,
-    class: `absolute z-10 top-10 left-80 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
+    width: 335,
+    height: 335,
+    class: `absolute z-10 top-10 left-72 pointer-events-none filter ${classes.imgRight} ${classes.img}`,
   },
 ];
 

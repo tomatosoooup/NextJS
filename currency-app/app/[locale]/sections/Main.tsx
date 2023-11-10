@@ -7,23 +7,6 @@ import { Link as ScrollLink } from "react-scroll";
 import Ticker from "../../components/Ticker";
 import Numbers from "../../components/Numbers";
 
-// const images = [
-//   {
-//     alt: "Bank",
-//     src: "/images/Bank.png",
-//     width: 700,
-//     height: 650,
-//     class: "hidden lg:block pointer-events-none filter ml-auto",
-//   },
-//   {
-//     alt: "Bank-2",
-//     src: "./images/Bank.svg",
-//     width: 500,
-//     height: 500,
-//     class: "lg:hidden mx-auto relative pointer-events-none filter",
-//   },
-// ];
-
 const Main = ({ text }: { text: string[] }) => {
   return (
     <>
@@ -79,9 +62,9 @@ const Main = ({ text }: { text: string[] }) => {
             <div className="my-auto lg:ml-24">
               <Reveal options={{ x: 100 }} width="100%">
                 <video width="640" height="360" autoPlay muted>
-                  <source src="/images/Bank.mp4" type="video/mp4" />
+                  <source src="/images/Bank.webm" type="video/webm" />
                   Ваш браузер не поддерживает воспроизведение видео в формате
-                  MP4.
+                  WEBM.
                 </video>
               </Reveal>
             </div>
@@ -92,7 +75,7 @@ const Main = ({ text }: { text: string[] }) => {
             width={375}
             height={375}
             className="absolute left-0 -bottom-36 hidden lg:block pointer-events-none"
-            loading="eager"
+            loading="lazy"
             quality={10}
           />
         </section>
