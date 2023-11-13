@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useStateProvider } from "../utils/StateProvider";
-import { reducerCases } from "../utils/Constants";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { reducerCases } from "../utils/Constants";
+import { useStateProvider } from "../utils/StateProvider";
 
-const PlayLists = () => {
+export default function Playlists() {
   const [{ token, playlists }, dispatch] = useStateProvider();
   useEffect(() => {
     const getPlaylistData = async () => {
@@ -21,26 +21,30 @@ const PlayLists = () => {
       const playlists = items.map(({ name, id }) => {
         return { name, id };
       });
-
       dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
     };
-
     getPlaylistData();
   }, [token, dispatch]);
+  const changeCurrentPlaylist = (selectedPlaylistId) => {
+    dispatch({ type: reducerCases.SET_PLAYLIST_ID, selectedPlaylistId });
+  };
   return (
     <Container>
       <ul>
         {playlists.map(({ name, id }) => {
-          return <li key={id}>{name}</li>;
+          return (
+            <li key={id} onClick={() => changeCurrentPlaylist(id)}>
+              {name}
+            </li>
+          );
         })}
       </ul>
     </Container>
   );
-};
-
-export default PlayLists;
+}
 
 const Container = styled.div`
+  color: #b3b3b3;
   height: 100%;
   overflow: hidden;
   ul {
@@ -49,7 +53,7 @@ const Container = styled.div`
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    height: 52vh;
+    height: 55vh;
     max-height: 100%;
     overflow: auto;
     &::-webkit-scrollbar {
@@ -59,10 +63,8 @@ const Container = styled.div`
       }
     }
     li {
-      display: flex;
-      gap: 1rem;
-      cursor: pointer;
       transition: 0.3s ease-in-out;
+      cursor: pointer;
       &:hover {
         color: white;
       }

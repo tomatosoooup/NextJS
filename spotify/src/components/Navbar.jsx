@@ -1,27 +1,26 @@
+import React from "react";
 import styled from "styled-components";
+import { useStateProvider } from "../utils/StateProvider";
 import { FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { useStateProvider } from "../utils/StateProvider";
 
-const Navbar = () => {
+export default function Navbar({ navbackground }) {
   const [{ userInfo }] = useStateProvider();
   return (
-    <Container>
+    <Container navbackground={navbackground}>
       <div className="search__bar">
         <FaSearch />
         <input type="text" placeholder="Artists, songs, or podcasts" />
       </div>
       <div className="avatar">
-        <a href="#">
+        <a href={userInfo?.userUrl}>
           <CgProfile />
-          <span>{userInfo?.userName}</span>
+          <span>{userInfo?.name}</span>
         </a>
       </div>
     </Container>
   );
-};
-
-export default Navbar;
+}
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +31,8 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   transition: 0.3s ease-in-out;
-  background-color: none;
+  background-color: ${({ navbackground }) =>
+    navbackground ? "rgba(0,0,0,0.7)" : "none"};
   .search__bar {
     background-color: white;
     width: 30%;

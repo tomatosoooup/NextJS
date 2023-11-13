@@ -1,9 +1,9 @@
+import React from "react";
 import styled from "styled-components";
-import { IoLibrary } from "react-icons/io5";
 import { MdHomeFilled, MdSearch } from "react-icons/md";
-import PlayLists from "./PlayLists";
-
-const Sidebar = () => {
+import { IoLibrary } from "react-icons/io5";
+import Playlists from "./Playlists";
+export default function Sidebar() {
   return (
     <Container>
       <div className="top__links">
@@ -28,12 +28,10 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <PlayLists />
+      <Playlists />
     </Container>
   );
-};
-
-export default Sidebar;
+}
 
 const Container = styled.div`
   background-color: black;
