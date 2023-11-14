@@ -7,10 +7,10 @@ const Footer = () => {
       className="max-w-[1225px] 2xl:max-w-screen-2xl mx-auto relative z-10 "
       id="footer"
     >
-      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 mt-10 lg:mt-2 px-5 lg:px-0">
+      <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between mt-10 lg:mt-2 px-5 xl:px-0">
         <div className="absolute min-w-full bg-white/10 h-[2px] top-28 sm:top-24 left-0 lg:hidden"></div>
         <div className="absolute min-w-full bg-white/10 h-[2px] bottom-44 sm:bottom-40 left-0 lg:hidden"></div>
-        <div className="text-center hidden font-medium text-white pt-4 lg:flex flex-col font-cf">
+        <div className="text-center hidden font-medium text-white pt-4 flex-col font-cf xl:flex">
           <span className="text-5xl lg:text-6xl tracking-[0.7rem] font-bold">
             KLTP
           </span>
@@ -18,24 +18,41 @@ const Footer = () => {
             exchange
           </span>
         </div>
-        <div className="order-2 lg:order-none relative">
+        <div className="order-2 lg:order-none relative flex-grow lg:flex-grow-0">
           <h4 className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10 font-tt">
             Локализация
           </h4>
-          <div className="flex gap-10 lg:gap-2 text-[#D9D9D9] text-sm font-bold">
-            <div className="flex-grow flex flex-col gap-1 text-center lg:text-left font-ct">
+          <div className="flex flex-wrap lg:flex-nowrap gap-10 lg:gap-16 text-[#D9D9D9] text-sm font-bold ">
+            <div className="flex-auto flex flex-col gap-1 text-center lg:text-left font-ct">
+              <span>Warszawa</span>
+              <span className="font-medium">Żurawia 6/12, офис 418</span>
+              <div className="hidden lg:block min-w-full bg-white/50 h-[1px] my-1"></div>
+              <div className="flex flex-col">
+                <span className="font-bold w-full">Пн-Пт 10:00-20:00</span>
+                <span className="font-bold w-full">Сб-Вс По запросу</span>
+              </div>
+            </div>
+            <div className="flex-auto flex flex-col gap-1 text-center lg:text-left font-ct">
               <span>Wrocław</span>
               <span className="font-medium">Ofiar Oswiecimskich 17</span>
-              <span className="font-semibold">10:00-20:00</span>
+              <div className="hidden lg:block min-w-full bg-white/50 h-[1px] my-1"></div>
+              <div className="flex flex-col">
+                <span className="font-bold w-full">Пн-Пт 10:00-20:00</span>
+                <span className="font-bold w-full">Сб-Вс По запросу</span>
+              </div>
             </div>
-            <div className="flex-grow  flex flex-col gap-1 pl-2 text-center lg:text-left font-ct">
+            <div className="flex-auto flex flex-col gap-1 pl-2 text-center lg:text-left font-ct">
               <span>Poznań</span>
               <span className="font-medium">Poznańska 1/36 60-848</span>
-              <span className="font-semibold">10:00-20:00</span>
+              <div className="hidden lg:block min-w-full bg-white/50 h-[1px] my-1"></div>
+              <div className="flex flex-col">
+                <span className="font-bold w-full">Пн-Пт 10:00-20:00</span>
+                <span className="font-bold w-full">Сб-Вс По запросу</span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="lg:ml-20 order-3  lg:order-none">
+        <div className="lg:ml-10 order-3 lg:order-none">
           <h4 className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10 font-tt">
             Контакт
           </h4>
@@ -50,10 +67,6 @@ const Footer = () => {
                   src={"./images/telegram.svg"}
                   width={28}
                   height={28}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
                 />
               </Link>
               <Link href={"/"}>
@@ -62,10 +75,6 @@ const Footer = () => {
                   src={"./images/instagram.svg"}
                   width={28}
                   height={28}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
                 />
               </Link>
             </div>
