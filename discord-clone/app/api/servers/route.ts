@@ -1,10 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import { NextResponse } from "next/server";
+import { MemberRole } from "@prisma/client";
 
 import { currentProfile } from "@/lib/currenct-profile";
-
 import { db } from "@/lib/db";
-import { MemberRole } from "@prisma/client";
 
 export async function POST(req: Request) {
   try {
@@ -37,7 +36,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(server);
   } catch (error) {
-    console.log("[SERVER_POST]", error);
+    console.log("[SERVER_PORT]", error);
     return new NextResponse("Internal error", { status: 500 });
   }
 }
