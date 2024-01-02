@@ -22,7 +22,7 @@ const Footer = () => {
           <h4 className="uppercase text-white text-lg font-black pb-8 text-center lg:text-left mt-16 lg:mt-10 font-tt">
             Локализация
           </h4>
-          <div className="flex flex-wrap lg:flex-nowrap gap-10 lg:gap-16 text-[#D9D9D9] text-sm font-bold ">
+          <div className="flex flex-wrap lg:flex-nowrap gap-10 lg:gap-4 text-[#D9D9D9] text-sm font-bold justify-around">
             <div className="flex-auto flex flex-col gap-1 text-center lg:text-left font-ct">
               <span>Warszawa</span>
               <span className="font-medium">Żurawia 6/12, офис 418</span>
