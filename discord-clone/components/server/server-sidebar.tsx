@@ -139,14 +139,16 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async ({ serverId }) => {
               role={role}
               label="Text channels"
             />
-            {textChannels.map((channel) => (
-              <ServerChannel
-                key={channel.id}
-                channel={channel}
-                role={role}
-                server={server}
-              />
-            ))}
+            <div className="space-y-[2px]">
+              {textChannels.map((channel) => (
+                <ServerChannel
+                  key={channel.id}
+                  channel={channel}
+                  role={role}
+                  server={server}
+                />
+              ))}
+            </div>
           </div>
         )}
         {!!audioChannels?.length && (
@@ -157,14 +159,16 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async ({ serverId }) => {
               role={role}
               label="Voice channels"
             />
-            {audioChannels.map((channel) => (
-              <ServerChannel
-                key={channel.id}
-                channel={channel}
-                role={role}
-                server={server}
-              />
-            ))}
+            <div className="space-y-[2px]">
+              {audioChannels.map((channel) => (
+                <ServerChannel
+                  key={channel.id}
+                  channel={channel}
+                  role={role}
+                  server={server}
+                />
+              ))}
+            </div>
           </div>
         )}
 
@@ -176,14 +180,16 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async ({ serverId }) => {
               role={role}
               label="Voice channels"
             />
-            {videoChannels.map((channel) => (
-              <ServerChannel
-                key={channel.id}
-                channel={channel}
-                role={role}
-                server={server}
-              />
-            ))}
+            <div className="space-y-[2px]">
+              {videoChannels.map((channel) => (
+                <ServerChannel
+                  key={channel.id}
+                  channel={channel}
+                  role={role}
+                  server={server}
+                />
+              ))}
+            </div>
           </div>
         )}
 
@@ -195,9 +201,11 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async ({ serverId }) => {
               label="Members"
               server={server}
             />
-            {members.map((member) => (
-              <ServerMember />
-            ))}
+            <div className="space-y-[2px]">
+              {members.map((member) => (
+                <ServerMember key={member.id} member={member} server={server} />
+              ))}
+            </div>
           </div>
         )}
       </ScrollArea>
