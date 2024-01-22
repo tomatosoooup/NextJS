@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { currentProfile } from "@/lib/currenct-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { cn } from "@/lib/utils";
 
 interface UserAvatarProps {

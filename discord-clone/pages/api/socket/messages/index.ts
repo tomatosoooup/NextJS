@@ -1,6 +1,7 @@
-import { currentProfilePages } from "@/lib/currenct-profile-pages";
-import { NextApiResponseServerIo } from "@/types";
 import { NextApiRequest } from "next";
+
+import { NextApiResponseServerIo } from "@/types";
+import { currentProfilePages } from "@/lib/current-profile-pages";
 import { db } from "@/lib/db";
 
 export default async function handler(
@@ -8,29 +9,28 @@ export default async function handler(
   res: NextApiResponseServerIo
 ) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "method not allowed" });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
     const profile = await currentProfilePages(req);
-
     const { content, fileUrl } = req.body;
     const { serverId, channelId } = req.query;
 
     if (!profile) {
-      return res.status(401).json({ message: "Unauthorized" });
+      return res.status(401).json({ error: "Unauthorized" });
     }
 
     if (!serverId) {
-      return res.status(400).json({ message: "Server ID missing" });
+      return res.status(400).json({ error: "Server ID missing" });
     }
 
     if (!channelId) {
-      return res.status(400).json({ message: "Channel ID missing" });
+      return res.status(400).json({ error: "Channel ID missing" });
     }
 
     if (!content) {
-      return res.status(400).json({ message: "Content missing" });
+      return res.status(400).json({ error: "Content missing" });
     }
 
     const server = await db.server.findFirst({
@@ -92,7 +92,7 @@ export default async function handler(
 
     return res.status(200).json(message);
   } catch (error) {
-    console.log("[MESSAGES_POST_ERROR]", error);
-    return res.status(500).json({ message: "Internal error" });
+    console.log("[MESSAGES_POST]", error);
+    return res.status(500).json({ message: "Internal Error" });
   }
 }

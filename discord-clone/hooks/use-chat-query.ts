@@ -11,10 +11,10 @@ interface ChatQueryProps {
 }
 
 export const useChatQuery = ({
+  queryKey,
   apiUrl,
   paramKey,
   paramValue,
-  queryKey,
 }: ChatQueryProps) => {
   const { isConnected } = useSocket();
 
@@ -22,10 +22,14 @@ export const useChatQuery = ({
     const url = qs.stringifyUrl(
       {
         url: apiUrl,
-        query: { cursor: pageParam, [paramKey]: paramValue },
+        query: {
+          cursor: pageParam,
+          [paramKey]: paramValue,
+        },
       },
       { skipNull: true }
     );
+
     const res = await fetch(url);
     return res.json();
   };
@@ -38,5 +42,11 @@ export const useChatQuery = ({
       refetchInterval: isConnected ? false : 1000,
     });
 
-  return { data, fetchNextPage, hasNextPage, isFetchingNextPage, status };
+  return {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    status,
+  };
 };

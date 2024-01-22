@@ -19,6 +19,8 @@ export const initialProfile = async () => {
     return profile;
   }
 
+  //changed `${user.firstName} ${user.lastName}` to `${user.username}`
+
   const newProfile = await db.profile.create({
     data: {
       userId: user.id,

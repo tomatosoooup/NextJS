@@ -8,7 +8,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import NavigationAction from "./navigation-action";
 import { NavigationItem } from "./navigation-item";
 
-import { currentProfile } from "@/lib/currenct-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 
 const NavigationSidebar = async () => {
