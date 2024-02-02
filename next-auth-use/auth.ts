@@ -6,6 +6,8 @@ import { db } from "./lib/db";
 import authConfig from "@/auth.config";
 import { JWT } from "next-auth/jwt";
 
+import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
+
 declare module "next-auth" {
   interface Session {
     user: {
@@ -50,11 +52,25 @@ export const {
         return false;
       }
 
+      if (existingUser.isTwoFactorEnabled) {
+        const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
+          existingUser.id
+        );
+        if (!twoFactorConfirmation) {
+          return false;
+        }
+
+        await db.twoFactorConfirmation.delete({
+          where: { id: twoFactorConfirmation.id },
+        });
+        // Delete two factor confirmation for new sign in
+      }
+
       // TODO: Add 2FAS check
       return true;
     },
     async session({ token, session }: { session: Session; token?: JWT }) {
-      console.log({ sessionToken: token });
+      // console.log({ sessionToken: token });
       if (token?.sub && session.user) {
         session.user.id = token.sub;
       }
