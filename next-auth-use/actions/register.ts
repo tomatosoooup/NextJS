@@ -3,9 +3,12 @@
 import * as z from "zod";
 import { RegisterSchema } from "@/schemas";
 
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
+
+import { sendVerificationEmail } from "@/lib/mail";
+import { generateVerificationToken } from "@/lib/tokens";
 
 // should mark use server to NOT bundle it with the client code
 // Equivalent of and API route
@@ -36,5 +39,8 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
 
   //TODO: Send verification token email
 
-  return { success: "User created!" };
+  const verificationToken = await generateVerificationToken(email);
+  await sendVerificationEmail(verificationToken.email, verificationToken.token);
+
+  return { success: "Confirmation email sent!" };
 };
